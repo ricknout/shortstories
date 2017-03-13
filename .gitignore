@@ -14,6 +14,7 @@ gen/
 out/
 
 # Gradle files
+.gradle
 .gradle/
 build/
 
@@ -32,9 +33,27 @@ proguard/
 # Android Studio captures folder
 captures/
 
+# Android Studio
+/*/local.properties
+/*/out
+/*/*/build
+/*/*/production
+*.iml
+*.iws
+*.ipr
+*~
+*.swp
+proguard/
+*.log
+
 # Intellij
 *.iml
+.idea/
 .idea/workspace.xml
 
 # Keystore files
 *.jks
+
+# Android SDK
+/android-sdk.zip
+/android-studio
