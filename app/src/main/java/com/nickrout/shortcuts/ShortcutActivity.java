@@ -59,7 +59,7 @@ public class ShortcutActivity extends AppCompatActivity {
         reAddShortcuts();
         hideShortcuts();
         if (!hide) {
-            openNotificationShadeDelayed();
+            expandNotificationsPanelDelayed();
         }
         finish();
         overridePendingTransition(0, 0);
@@ -117,11 +117,11 @@ public class ShortcutActivity extends AppCompatActivity {
         return bitmap;
     }
 
-    private void openNotificationShadeDelayed() {
+    private void expandNotificationsPanelDelayed() {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                openNotificationShade();
+                expandNotificationsPanel();
             }
         }, getNotificationVibrateDelay());
     }
@@ -137,17 +137,18 @@ public class ShortcutActivity extends AppCompatActivity {
         return totalDelay;
     }
 
-    private void openNotificationShade() {
+    @SuppressWarnings({"ResourceType", "SpellCheckingInspection"})
+    private void expandNotificationsPanel() {
         Object statusbar = getSystemService("statusbar");
-        Class<?> statusbarManager;
+        Class<?> statusBarManager;
         try {
-            statusbarManager = Class.forName("android.app.StatusBarManager");
+            statusBarManager = Class.forName("android.app.StatusBarManager");
         } catch (ClassNotFoundException ignored) {
             return;
         }
         Method expandNotificationsPanel;
         try {
-            expandNotificationsPanel = statusbarManager.getMethod("expandNotificationsPanel");
+            expandNotificationsPanel = statusBarManager.getMethod("expandNotificationsPanel");
         } catch (NoSuchMethodException ignored) {
             return;
         }
