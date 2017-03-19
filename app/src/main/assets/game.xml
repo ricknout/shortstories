@@ -40,24 +40,21 @@
     <!-- TODO: Shorten actions to <= 25 chars-->
 
     <choice
-        scene="Your majesty, your people are starving in the streets, and threaten revolution.
-        Our enemies to the west are weak, but they threaten soon to invade. What will you do?"
+        scene="Your majesty, your people are starving in the streets, and threaten revolution. Our enemies to the west are weak, but they threaten soon to invade. What will you do?"
         scene_type="despair">
         <choice
             action="Make pre-emptive war on the western lands."
             action_type="attack"
-            scene="If you can seize their territory, your kingdom will flourish.
-            But your army's morale is low and the kingdom's armory is empty. How will you win the war?"
+            scene="If you can seize their territory, your kingdom will flourish. But your army's morale is low and the kingdom's armory is empty. How will you win the war?"
             scene_type="hope">
-            <adjust_stat stat_id="leadership">10</adjust_stat>
+            <stat_adjustment stat_id="leadership">10</stat_adjustment>
             <choice
                 action="Drive the peasants like slaves; if we work hard enough, we'll win."
                 action_type="command"
-                scene="Unfortunately, morale doesn't work like that.
-                Your army soon turns against you and the kingdom falls to the western barbarians."
+                scene="Unfortunately, morale doesn't work like that. Your army soon turns against you and the kingdom falls to the western barbarians."
                 scene_type="revolt">
-                <adjust_stat stat_id="leadership">-5</adjust_stat>
-                <adjust_stat stat_id="strength">-10</adjust_stat>
+                <stat_adjustment stat_id="leadership">-5</stat_adjustment>
+                <stat_adjustment stat_id="strength">-10</stat_adjustment>
                 <finish/>
                 <!--
                 leadership: 55 | strength: 40 | wealth: 50
@@ -66,11 +63,10 @@
             <choice
                 action="Appoint charismatic knights and give them land, peasants, and resources."
                 action_type="recruit"
-                scene="Your majesty's people are eminently resourceful.
-                Your knights win the day, but take care: they may soon demand a convention of parliament."
+                scene="Your majesty's people are eminently resourceful. Your knights win the day, but take care: they may soon demand a convention of parliament."
                 scene_type="victory">
-                <adjust_stat stat_id="strength">5</adjust_stat>
-                <adjust_stat stat_id="wealth">-10</adjust_stat>
+                <stat_adjustment stat_id="strength">5</stat_adjustment>
+                <stat_adjustment stat_id="wealth">-10</stat_adjustment>
                 <finish/>
                 <!--
                 leadership: 60 | strength: 55 | wealth: 40
@@ -79,10 +75,9 @@
             <choice
                 action="Steal food and weapons from the enemy in the dead of night."
                 action_type="steal"
-                scene="A cunning plan. Soon your army is a match for the westerners;
-                they choose not to invade for now, but how long can your majesty postpone the inevitable?"
+                scene="A cunning plan. Soon your army is a match for the westerners; they choose not to invade for now, but how long can your majesty postpone the inevitable?"
                 scene_type="peace">
-                <adjust_stat stat_id="wealth">10</adjust_stat>
+                <stat_adjustment stat_id="wealth">10</stat_adjustment>
                 <finish/>
                 <!--
                 leadership: 60 | strength: 50 | wealth: 60
@@ -94,15 +89,14 @@
             action_type="trade"
             scene="The westerners have you at the point of a sword. They demand unfair terms from you."
             scene_type="danger">
-            <adjust_stat stat_id="strength">-10</adjust_stat>
+            <stat_adjustment stat_id="strength">-10</stat_adjustment>
             <choice
                 action="Accept the terms for now."
                 action_type="surrender"
-                scene="Eventually, the barbarian westerners conquer you anyway,
-                destroying their bread basket, and the entire region starves."
+                scene="Eventually, the barbarian westerners conquer you anyway, destroying their bread basket, and the entire region starves."
                 scene_type="defeat">
-                <adjust_stat stat_id="leadership">-5</adjust_stat>
-                <adjust_stat stat_id="wealth">-5</adjust_stat>
+                <stat_adjustment stat_id="leadership">-5</stat_adjustment>
+                <stat_adjustment stat_id="wealth">-5</stat_adjustment>
                 <finish/>
                 <!--
                 leadership: 45 | strength: 40 | wealth: 45
@@ -113,8 +107,8 @@
                 action_type="warn"
                 scene="They blink. Your majesty gets a fair price for wheat."
                 scene_type="victory">
-                <adjust_stat stat_id="leadership">10</adjust_stat>
-                <adjust_stat stat_id="wealth">5</adjust_stat>
+                <stat_adjustment stat_id="leadership">10</stat_adjustment>
+                <stat_adjustment stat_id="wealth">5</stat_adjustment>
                 <finish/>
                 <!--
                 leadership: 60 | strength: 40 | wealth: 55
@@ -124,10 +118,9 @@
         <choice
             action="Abdicate the throne. I have clearly mismanaged this kingdom!"
             action_type="surrender"
-            scene="The kingdom descends into chaos, but you manage to escape with your own hide.
-            Perhaps in time you can return to restore order to this fair land."
+            scene="The kingdom descends into chaos, but you manage to escape with your own hide. Perhaps in time you can return to restore order to this fair land."
             scene_type="revolt">
-            <adjust_stat stat_id="leadership">-15</adjust_stat>
+            <stat_adjustment stat_id="leadership">-15</stat_adjustment>
             <finish/>
             <!--
             leadership: 35 | strength: 50 | wealth: 50
