@@ -12,6 +12,7 @@ import android.util.Log;
 import android.util.Xml;
 
 import com.nickrout.shortcuts.model.Game;
+import com.nickrout.shortcuts.util.Stats;
 
 import org.simpleframework.xml.Serializer;
 import org.simpleframework.xml.core.Persister;
@@ -21,6 +22,7 @@ import org.xmlpull.v1.XmlPullParserException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Arrays;
+import java.util.Map;
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
@@ -34,6 +36,12 @@ public class MainActivity extends AppCompatActivity {
         addShortcuts();
         //parseGameXml();
         parseGameXmlSimple();
+        Map<String, Integer> stats = new Stats(this).getAll();
+        if (stats != null) {
+            Log.d(TAG, stats.toString());
+        } else {
+            Log.d(TAG, "Stats is null");
+        }
     }
 
     private void addShortcuts() {
@@ -114,14 +122,18 @@ public class MainActivity extends AppCompatActivity {
             Log.d(TAG, e.toString());
             return;
         }
+        Stats stats = new Stats(this);
         Log.d(TAG, "Game title: " + game.title);
         Log.d(TAG, "Game stats size: " + game.stats.size());
         Log.d(TAG, "Game choice action: " + game.choice.action);
         Log.d(TAG, "Game choice action type: " + game.choice.actionType);
         Log.d(TAG, "Game choice scene: " + game.choice.scene);
         Log.d(TAG, "Game choice scene type: " + game.choice.sceneType);
-        Log.d(TAG, "Game choice choice stat adjustment statId: " + game.choice.choices.get(0).statAdjustments.get(0).statId);
+        Log.d(TAG, "Game choice choice stat adjustment statName: " + game.choice.choices.get(0).statAdjustments.get(0).statName);
         Log.d(TAG, "Game choice choice stat adjustment amount: " + game.choice.choices.get(0).statAdjustments.get(0).amount);
         Log.d(TAG, "Game choice choices size: " + game.choice.choices.size());
+        stats.setAll(game.stats);
+        stats.adjust(game.choice.choices.get(0).statAdjustments.get(0).statName,
+                game.choice.choices.get(0).statAdjustments.get(0).amount);
     }
 }

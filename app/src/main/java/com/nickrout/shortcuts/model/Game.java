@@ -13,7 +13,7 @@ public class Game {
     @Attribute(name = "title")
     public String title;
 
-    @ElementMap(entry = "stat", key = "id", attribute = true, inline = true)
+    @ElementMap(entry = "stat", key = "name", attribute = true, inline = true, valueType = Integer.class)
     public Map<String, Integer> stats;
 
     @Element(name = "choice")

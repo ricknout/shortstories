@@ -30,4 +30,8 @@ public class Choice {
 
     @Element(name = "finish", required = false)
     public Finish finish;
+
+    public boolean isFinish() {
+        return finish != null;
+    }
 }
