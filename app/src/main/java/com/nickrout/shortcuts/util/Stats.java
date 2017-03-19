@@ -65,4 +65,8 @@ public class Stats {
             return null;
         }
     }
+
+    public void clear() {
+        sharedPreferences().edit().clear().apply();
+    }
 }
