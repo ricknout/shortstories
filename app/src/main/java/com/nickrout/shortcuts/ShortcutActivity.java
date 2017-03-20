@@ -1,6 +1,5 @@
 package com.nickrout.shortcuts;
 
-import android.app.Notification;
 import android.app.PendingIntent;
 import android.content.Intent;
 import android.content.pm.ShortcutInfo;
@@ -18,6 +17,8 @@ import android.support.v4.app.NotificationCompat;
 import android.support.v4.app.NotificationManagerCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
+
+import com.nickrout.shortcuts.ui.SceneDialogActivity;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -40,7 +41,7 @@ public class ShortcutActivity extends AppCompatActivity {
         boolean hide = getIntent().getBooleanExtra(EXTRA_HIDE, false);
         if (!hide) {
             NotificationCompat.Builder builder = new NotificationCompat.Builder(this);
-            Intent dialogIntent = new Intent(this, DialogActivity.class);
+            Intent dialogIntent = new Intent(this, SceneDialogActivity.class);
             PendingIntent pendingDialogIntent = PendingIntent.getActivity(this, 0, dialogIntent, PendingIntent.FLAG_UPDATE_CURRENT);
             builder.setStyle(new NotificationCompat.BigTextStyle().bigText("Notification " + new Random().nextInt()))
                     .setContentTitle("Notification")
@@ -75,7 +76,7 @@ public class ShortcutActivity extends AppCompatActivity {
     private void reAddShortcuts() {
         ShortcutManager shortcutManager = getSystemService(ShortcutManager.class);
         List<String> pinnedShortcutIds = new ArrayList<>();
-        for (ShortcutInfo shortcutInfo: shortcutManager.getPinnedShortcuts()) {
+        for (ShortcutInfo shortcutInfo: shortcutManager.getDynamicShortcuts()) {
             pinnedShortcutIds.add(shortcutInfo.getId());
         }
         shortcutManager.disableShortcuts(pinnedShortcutIds);
@@ -86,6 +87,7 @@ public class ShortcutActivity extends AppCompatActivity {
         ShortcutInfo showNotificationShortcut = new ShortcutInfo.Builder(this, "id_show_notification" + new Random().nextInt())
                 .setShortLabel("Show")
                 .setLongLabel("Show notification")
+                .setDisabledMessage("Shortcut is disabled")
                 .setIcon(Icon.createWithResource(this, R.mipmap.ic_launcher_round))
                 .setIntent(showNotificationIntent)
                 .build();
@@ -96,6 +98,7 @@ public class ShortcutActivity extends AppCompatActivity {
         ShortcutInfo hideNotificationShortcut = new ShortcutInfo.Builder(this, "id_hide_notification_" + new Random().nextInt())
                 .setShortLabel("Hide")
                 .setLongLabel("Hide notification")
+                .setDisabledMessage("Shortcut is disabled")
                 .setIcon(Icon.createWithResource(this, R.mipmap.ic_launcher_round))
                 .setIntent(hideNotificationIntent)
                 .build();

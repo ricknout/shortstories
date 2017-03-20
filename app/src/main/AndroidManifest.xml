@@ -21,9 +21,12 @@
         </activity>
         <activity
             android:name=".ShortcutActivity"
-            android:theme="@style/Translucent" />
+            android:theme="@style/Theme.Invisible" />
         <activity
-            android:name=".DialogActivity"
+            android:name=".ui.ChoiceActivity"
+            android:theme="@style/Theme.Invisible" />
+        <activity
+            android:name=".ui.SceneDialogActivity"
             android:theme="@style/Theme.AppCompat.Light.Dialog.Alert"
             android:label="@string/title_dialog" />
     </application>

@@ -8,7 +8,7 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
-    <style name="Translucent" parent="android:Theme.Translucent.NoTitleBar">
+    <style name="Theme.Invisible" parent="android:Theme.Translucent.NoTitleBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
         <item name="android:windowDrawsSystemBarBackgrounds">false</item>

@@ -11,8 +11,10 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.util.Xml;
 
+import com.nickrout.shortcuts.model.Choice;
 import com.nickrout.shortcuts.model.Game;
-import com.nickrout.shortcuts.util.Stats;
+import com.nickrout.shortcuts.prefs.Stats;
+import com.nickrout.shortcuts.util.IntentUtil;
 
 import org.simpleframework.xml.Serializer;
 import org.simpleframework.xml.core.Persister;
@@ -22,7 +24,9 @@ import org.xmlpull.v1.XmlPullParserException;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Map;
 import java.util.Random;
 
@@ -34,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        addShortcuts();
+        //addShortcuts();
         //parseGameXml();
         parseGameXmlSimple();
         Map<String, Integer> stats = new Stats(this).getAll();
@@ -55,6 +59,7 @@ public class MainActivity extends AppCompatActivity {
         ShortcutInfo showNotificationShortcut = new ShortcutInfo.Builder(this, "id_show_notification" + new Random().nextInt())
                 .setShortLabel("Show")
                 .setLongLabel("Show notification")
+                .setDisabledMessage("Shortcut is disabled")
                 .setIcon(Icon.createWithResource(this, R.mipmap.ic_launcher_round))
                 .setIntent(showNotificationIntent)
                 .build();
@@ -65,6 +70,7 @@ public class MainActivity extends AppCompatActivity {
         ShortcutInfo hideNotificationShortcut = new ShortcutInfo.Builder(this, "id_hide_notification_" + new Random().nextInt())
                 .setShortLabel("Hide")
                 .setLongLabel("Hide notification")
+                .setDisabledMessage("Shortcut is disabled")
                 .setIcon(Icon.createWithResource(this, R.mipmap.ic_launcher_round))
                 .setIntent(hideNotificationIntent)
                 .build();
@@ -146,5 +152,28 @@ public class MainActivity extends AppCompatActivity {
         } catch (Exception e) {
             Log.d(TAG, e.toString());
         }
+        // Shortcuts
+        if (game.choice.choices == null || game.choice.choices.size() == 0) {
+            return;
+        }
+        ShortcutManager shortcutManager = getSystemService(ShortcutManager.class);
+        List<ShortcutInfo> choiceShortcuts = new ArrayList<>();
+        for (Choice choice : game.choice.choices) {
+            ByteArrayOutputStream choiceOutputStream = new ByteArrayOutputStream();
+            try {
+                serializer.write(choice, choiceOutputStream);
+            } catch (Exception e) {
+                Log.d(TAG, e.toString());
+            }
+            ShortcutInfo choiceShortcut = new ShortcutInfo.Builder(this, "id_" + new Random().nextInt())
+                    .setShortLabel(choice.action)
+                    .setLongLabel(choice.action)
+                    .setDisabledMessage("DISABLED MESSAGE")
+                    .setIcon(Icon.createWithResource(this, R.mipmap.ic_launcher_round))
+                    .setIntent(IntentUtil.choice(this, choiceOutputStream.toString()))
+                    .build();
+            choiceShortcuts.add(choiceShortcut);
+        }
+        shortcutManager.setDynamicShortcuts(choiceShortcuts);
     }
 }

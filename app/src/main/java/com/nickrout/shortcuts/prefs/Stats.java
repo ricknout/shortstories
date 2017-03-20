@@ -1,4 +1,4 @@
-package com.nickrout.shortcuts.util;
+package com.nickrout.shortcuts.prefs;
 
 import android.content.Context;
 import android.content.SharedPreferences;
