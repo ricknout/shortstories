@@ -19,6 +19,7 @@ import org.simpleframework.xml.core.Persister;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Arrays;
@@ -116,6 +117,7 @@ public class MainActivity extends AppCompatActivity {
     private void parseGameXmlSimple() {
         Serializer serializer = new Persister();
         Game game;
+        // Deserialize
         try {
             game = serializer.read(Game.class, getAssets().open("game.xml"));
         } catch (Exception e) {
@@ -135,5 +137,14 @@ public class MainActivity extends AppCompatActivity {
         stats.setAll(game.stats);
         stats.adjust(game.choice.choices.get(0).statAdjustments.get(0).statName,
                 game.choice.choices.get(0).statAdjustments.get(0).amount);
+        // Serialize
+        ByteArrayOutputStream gameOutputStream = new ByteArrayOutputStream();
+        try {
+            serializer.write(game, gameOutputStream);
+            Log.d(TAG, "Game output stream size: " + gameOutputStream.size());
+            Log.d(TAG, gameOutputStream.toString());
+        } catch (Exception e) {
+            Log.d(TAG, e.toString());
+        }
     }
 }
