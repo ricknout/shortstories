@@ -9,7 +9,7 @@ public class BitmapUtil {
 
     public static Bitmap drawableToBitmap(Drawable drawable) {
         if (drawable instanceof BitmapDrawable) {
-            return ((BitmapDrawable)drawable).getBitmap();
+            return ((BitmapDrawable) drawable).getBitmap();
         }
         int width = drawable.getIntrinsicWidth();
         width = width > 0 ? width : 1;
