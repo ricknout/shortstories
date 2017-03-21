@@ -1,4 +1,4 @@
-package com.nickrout.shortcuts;
+package com.nickrout.shortcuts.ui;
 
 import android.content.pm.ShortcutInfo;
 import android.content.pm.ShortcutManager;
@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 
+import com.nickrout.shortcuts.R;
 import com.nickrout.shortcuts.model.Game;
 import com.nickrout.shortcuts.prefs.Stats;
 import com.nickrout.shortcuts.util.IntentUtil;
@@ -50,9 +51,9 @@ public class MainActivity extends AppCompatActivity {
         Log.d(TAG, "Game title: " + game.title);
         Log.d(TAG, "Game stats size: " + game.stats.size());
         Log.d(TAG, "Game choice action: " + game.choice.action);
-        Log.d(TAG, "Game choice action type: " + game.choice.actionType);
+        //Log.d(TAG, "Game choice action type: " + game.choice.actionType);
         Log.d(TAG, "Game choice scenario: " + game.choice.scenario);
-        Log.d(TAG, "Game choice scenario type: " + game.choice.scenarioType);
+        //Log.d(TAG, "Game choice scenario type: " + game.choice.scenarioType);
         Log.d(TAG, "Game choice choice stat adjustment statName: " + game.choice.choices.get(0).statAdjustments.get(0).statName);
         Log.d(TAG, "Game choice choice stat adjustment amount: " + game.choice.choices.get(0).statAdjustments.get(0).amount);
         Log.d(TAG, "Game choice choices size: " + game.choice.choices.size());

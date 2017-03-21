@@ -1,5 +1,8 @@
 package com.nickrout.shortcuts.model;
 
+import com.nickrout.shortcuts.model.type.ActionType;
+import com.nickrout.shortcuts.model.type.ScenarioType;
+
 import org.simpleframework.xml.Attribute;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.ElementList;
@@ -14,13 +17,13 @@ public class Choice {
     public String action;
 
     @Attribute(name = "action_type", required = false)
-    public String actionType;
+    private int mActionType;
 
     @Attribute(name = "scenario")
     public String scenario;
 
     @Attribute(name = "scenario_type")
-    public String scenarioType;
+    private int mScenarioType;
 
     @ElementList(inline = true, required = false)
     public List<StatAdjustment> statAdjustments;
@@ -33,5 +36,21 @@ public class Choice {
 
     public boolean isFinish() {
         return finish != null;
+    }
+
+    public ActionType getActionType() {
+        ActionType[] actionTypes = ActionType.values();
+        if (mActionType > actionTypes.length - 1) {
+            return ActionType.UNKNOWN;
+        }
+        return actionTypes[mActionType];
+    }
+
+    public ScenarioType getScenarioType() {
+        ScenarioType[] scenarioTypes = ScenarioType.values();
+        if (mScenarioType > scenarioTypes.length - 1) {
+            return ScenarioType.UNKNOWN;
+        }
+        return scenarioTypes[mScenarioType];
     }
 }

@@ -6,6 +6,7 @@ import android.content.pm.ShortcutInfo;
 import android.content.pm.ShortcutManager;
 import android.graphics.drawable.Icon;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v4.app.NotificationCompat;
 import android.support.v4.app.NotificationManagerCompat;
@@ -14,13 +15,13 @@ import android.util.Log;
 
 import com.nickrout.shortcuts.R;
 import com.nickrout.shortcuts.model.Choice;
+import com.nickrout.shortcuts.util.BitmapUtil;
 import com.nickrout.shortcuts.util.IntentUtil;
+import com.nickrout.shortcuts.util.UiUtil;
 
 import org.simpleframework.xml.Serializer;
 import org.simpleframework.xml.core.Persister;
 
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -30,16 +31,16 @@ public class ChoiceActivity extends AppCompatActivity {
 
     private static final String TAG = "ChoiceActivity";
     private static final int ID_NOTIFICATION = 1;
+    private static final long DELAY_EXPAND_NOTIFICATION_PANEL = 1000;
 
-    private Serializer mSerializer;
     private Choice mChoice;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
-        mSerializer = new Persister();
+        Serializer serializer = new Persister();
         String choiceXml = getIntent().getExtras().getString(IntentUtil.EXTRA_CHOICE_XML);
         try {
-            mChoice = mSerializer.read(Choice.class, choiceXml);
+            mChoice = serializer.read(Choice.class, choiceXml);
         } catch (Exception e) {
             Log.d(TAG, e.toString());
             return;
@@ -48,7 +49,7 @@ public class ChoiceActivity extends AppCompatActivity {
         disableExistingShortcuts();
         addChoiceShortcuts();
         goHomeToHideShortcuts();
-        expandNotificationsPanel();
+        expandNotificationsPanelDelayed();
         finish();
         overridePendingTransition(0, 0);
         super.onCreate(savedInstanceState);
@@ -62,9 +63,10 @@ public class ChoiceActivity extends AppCompatActivity {
                 .setContentTitle(getString(R.string.title_scenario))
                 .setPriority(NotificationCompat.PRIORITY_MAX)
                 .setSmallIcon(R.mipmap.ic_launcher)
-                //.setLargeIcon(drawableToBitmap(ContextCompat.getDrawable(this, R.mipmap.ic_launcher_round)))
-                //.setColor(ContextCompat.getColor(this, R.color.colorPrimary))
-                //.setVibrate(mVibrate)
+                .setLargeIcon(BitmapUtil.drawableToBitmap(mChoice.getScenarioType().getIcon(this)))
+                .setColor(mChoice.getScenarioType().getColor(this))
+                .setSound(mChoice.getScenarioType().getSound(this))
+                .setVibrate(mChoice.getScenarioType().vibratePattern)
                 .setOngoing(!mChoice.isFinish())
                 .setContentIntent(pendingDialogIntent)
                 /*.addAction(new NotificationCompat.Action(
@@ -117,24 +119,12 @@ public class ChoiceActivity extends AppCompatActivity {
         shortcutManager.setDynamicShortcuts(choiceShortcuts);
     }
 
-    @SuppressWarnings({"ResourceType", "SpellCheckingInspection"})
-    private void expandNotificationsPanel() {
-        Object statusbar = getSystemService("statusbar");
-        Class<?> statusBarManager;
-        try {
-            statusBarManager = Class.forName("android.app.StatusBarManager");
-        } catch (ClassNotFoundException ignored) {
-            return;
-        }
-        Method expandNotificationsPanel;
-        try {
-            expandNotificationsPanel = statusBarManager.getMethod("expandNotificationsPanel");
-        } catch (NoSuchMethodException ignored) {
-            return;
-        }
-        try {
-            expandNotificationsPanel.invoke(statusbar);
-        } catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException ignored) {
-        }
+    private void expandNotificationsPanelDelayed() {
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                UiUtil.expandNotificationsPanel(ChoiceActivity.this);
+            }
+        }, DELAY_EXPAND_NOTIFICATION_PANEL);
     }
 }

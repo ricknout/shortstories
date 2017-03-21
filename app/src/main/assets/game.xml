@@ -10,43 +10,51 @@
     <stat name="Wealth">0</stat>
 
     <!--
-    Action types (indicates shortcut icon):
-        - attack
-        - trade
-        - surrender
-        - command
-        - recruit
-        - steal
-        - warn
+    Action types (indicates shortcut color / icon):
+        0: UNKNOWN
+        1: ATTACK
+        2: DEFEND
+        3: MOVE
+        4: RECRUIT
+        5: COMMAND
+        6: TRADE
+        7: STEAL
+        8: WARN
+        9: WAIT
+        10: SURRENDER
     -->
 
     <!--
-    Scenario types (indicates notification icon):
-        - despair
-        - hope
-        - revolt
-        - victory
-        - peace
-        - danger
-        - defeat
+    Scenario types (indicates notification color / icon / sound / vibrate pattern):
+        0: UNKNOWN
+        1: NEUTRAL
+        2: SURPRISE
+        3: MYSTERY
+        4: DESPAIR
+        5: HOPE
+        6: REVOLT
+        7: VICTORY
+        8: PEACE
+        9: DANGER
+        10: DEFEAT
     -->
 
     <!-- TODO: Shorten actions to <= 25 chars-->
 
     <choice
         scenario="Your majesty, your people are starving in the streets, and threaten revolution. Our enemies to the west are weak, but they threaten soon to invade. What will you do?"
-        scenario_type="despair">
+        scenario_type="4">
         <choice
             action="Make pre-emptive war on the western lands."
-            action_type="attack"
+            action_type="1"
             scenario="If you can seize their territory, your kingdom will flourish. But your army's morale is low and the kingdom's armory is empty. How will you win the war?"
-            scenario_type="hope">
+            scenario_type="5">
             <stat_adjustment stat_name="Leadership">10</stat_adjustment>
             <choice
                 action="Drive the peasants like slaves; if we work hard enough, we'll win."
-                action_type="command"
+                action_type="5"
                 scenario="Unfortunately, morale doesn't work like that. Your army soon turns against you and the kingdom falls to the western barbarians."
-                scenario_type="revolt">
+                scenario_type="6">
                 <stat_adjustment stat_name="Leadership">-5</stat_adjustment>
                 <stat_adjustment stat_name="Strength">-10</stat_adjustment>
                 <finish/>
@@ -56,9 +64,9 @@
             </choice>
             <choice
                 action="Appoint charismatic knights and give them land, peasants, and resources."
-                action_type="recruit"
+                action_type="4"
                 scenario="Your majesty's people are eminently resourceful. Your knights win the day, but take care: they may soon demand a convention of parliament."
-                scenario_type="victory">
+                scenario_type="7">
                 <stat_adjustment stat_name="Strength">5</stat_adjustment>
                 <stat_adjustment stat_name="Wealth">-10</stat_adjustment>
                 <finish/>
@@ -68,9 +76,9 @@
             </choice>
             <choice
                 action="Steal food and weapons from the enemy in the dead of night."
-                action_type="steal"
+                action_type="7"
                 scenario="A cunning plan. Soon your army is a match for the westerners; they choose not to invade for now, but how long can your majesty postpone the inevitable?"
-                scenario_type="peace">
+                scenario_type="8">
                 <stat_adjustment stat_name="Wealth">10</stat_adjustment>
                 <finish/>
                 <!--
@@ -80,15 +88,15 @@
         </choice>
         <choice
             action="Beat swords to plowshares and trade food to the westerners for protection."
-            action_type="trade"
+            action_type="6"
             scenario="The westerners have you at the point of a sword. They demand unfair terms from you."
-            scenario_type="danger">
+            scenario_type="9">
             <stat_adjustment stat_name="Strength">-10</stat_adjustment>
             <choice
                 action="Accept the terms for now."
-                action_type="surrender"
+                action_type="10"
                 scenario="Eventually, the barbarian westerners conquer you anyway, destroying their bread basket, and the entire region starves."
-                scenario_type="defeat">
+                scenario_type="10">
                 <stat_adjustment stat_name="Leadership">-5</stat_adjustment>
                 <stat_adjustment stat_name="Wealth">-5</stat_adjustment>
                 <finish/>
@@ -98,9 +106,9 @@
             </choice>
             <choice
                 action="Threaten to salt our fields if they don't offer better terms."
-                action_type="warn"
+                action_type="8"
                 scenario="They blink. Your majesty gets a fair price for wheat."
-                scenario_type="victory">
+                scenario_type="7">
                 <stat_adjustment stat_name="Leadership">10</stat_adjustment>
                 <stat_adjustment stat_name="Wealth">5</stat_adjustment>
                 <finish/>
@@ -111,9 +119,9 @@
         </choice>
         <choice
             action="Abdicate the throne. I have clearly mismanaged this kingdom!"
-            action_type="surrender"
+            action_type="10"
             scenario="The kingdom descends into chaos, but you manage to escape with your own hide. Perhaps in time you can return to restore order to this fair land."
-            scenario_type="revolt">
+            scenario_type="6">
             <stat_adjustment stat_name="Leadership">-15</stat_adjustment>
             <finish/>
             <!--

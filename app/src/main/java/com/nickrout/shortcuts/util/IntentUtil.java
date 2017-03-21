@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.util.Log;
 
-import com.nickrout.shortcuts.MainActivity;
+import com.nickrout.shortcuts.ui.MainActivity;
 import com.nickrout.shortcuts.model.Choice;
 import com.nickrout.shortcuts.ui.ScenarioDialogActivity;
 import com.nickrout.shortcuts.ui.ChoiceActivity;
