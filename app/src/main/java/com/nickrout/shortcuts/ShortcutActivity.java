@@ -18,7 +18,7 @@ import android.support.v4.app.NotificationManagerCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 
-import com.nickrout.shortcuts.ui.SceneDialogActivity;
+import com.nickrout.shortcuts.ui.ScenarioDialogActivity;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -41,7 +41,7 @@ public class ShortcutActivity extends AppCompatActivity {
         boolean hide = getIntent().getBooleanExtra(EXTRA_HIDE, false);
         if (!hide) {
             NotificationCompat.Builder builder = new NotificationCompat.Builder(this);
-            Intent dialogIntent = new Intent(this, SceneDialogActivity.class);
+            Intent dialogIntent = new Intent(this, ScenarioDialogActivity.class);
             PendingIntent pendingDialogIntent = PendingIntent.getActivity(this, 0, dialogIntent, PendingIntent.FLAG_UPDATE_CURRENT);
             builder.setStyle(new NotificationCompat.BigTextStyle().bigText("Notification " + new Random().nextInt()))
                     .setContentTitle("Notification")

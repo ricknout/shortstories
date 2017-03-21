@@ -6,12 +6,14 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <TextView
-            android:id="@+id/scene"
+            android:id="@+id/scenario"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="@dimen/padding_dialog"
+            android:paddingStart="@dimen/padding_dialog"
+            android:paddingEnd="@dimen/padding_dialog"
+            android:paddingTop="@dimen/padding_dialog_half"
+            android:paddingBottom="@dimen/padding_dialog"
             style="?android:attr/textAppearanceMedium"
-            android:gravity="center"
             tools:text="@string/lorem_ipsum"/>
     </ScrollView>
 </layout>

@@ -26,9 +26,9 @@
             android:name=".ui.ChoiceActivity"
             android:theme="@style/Theme.Invisible" />
         <activity
-            android:name=".ui.SceneDialogActivity"
+            android:name=".ui.ScenarioDialogActivity"
             android:theme="@style/Theme.AppCompat.Light.Dialog.Alert"
-            android:label="@string/title_dialog" />
+            android:label="@string/title_scenario" />
     </application>
 
 </manifest>

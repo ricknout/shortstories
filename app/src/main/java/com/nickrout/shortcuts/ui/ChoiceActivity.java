@@ -19,13 +19,12 @@ import com.nickrout.shortcuts.util.IntentUtil;
 import org.simpleframework.xml.Serializer;
 import org.simpleframework.xml.core.Persister;
 
-import java.io.ByteArrayOutputStream;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Random;
+import java.util.UUID;
 
 public class ChoiceActivity extends AppCompatActivity {
 
@@ -45,7 +44,7 @@ public class ChoiceActivity extends AppCompatActivity {
             Log.d(TAG, e.toString());
             return;
         }
-        showSceneNotification();
+        showScenarioNotification();
         disableExistingShortcuts();
         addChoiceShortcuts();
         goHomeToHideShortcuts();
@@ -55,12 +54,13 @@ public class ChoiceActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
     }
 
-    private void showSceneNotification() {
-        Intent sceneDialogIntent = IntentUtil.sceneDialog(this, mChoice.scene);
-        PendingIntent pendingDialogIntent = PendingIntent.getActivity(this, 0, sceneDialogIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+    private void showScenarioNotification() {
+        Intent scenarioDialogIntent = IntentUtil.scenarioDialog(this, mChoice.scenario);
+        PendingIntent pendingDialogIntent = PendingIntent.getActivity(this, 0, scenarioDialogIntent, PendingIntent.FLAG_UPDATE_CURRENT);
         NotificationCompat.Builder builder = new NotificationCompat.Builder(this);
-        builder.setStyle(new NotificationCompat.BigTextStyle().bigText(mChoice.scene))
-                .setContentTitle("Scene")
+        builder.setStyle(new NotificationCompat.BigTextStyle().bigText(mChoice.scenario))
+                .setContentTitle(getString(R.string.title_scenario))
+                .setPriority(NotificationCompat.PRIORITY_MAX)
                 .setSmallIcon(R.mipmap.ic_launcher)
                 //.setLargeIcon(drawableToBitmap(ContextCompat.getDrawable(this, R.mipmap.ic_launcher_round)))
                 //.setColor(ContextCompat.getColor(this, R.color.colorPrimary))
@@ -90,10 +90,10 @@ public class ChoiceActivity extends AppCompatActivity {
     private void addChoiceShortcuts() {
         ShortcutManager shortcutManager = getSystemService(ShortcutManager.class);
         if (mChoice.isFinish()) {
-            ShortcutInfo restartShortcut = new ShortcutInfo.Builder(this, "id_" + new Random().nextInt())
-                    .setShortLabel("Restart")
-                    .setLongLabel("Restart")
-                    .setDisabledMessage("DISABLED MESSAGE")
+            ShortcutInfo restartShortcut = new ShortcutInfo.Builder(this, UUID.randomUUID().toString())
+                    .setShortLabel("Restart game")
+                    .setLongLabel("Restart game")
+                    .setDisabledMessage(getString(R.string.shortcut_disabled_message))
                     .setIcon(Icon.createWithResource(this, R.mipmap.ic_launcher_round))
                     .setIntent(IntentUtil.main(this))
                     .build();
@@ -103,21 +103,14 @@ public class ChoiceActivity extends AppCompatActivity {
         if (mChoice.choices == null || mChoice.choices.size() == 0) {
             return;
         }
-        Serializer serializer = new Persister();
         List<ShortcutInfo> choiceShortcuts = new ArrayList<>();
         for (Choice choice : mChoice.choices) {
-            ByteArrayOutputStream choiceOutputStream = new ByteArrayOutputStream();
-            try {
-                serializer.write(choice, choiceOutputStream);
-            } catch (Exception e) {
-                Log.d(TAG, e.toString());
-            }
-            ShortcutInfo choiceShortcut = new ShortcutInfo.Builder(this, "id_" + new Random().nextInt())
+            ShortcutInfo choiceShortcut = new ShortcutInfo.Builder(this, UUID.randomUUID().toString())
                     .setShortLabel(choice.action)
                     .setLongLabel(choice.action)
-                    .setDisabledMessage("DISABLED MESSAGE")
+                    .setDisabledMessage(getString(R.string.shortcut_disabled_message))
                     .setIcon(Icon.createWithResource(this, R.mipmap.ic_launcher_round))
-                    .setIntent(IntentUtil.choice(this, choiceOutputStream.toString()))
+                    .setIntent(IntentUtil.choice(this, choice))
                     .build();
             choiceShortcuts.add(choiceShortcut);
         }

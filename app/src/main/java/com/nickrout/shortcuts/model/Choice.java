@@ -16,11 +16,11 @@ public class Choice {
     @Attribute(name = "action_type", required = false)
     public String actionType;
 
-    @Attribute(name = "scene")
-    public String scene;
+    @Attribute(name = "scenario")
+    public String scenario;
 
-    @Attribute(name = "scene_type")
-    public String sceneType;
+    @Attribute(name = "scenario_type")
+    public String scenarioType;
 
     @ElementList(inline = true, required = false)
     public List<StatAdjustment> statAdjustments;
