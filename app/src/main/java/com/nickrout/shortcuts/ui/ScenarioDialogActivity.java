@@ -14,8 +14,8 @@ public class ScenarioDialogActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        String dialogBody = getIntent().getExtras().getString(IntentUtil.EXTRA_SCENARIO);
+        String scenario = getIntent().getExtras().getString(IntentUtil.EXTRA_SCENARIO);
         ActivityScenarioDialogBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_scenario_dialog);
-        binding.scenario.setText(dialogBody);
+        binding.scenario.setText(scenario);
     }
 }

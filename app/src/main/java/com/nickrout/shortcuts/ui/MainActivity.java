@@ -17,7 +17,6 @@ import org.simpleframework.xml.core.Persister;
 
 import java.io.ByteArrayOutputStream;
 import java.util.Arrays;
-import java.util.Map;
 import java.util.UUID;
 
 public class MainActivity extends AppCompatActivity {
@@ -28,16 +27,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        parseGameXmlSimple();
-        Map<String, Integer> stats = new Stats(this).getAll();
-        if (stats != null) {
-            Log.d(TAG, stats.toString());
-        } else {
-            Log.d(TAG, "Stats is null");
-        }
+        parseGameXml();
     }
 
-    private void parseGameXmlSimple() {
+    private void parseGameXml() {
         Serializer serializer = new Persister();
         Game game;
         // Deserialize
@@ -58,8 +51,6 @@ public class MainActivity extends AppCompatActivity {
         Log.d(TAG, "Game choice choice stat adjustment amount: " + game.choice.choices.get(0).statAdjustments.get(0).amount);
         Log.d(TAG, "Game choice choices size: " + game.choice.choices.size());
         stats.setAll(game.stats);
-        stats.adjust(game.choice.choices.get(0).statAdjustments.get(0).statName,
-                game.choice.choices.get(0).statAdjustments.get(0).amount);
         // Serialize
         ByteArrayOutputStream gameOutputStream = new ByteArrayOutputStream();
         try {

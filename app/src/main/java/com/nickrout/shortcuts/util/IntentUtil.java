@@ -9,6 +9,7 @@ import com.nickrout.shortcuts.ui.MainActivity;
 import com.nickrout.shortcuts.model.Choice;
 import com.nickrout.shortcuts.ui.ScenarioDialogActivity;
 import com.nickrout.shortcuts.ui.ChoiceActivity;
+import com.nickrout.shortcuts.ui.StatsDialogActivity;
 
 import org.simpleframework.xml.Serializer;
 import org.simpleframework.xml.core.Persister;
@@ -47,6 +48,12 @@ public class IntentUtil {
         Intent dialogIntent = new Intent(context, ScenarioDialogActivity.class);
         dialogIntent.setFlags(Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS);
         dialogIntent.putExtra(EXTRA_SCENARIO, scenario);
+        return dialogIntent;
+    }
+
+    public static Intent statsDialog(Context context) {
+        Intent dialogIntent = new Intent(context, StatsDialogActivity.class);
+        dialogIntent.setFlags(Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS);
         return dialogIntent;
     }
 }

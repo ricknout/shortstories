@@ -26,6 +26,10 @@
             android:name=".ui.ScenarioDialogActivity"
             android:theme="@style/Theme.AppCompat.Light.Dialog.Alert"
             android:label="@string/title_scenario" />
+        <activity
+            android:name=".ui.StatsDialogActivity"
+            android:theme="@style/Theme.AppCompat.Light.Dialog.Alert"
+            android:label="@string/title_stats" />
     </application>
 
 </manifest>

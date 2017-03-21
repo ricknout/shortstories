@@ -15,6 +15,8 @@ import android.util.Log;
 
 import com.nickrout.shortcuts.R;
 import com.nickrout.shortcuts.model.Choice;
+import com.nickrout.shortcuts.model.StatAdjustment;
+import com.nickrout.shortcuts.prefs.Stats;
 import com.nickrout.shortcuts.util.BitmapUtil;
 import com.nickrout.shortcuts.util.IntentUtil;
 import com.nickrout.shortcuts.util.UiUtil;
@@ -45,6 +47,7 @@ public class ChoiceActivity extends AppCompatActivity {
             Log.d(TAG, e.toString());
             return;
         }
+        adjustStats();
         showScenarioNotification();
         disableExistingShortcuts();
         addChoiceShortcuts();
@@ -55,22 +58,34 @@ public class ChoiceActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
     }
 
+    private void adjustStats() {
+        if (mChoice.statAdjustments == null || mChoice.statAdjustments.isEmpty()) {
+            return;
+        }
+        Stats stats = new Stats(this);
+        for (StatAdjustment statAdjustment : mChoice.statAdjustments) {
+            stats.adjust(statAdjustment.statName, statAdjustment.amount);
+        }
+    }
+
     private void showScenarioNotification() {
         Intent scenarioDialogIntent = IntentUtil.scenarioDialog(this, mChoice.scenario);
-        PendingIntent pendingDialogIntent = PendingIntent.getActivity(this, 0, scenarioDialogIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+        PendingIntent pendingScenarioDialogIntent = PendingIntent.getActivity(this, 0, scenarioDialogIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+        Intent statsDialogIntent = IntentUtil.statsDialog(this);
+        PendingIntent pendingStatsDialogIntent = PendingIntent.getActivity(this, 0, statsDialogIntent, PendingIntent.FLAG_UPDATE_CURRENT);
         NotificationCompat.Builder builder = new NotificationCompat.Builder(this);
         builder.setStyle(new NotificationCompat.BigTextStyle().bigText(mChoice.scenario))
                 .setContentTitle(getString(R.string.title_scenario))
-                .setPriority(NotificationCompat.PRIORITY_MAX)
+                //.setPriority(NotificationCompat.PRIORITY_MAX)
                 .setSmallIcon(R.mipmap.ic_launcher)
                 .setLargeIcon(BitmapUtil.drawableToBitmap(mChoice.getScenarioType().getIcon(this)))
                 .setColor(mChoice.getScenarioType().getColor(this))
                 .setSound(mChoice.getScenarioType().getSound(this))
                 .setVibrate(mChoice.getScenarioType().vibratePattern)
                 .setOngoing(!mChoice.isFinish())
-                .setContentIntent(pendingDialogIntent)
-                /*.addAction(new NotificationCompat.Action(
-                        0, "Action", null))*/;
+                .setContentIntent(pendingScenarioDialogIntent)
+                .addAction(new NotificationCompat.Action(
+                        0, getString(R.string.notification_action_view_stats), pendingStatsDialogIntent));
         NotificationManagerCompat.from(this).notify(ID_NOTIFICATION, builder.build());
     }
 
