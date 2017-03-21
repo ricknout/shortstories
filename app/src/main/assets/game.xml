@@ -3,11 +3,11 @@
     title="Game">
 
     <!--
-    Stats start at 50? Have min of 0 and max of 100?
+    TODO: Have min of 0 and max of 100?
     -->
-    <stat name="Leadership">0</stat>
-    <stat name="Strength">0</stat>
-    <stat name="Wealth">0</stat>
+    <stat name="Leadership">50</stat>
+    <stat name="Strength">50</stat>
+    <stat name="Wealth">50</stat>
 
     <!--
     Action types (indicates shortcut color / icon):
@@ -39,19 +39,19 @@
         10: DEFEAT
     -->
 
-    <!-- TODO: Shorten actions to <= 25 chars-->
-
     <choice
         scenario="Your majesty, your people are starving in the streets, and threaten revolution. Our enemies to the west are weak, but they threaten soon to invade. What will you do?"
         scenario_type="4">
+        <!-- action="Make pre-emptive war on the western lands." -->
         <choice
-            action="Make pre-emptive war on the western lands."
+            action="Make war on western lands"
             action_type="1"
             scenario="If you can seize their territory, your kingdom will flourish. But your army's morale is low and the kingdom's armory is empty. How will you win the war?"
             scenario_type="5">
             <stat_adjustment stat_name="Leadership">10</stat_adjustment>
+            <!-- action="Drive the peasants like slaves; if we work hard enough, we'll win." -->
             <choice
-                action="Drive the peasants like slaves; if we work hard enough, we'll win."
+                action="Enslave peasants"
                 action_type="5"
                 scenario="Unfortunately, morale doesn't work like that. Your army soon turns against you and the kingdom falls to the western barbarians."
                 scenario_type="6">
@@ -62,8 +62,9 @@
                 leadership: 55 | strength: 40 | wealth: 50
                 -->
             </choice>
+            <!-- action="Appoint charismatic knights and give them land, peasants, and resources." -->
             <choice
-                action="Appoint charismatic knights and give them land, peasants, and resources."
+                action="Appoint knights"
                 action_type="4"
                 scenario="Your majesty's people are eminently resourceful. Your knights win the day, but take care: they may soon demand a convention of parliament."
                 scenario_type="7">
@@ -74,8 +75,9 @@
                 leadership: 60 | strength: 55 | wealth: 40
                 -->
             </choice>
+            <!-- action="Steal food and weapons from the enemy in the dead of night." -->
             <choice
-                action="Steal food and weapons from the enemy in the dead of night."
+                action="Steal from enemy"
                 action_type="7"
                 scenario="A cunning plan. Soon your army is a match for the westerners; they choose not to invade for now, but how long can your majesty postpone the inevitable?"
                 scenario_type="8">
@@ -86,14 +88,16 @@
                 -->
             </choice>
         </choice>
+        <!-- action="Beat swords to plowshares and trade food to the westerners for protection." -->
         <choice
-            action="Beat swords to plowshares and trade food to the westerners for protection."
+            action="Trade food to westerners"
             action_type="6"
             scenario="The westerners have you at the point of a sword. They demand unfair terms from you."
             scenario_type="9">
             <stat_adjustment stat_name="Strength">-10</stat_adjustment>
+            <!-- action="Accept the terms for now." -->
             <choice
-                action="Accept the terms for now."
+                action="Accept terms"
                 action_type="10"
                 scenario="Eventually, the barbarian westerners conquer you anyway, destroying their bread basket, and the entire region starves."
                 scenario_type="10">
@@ -104,8 +108,9 @@
                 leadership: 45 | strength: 40 | wealth: 45
                 -->
             </choice>
+            <!-- action="Threaten to salt our fields if they don't offer better terms." -->
             <choice
-                action="Threaten to salt our fields if they don't offer better terms."
+                action="Threaten to salt fields"
                 action_type="8"
                 scenario="They blink. Your majesty gets a fair price for wheat."
                 scenario_type="7">
@@ -117,8 +122,9 @@
                 -->
             </choice>
         </choice>
+        <!-- action="Abdicate the throne. I have clearly mismanaged this kingdom!" -->
         <choice
-            action="Abdicate the throne. I have clearly mismanaged this kingdom!"
+            action="Abdicate the throne"
             action_type="10"
             scenario="The kingdom descends into chaos, but you manage to escape with your own hide. Perhaps in time you can return to restore order to this fair land."
             scenario_type="6">
