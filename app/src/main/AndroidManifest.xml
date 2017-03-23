@@ -23,6 +23,9 @@
             android:name=".ui.ChoiceActivity"
             android:theme="@style/Theme.Invisible" />
         <activity
+            android:name=".ui.AddShowScenarioShortcutActivity"
+            android:theme="@style/Theme.Invisible" />
+        <activity
             android:name=".ui.ScenarioDialogActivity"
             android:theme="@style/Theme.AppCompat.Light.Dialog.Alert"
             android:label="@string/title_scenario" />

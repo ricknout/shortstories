@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.util.Log;
 
+import com.nickrout.shortcuts.ui.AddShowScenarioShortcutActivity;
 import com.nickrout.shortcuts.ui.MainActivity;
 import com.nickrout.shortcuts.model.Choice;
 import com.nickrout.shortcuts.ui.ScenarioDialogActivity;
@@ -42,6 +43,21 @@ public class IntentUtil {
         choiceIntent.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION | Intent.FLAG_ACTIVITY_CLEAR_TOP);
         choiceIntent.putExtra(EXTRA_CHOICE_XML, choiceXml);
         return choiceIntent;
+    }
+
+    public static Intent addShowScenarioShortcut(Context context, Choice choice) {
+        Serializer serializer = new Persister();
+        ByteArrayOutputStream choiceOutputStream = new ByteArrayOutputStream();
+        try {
+            serializer.write(choice, choiceOutputStream);
+        } catch (Exception e) {
+            Log.d(TAG, e.toString());
+        }
+        String choiceXml = choiceOutputStream.toString();
+        Intent addShowScenarioShortcutIntent = new Intent(Intent.ACTION_VIEW, Uri.EMPTY, context, AddShowScenarioShortcutActivity.class);
+        addShowScenarioShortcutIntent.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        addShowScenarioShortcutIntent.putExtra(EXTRA_CHOICE_XML, choiceXml);
+        return addShowScenarioShortcutIntent;
     }
 
     public static Intent scenarioDialog(Context context, String scenario) {
