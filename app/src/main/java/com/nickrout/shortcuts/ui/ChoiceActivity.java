@@ -5,12 +5,9 @@ import android.content.Intent;
 import android.content.pm.ShortcutInfo;
 import android.content.pm.ShortcutManager;
 import android.graphics.drawable.Icon;
-import android.os.Bundle;
 import android.os.Handler;
-import android.support.annotation.Nullable;
 import android.support.v4.app.NotificationCompat;
 import android.support.v4.app.NotificationManagerCompat;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
 import com.nickrout.shortcuts.R;
@@ -29,7 +26,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
 
-public class ChoiceActivity extends AppCompatActivity {
+public class ChoiceActivity extends InvisibleActivity {
 
     private static final String TAG = "ChoiceActivity";
     private static final int ID_NOTIFICATION = 1;
@@ -38,7 +35,7 @@ public class ChoiceActivity extends AppCompatActivity {
     private Choice mChoice;
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    protected void performPreFinishOperations() {
         Serializer serializer = new Persister();
         String choiceXml = getIntent().getExtras().getString(IntentUtil.EXTRA_CHOICE_XML);
         try {
@@ -53,9 +50,6 @@ public class ChoiceActivity extends AppCompatActivity {
         addChoiceShortcuts();
         goHomeToHideShortcuts();
         expandNotificationsPanelDelayed();
-        finish();
-        overridePendingTransition(0, 0);
-        super.onCreate(savedInstanceState);
     }
 
     private void adjustStats() {
