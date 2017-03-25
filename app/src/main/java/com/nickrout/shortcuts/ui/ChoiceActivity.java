@@ -58,7 +58,7 @@ public class ChoiceActivity extends InvisibleActivity {
         }
         Stats stats = new Stats(this);
         for (StatAdjustment statAdjustment : mChoice.statAdjustments) {
-            stats.adjust(statAdjustment.statName, statAdjustment.amount);
+            stats.adjust(statAdjustment.statName, statAdjustment.value);
         }
     }
 

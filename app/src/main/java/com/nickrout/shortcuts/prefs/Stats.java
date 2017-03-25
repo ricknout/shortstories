@@ -4,6 +4,10 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.util.Log;
 
+import com.nickrout.shortcuts.model.Stat;
+
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 public class Stats {
@@ -51,8 +55,8 @@ public class Stats {
             Log.e(TAG, "Attempted to setAll stats with empty map");
             return;
         }
-        for (Map.Entry<String, Integer> stat : stats.entrySet()) {
-            set(stat.getKey(), stat.getValue());
+        for (Map.Entry<String, Integer> statEntry : stats.entrySet()) {
+            set(statEntry.getKey(), statEntry.getValue());
         }
     }
 
@@ -68,5 +72,18 @@ public class Stats {
 
     public void clear() {
         sharedPreferences().edit().clear().apply();
+    }
+
+    public List<Stat> getStats() {
+        List<Stat> stats = new ArrayList<>();
+        Map<String, Integer> statsMap = getAll();
+        if (statsMap == null || statsMap.isEmpty()) {
+            return stats;
+        }
+        for (Map.Entry<String, Integer> statEntry : statsMap.entrySet()) {
+            Stat stat = new Stat(statEntry.getKey(), statEntry.getValue());
+            stats.add(stat);
+        }
+        return stats;
     }
 }

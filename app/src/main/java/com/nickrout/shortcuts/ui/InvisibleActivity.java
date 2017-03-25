@@ -14,5 +14,5 @@ public abstract class InvisibleActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
     }
 
-    abstract protected void performPreFinishOperations();
+    protected abstract void performPreFinishOperations();
 }

@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
         Log.d(TAG, "Game choice scenario: " + game.choice.scenario);
         //Log.d(TAG, "Game choice scenario type: " + game.choice.scenarioType);
         Log.d(TAG, "Game choice choice stat adjustment statName: " + game.choice.choices.get(0).statAdjustments.get(0).statName);
-        Log.d(TAG, "Game choice choice stat adjustment amount: " + game.choice.choices.get(0).statAdjustments.get(0).amount);
+        Log.d(TAG, "Game choice choice stat adjustment value: " + game.choice.choices.get(0).statAdjustments.get(0).value);
         Log.d(TAG, "Game choice choices size: " + game.choice.choices.size());
         stats.setAll(game.stats);
         // Serialize

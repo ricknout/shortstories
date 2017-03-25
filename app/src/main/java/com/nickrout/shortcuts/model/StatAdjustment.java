@@ -11,5 +11,5 @@ public class StatAdjustment {
     public String statName;
 
     @Text
-    public int amount;
+    public int value;
 }

@@ -2,19 +2,13 @@
 <layout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
-    <!-- TODO: Replace with RecyclerView (to be populated by stats) -->
-    <ScrollView
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <TextView
-            android:id="@+id/stats"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingStart="@dimen/padding_dialog"
-            android:paddingEnd="@dimen/padding_dialog"
-            android:paddingTop="@dimen/padding_dialog_half"
-            android:paddingBottom="@dimen/padding_dialog"
-            style="?android:attr/textAppearanceMedium"
-            tools:text="@string/lorem_ipsum"/>
-    </ScrollView>
+        android:layout_height="match_parent"
+        android:paddingTop="@dimen/padding_dialog_half"
+        android:clipToPadding="false"
+        tools:listitem="@layout/item_stat"/>
+
 </layout>
