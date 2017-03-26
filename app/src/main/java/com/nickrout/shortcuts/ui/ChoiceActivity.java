@@ -22,7 +22,6 @@ import org.simpleframework.xml.Serializer;
 import org.simpleframework.xml.core.Persister;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
 
@@ -106,14 +105,7 @@ public class ChoiceActivity extends InvisibleActivity {
     private void addChoiceShortcuts() {
         ShortcutManager shortcutManager = getSystemService(ShortcutManager.class);
         if (mChoice.isFinish()) {
-            ShortcutInfo restartShortcut = new ShortcutInfo.Builder(this, UUID.randomUUID().toString())
-                    .setShortLabel("Restart game")
-                    .setLongLabel("Restart game")
-                    .setDisabledMessage(getString(R.string.shortcut_disabled_message))
-                    .setIcon(Icon.createWithResource(this, R.mipmap.ic_launcher_round))
-                    .setIntent(IntentUtil.main(this))
-                    .build();
-            shortcutManager.setDynamicShortcuts(Arrays.asList(restartShortcut));
+            shortcutManager.removeAllDynamicShortcuts();
             return;
         }
         if (mChoice.choices == null || mChoice.choices.size() == 0) {
