@@ -62,9 +62,9 @@ public class ChoiceActivity extends NoDisplayActivity {
 
     private void showScenarioNotification() {
         Intent scenarioDialogIntent = IntentUtil.scenarioDialog(this, mChoice.scenario);
-        PendingIntent pendingScenarioDialogIntent = PendingIntent.getActivity(this, 0, scenarioDialogIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+        PendingIntent pendingScenarioDialogIntent = IntentUtil.makePendingIntent(this, scenarioDialogIntent);
         Intent statsDialogIntent = IntentUtil.statsDialog(this);
-        PendingIntent pendingStatsDialogIntent = PendingIntent.getActivity(this, 0, statsDialogIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+        PendingIntent pendingStatsDialogIntent = IntentUtil.makePendingIntent(this, statsDialogIntent);
         NotificationCompat.Builder builder = new NotificationCompat.Builder(this);
         builder.setStyle(new NotificationCompat.BigTextStyle().bigText(mChoice.scenario))
                 .setContentTitle(getString(R.string.title_scenario))
@@ -74,16 +74,15 @@ public class ChoiceActivity extends NoDisplayActivity {
                 .setColor(mChoice.getScenarioType().getColor(this))
                 .setSound(mChoice.getScenarioType().getSound(this))
                 .setVibrate(mChoice.getScenarioType().vibratePattern)
-                //.setOngoing(!mChoice.isFinish())
                 .setContentIntent(pendingScenarioDialogIntent)
                 .addAction(new NotificationCompat.Action(
                         0, getString(R.string.notification_action_view_stats), pendingStatsDialogIntent));
         if (!mChoice.isFinish()) {
             Intent addShowScenarioShortcutIntent = IntentUtil.addShowScenarioShortcut(this, mChoice);
-            PendingIntent pendingAddShowScenarioShortcutDialogIntent = PendingIntent.getActivity(this, 0, addShowScenarioShortcutIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+            PendingIntent pendingAddShowScenarioShortcutDialogIntent = IntentUtil.makePendingIntent(this, addShowScenarioShortcutIntent);
             builder.setDeleteIntent(pendingAddShowScenarioShortcutDialogIntent);
             Intent quitGameIntent = IntentUtil.quitGame(this);
-            PendingIntent pendingQuitGameIntent = PendingIntent.getActivity(this, 0, quitGameIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+            PendingIntent pendingQuitGameIntent = IntentUtil.makePendingIntent(this, quitGameIntent);
             builder.addAction(new NotificationCompat.Action(
                     0, getString(R.string.notification_action_quit_game), pendingQuitGameIntent));
         }
