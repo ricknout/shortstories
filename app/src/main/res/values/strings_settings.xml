@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="setting_title_notification_priority">Notification priority</string>
+    <string name="setting_summary_notification_priority">Determines the order of the scenario notification in the notification list. Some priorities (eg. High or Max) may cause heads-up notification behaviour.</string>
+    <string translatable="false" name="setting_key_notification_priority">notification_priority</string>
+    <string name="setting_title_go_home_new_scenario">Go home on new scenario</string>
+    <string name="setting_summary_go_home_new_scenario">Return to the launcher home screen for each new scenario. This minimizes the list of app shortcuts (choices).</string>
+    <string translatable="false" name="setting_key_go_home_new_scenario">go_home_new_scenario</string>
+    <string name="setting_title_expand_notifications_new_scenario">Expand notification panel on new scenario</string>
+    <string name="setting_summary_expand_notifications_new_scenario">Attempt to drop down the notification panel for each new scenario, showing the latest scenario notification.</string>
+    <string translatable="false" name="setting_key_expand_notifications_new_scenario">expand_notifications_new_scenario</string>
+
+    <string-array name="setting_entries_notification_priority">
+        <item>Default</item>
+        <item>Min</item>
+        <item>Low</item>
+        <item>High</item>
+        <item>Max</item>
+    </string-array>
+
+    <string-array name="setting_entrie_values_notification_priority">
+        <item>0</item>
+        <item>-2</item>
+        <item>-1</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
+</resources>

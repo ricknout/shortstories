@@ -13,6 +13,7 @@ import android.util.Log;
 import com.nickrout.shortcuts.R;
 import com.nickrout.shortcuts.model.Choice;
 import com.nickrout.shortcuts.model.StatAdjustment;
+import com.nickrout.shortcuts.prefs.Settings;
 import com.nickrout.shortcuts.prefs.Stats;
 import com.nickrout.shortcuts.util.BitmapUtil;
 import com.nickrout.shortcuts.util.IdUtil;
@@ -31,6 +32,9 @@ public class ChoiceActivity extends NoDisplayActivity {
     private static final long DELAY_EXPAND_NOTIFICATION_PANEL = 1000;
 
     private Choice mChoice;
+    private int mNotificationPriority = NotificationCompat.PRIORITY_DEFAULT;
+    private boolean mGoHomeNewScenario = true;
+    private boolean mExpandNotificationsNewScenario = true;
 
     @Override
     protected void performPreFinishOperations() {
@@ -42,6 +46,10 @@ public class ChoiceActivity extends NoDisplayActivity {
             Log.d(TAG, e.toString());
             return;
         }
+        Settings settings = new Settings(this);
+        mNotificationPriority = settings.notificationPriority();
+        mGoHomeNewScenario = settings.goHomeNewScenario();
+        mExpandNotificationsNewScenario = settings.expandNotificationsNewScenario();
         adjustStats();
         showScenarioNotification();
         disableExistingShortcuts();
@@ -68,7 +76,7 @@ public class ChoiceActivity extends NoDisplayActivity {
         NotificationCompat.Builder builder = new NotificationCompat.Builder(this);
         builder.setStyle(new NotificationCompat.BigTextStyle().bigText(mChoice.scenario))
                 .setContentTitle(getString(R.string.title_scenario))
-                //.setPriority(NotificationCompat.PRIORITY_MAX)
+                .setPriority(mNotificationPriority)
                 .setSmallIcon(R.mipmap.ic_launcher)
                 .setLargeIcon(BitmapUtil.drawableToBitmap(mChoice.getScenarioType().getIcon(this)))
                 .setColor(mChoice.getScenarioType().getColor(this))
@@ -90,6 +98,9 @@ public class ChoiceActivity extends NoDisplayActivity {
     }
 
     private void goHomeToHideShortcuts() {
+        if (!mGoHomeNewScenario) {
+            return;
+        }
         Intent homeIntent = new Intent(Intent.ACTION_MAIN);
         homeIntent.addCategory(Intent.CATEGORY_HOME);
         startActivity(homeIntent);
@@ -128,6 +139,9 @@ public class ChoiceActivity extends NoDisplayActivity {
     }
 
     private void expandNotificationsPanelDelayed() {
+        if (!mExpandNotificationsNewScenario) {
+            return;
+        }
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
