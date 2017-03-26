@@ -15,7 +15,7 @@ import org.simpleframework.xml.core.Persister;
 import java.util.Arrays;
 import java.util.UUID;
 
-public class AddShowScenarioShortcutActivity extends InvisibleActivity {
+public class AddShowScenarioShortcutActivity extends NoDisplayActivity {
 
     private static final String TAG = "AddShowScenarioShortcut";
 

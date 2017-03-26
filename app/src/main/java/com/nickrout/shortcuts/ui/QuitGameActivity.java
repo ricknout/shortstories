@@ -6,7 +6,7 @@ import android.support.v4.app.NotificationManagerCompat;
 import com.nickrout.shortcuts.prefs.Stats;
 import com.nickrout.shortcuts.util.IdUtil;
 
-public class QuitGameActivity extends InvisibleActivity {
+public class QuitGameActivity extends NoDisplayActivity {
 
     private static final String TAG = "QuitGameActivity";
 

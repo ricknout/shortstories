@@ -25,7 +25,7 @@ import org.simpleframework.xml.core.Persister;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ChoiceActivity extends InvisibleActivity {
+public class ChoiceActivity extends NoDisplayActivity {
 
     private static final String TAG = "ChoiceActivity";
     private static final long DELAY_EXPAND_NOTIFICATION_PANEL = 1000;

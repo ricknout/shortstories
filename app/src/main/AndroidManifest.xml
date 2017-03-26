@@ -23,25 +23,30 @@
 
         <activity
             android:name=".ui.ChoiceActivity"
-            android:theme="@style/Theme.Invisible" />
+            android:theme="@android:style/Theme.NoDisplay"
+            android:excludeFromRecents="true" />
 
         <activity
             android:name=".ui.AddShowScenarioShortcutActivity"
-            android:theme="@style/Theme.Invisible" />
+            android:theme="@android:style/Theme.NoDisplay"
+            android:excludeFromRecents="true" />
 
         <activity
             android:name=".ui.ScenarioDialogActivity"
             android:theme="@style/Theme.AppCompat.Light.Dialog.Alert"
-            android:label="@string/title_scenario" />
+            android:label="@string/title_scenario"
+            android:excludeFromRecents="true" />
 
         <activity
             android:name=".ui.StatsDialogActivity"
             android:theme="@style/Theme.AppCompat.Light.Dialog.Alert"
-            android:label="@string/title_stats" />
+            android:label="@string/title_stats"
+            android:excludeFromRecents="true"/>
 
         <activity
             android:name=".ui.QuitGameActivity"
-            android:theme="@style/Theme.Invisible" />
+            android:theme="@android:style/Theme.NoDisplay"
+            android:excludeFromRecents="true" />
 
     </application>
 

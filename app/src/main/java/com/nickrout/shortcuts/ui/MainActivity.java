@@ -44,8 +44,8 @@ public class MainActivity extends AppCompatActivity {
         mBinding.button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                finishAndRemoveTask();
                 startActivity(IntentUtil.choice(MainActivity.this, game.choice));
-                finish();
             }
         });
     }
