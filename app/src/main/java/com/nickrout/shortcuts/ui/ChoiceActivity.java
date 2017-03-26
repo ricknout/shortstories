@@ -15,6 +15,7 @@ import com.nickrout.shortcuts.model.Choice;
 import com.nickrout.shortcuts.model.StatAdjustment;
 import com.nickrout.shortcuts.prefs.Stats;
 import com.nickrout.shortcuts.util.BitmapUtil;
+import com.nickrout.shortcuts.util.IdUtil;
 import com.nickrout.shortcuts.util.IntentUtil;
 import com.nickrout.shortcuts.util.UiUtil;
 
@@ -23,12 +24,10 @@ import org.simpleframework.xml.core.Persister;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.UUID;
 
 public class ChoiceActivity extends InvisibleActivity {
 
     private static final String TAG = "ChoiceActivity";
-    private static final int ID_NOTIFICATION = 1;
     private static final long DELAY_EXPAND_NOTIFICATION_PANEL = 1000;
 
     private Choice mChoice;
@@ -83,8 +82,12 @@ public class ChoiceActivity extends InvisibleActivity {
             Intent addShowScenarioShortcutIntent = IntentUtil.addShowScenarioShortcut(this, mChoice);
             PendingIntent pendingAddShowScenarioShortcutDialogIntent = PendingIntent.getActivity(this, 0, addShowScenarioShortcutIntent, PendingIntent.FLAG_UPDATE_CURRENT);
             builder.setDeleteIntent(pendingAddShowScenarioShortcutDialogIntent);
+            Intent quitGameIntent = IntentUtil.quitGame(this);
+            PendingIntent pendingQuitGameIntent = PendingIntent.getActivity(this, 0, quitGameIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+            builder.addAction(new NotificationCompat.Action(
+                    0, getString(R.string.notification_action_quit_game), pendingQuitGameIntent));
         }
-        NotificationManagerCompat.from(this).notify(ID_NOTIFICATION, builder.build());
+        NotificationManagerCompat.from(this).notify(IdUtil.ID_NOTIFICATION, builder.build());
     }
 
     private void goHomeToHideShortcuts() {
@@ -113,7 +116,7 @@ public class ChoiceActivity extends InvisibleActivity {
         }
         List<ShortcutInfo> choiceShortcuts = new ArrayList<>();
         for (Choice choice : mChoice.choices) {
-            ShortcutInfo choiceShortcut = new ShortcutInfo.Builder(this, UUID.randomUUID().toString())
+            ShortcutInfo choiceShortcut = new ShortcutInfo.Builder(this, IdUtil.getRandomUniqueShortcutId())
                     .setShortLabel(choice.action)
                     .setLongLabel(choice.action)
                     .setDisabledMessage(getString(R.string.shortcut_disabled_message))

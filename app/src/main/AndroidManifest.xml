@@ -12,6 +12,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <activity
             android:name=".ui.MainActivity">
             <intent-filter>
@@ -19,20 +20,29 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
             android:name=".ui.ChoiceActivity"
             android:theme="@style/Theme.Invisible" />
+
         <activity
             android:name=".ui.AddShowScenarioShortcutActivity"
             android:theme="@style/Theme.Invisible" />
+
         <activity
             android:name=".ui.ScenarioDialogActivity"
             android:theme="@style/Theme.AppCompat.Light.Dialog.Alert"
             android:label="@string/title_scenario" />
+
         <activity
             android:name=".ui.StatsDialogActivity"
             android:theme="@style/Theme.AppCompat.Light.Dialog.Alert"
             android:label="@string/title_stats" />
+
+        <activity
+            android:name=".ui.QuitGameActivity"
+            android:theme="@style/Theme.Invisible" />
+
     </application>
 
 </manifest>

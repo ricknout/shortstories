@@ -8,6 +8,7 @@ import android.util.Log;
 import com.nickrout.shortcuts.ui.AddShowScenarioShortcutActivity;
 import com.nickrout.shortcuts.ui.MainActivity;
 import com.nickrout.shortcuts.model.Choice;
+import com.nickrout.shortcuts.ui.QuitGameActivity;
 import com.nickrout.shortcuts.ui.ScenarioDialogActivity;
 import com.nickrout.shortcuts.ui.ChoiceActivity;
 import com.nickrout.shortcuts.ui.StatsDialogActivity;
@@ -61,15 +62,21 @@ public class IntentUtil {
     }
 
     public static Intent scenarioDialog(Context context, String scenario) {
-        Intent dialogIntent = new Intent(context, ScenarioDialogActivity.class);
-        dialogIntent.setFlags(Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS);
-        dialogIntent.putExtra(EXTRA_SCENARIO, scenario);
-        return dialogIntent;
+        Intent scenarioDialogIntent = new Intent(context, ScenarioDialogActivity.class);
+        scenarioDialogIntent.setFlags(Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        scenarioDialogIntent.putExtra(EXTRA_SCENARIO, scenario);
+        return scenarioDialogIntent;
     }
 
     public static Intent statsDialog(Context context) {
-        Intent dialogIntent = new Intent(context, StatsDialogActivity.class);
-        dialogIntent.setFlags(Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS);
-        return dialogIntent;
+        Intent statsDialogIntent = new Intent(context, StatsDialogActivity.class);
+        statsDialogIntent.setFlags(Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        return statsDialogIntent;
+    }
+
+    public static Intent quitGame(Context context) {
+        Intent quitGameIntent = new Intent(Intent.ACTION_VIEW, Uri.EMPTY, context, QuitGameActivity.class);
+        quitGameIntent.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        return quitGameIntent;
     }
 }
