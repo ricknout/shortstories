@@ -13,24 +13,24 @@ public enum ActionType {
 
     // TODO: Add actual attributes
 
-    UNKNOWN(R.color.colorPrimary, R.mipmap.ic_launcher_round),
+    UNKNOWN(R.color.colorPrimary, R.mipmap.ic_launcher),
     ATTACK(R.color.colorAccent, R.mipmap.ic_launcher_round),
-    DEFEND(R.color.colorPrimary, R.mipmap.ic_launcher_round),
+    DEFEND(R.color.colorPrimary, R.mipmap.ic_launcher),
     MOVE(R.color.colorAccent, R.mipmap.ic_launcher_round),
-    RECRUIT(R.color.colorPrimary, R.mipmap.ic_launcher_round),
+    RECRUIT(R.color.colorPrimary, R.mipmap.ic_launcher),
     COMMAND(R.color.colorAccent, R.mipmap.ic_launcher_round),
-    TRADE(R.color.colorPrimary, R.mipmap.ic_launcher_round),
+    TRADE(R.color.colorPrimary, R.mipmap.ic_launcher),
     STEAL(R.color.colorAccent, R.mipmap.ic_launcher_round),
-    WARN(R.color.colorPrimary, R.mipmap.ic_launcher_round),
+    WARN(R.color.colorPrimary, R.mipmap.ic_launcher),
     WAIT(R.color.colorAccent, R.mipmap.ic_launcher_round),
-    SURRENDER(R.color.colorPrimary, R.mipmap.ic_launcher_round);
+    SURRENDER(R.color.colorPrimary, R.mipmap.ic_launcher);
 
     private @ColorRes int mColorResId;
-    private @DrawableRes int mIconResId;
+    public @DrawableRes int iconResId;
 
     ActionType(@ColorRes int colorResId, @DrawableRes int iconResId) {
         mColorResId = colorResId;
-        mIconResId = iconResId;
+        this.iconResId = iconResId;
     }
 
     public @ColorInt int getColor(Context context) {
@@ -38,6 +38,6 @@ public enum ActionType {
     }
 
     public Drawable getIcon(Context context) {
-        return ContextCompat.getDrawable(context, mIconResId);
+        return ContextCompat.getDrawable(context, iconResId);
     }
 }

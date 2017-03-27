@@ -78,7 +78,7 @@ public class ChoiceActivity extends NoDisplayActivity {
         builder.setStyle(new NotificationCompat.BigTextStyle().bigText(mChoice.scenario))
                 .setContentTitle(getString(R.string.title_scenario))
                 .setPriority(mNotificationPriority)
-                .setSmallIcon(R.mipmap.ic_launcher)
+                .setSmallIcon(R.mipmap.ic_launcher) // TODO: Add dedicated small notification icon
                 .setLargeIcon(BitmapUtil.drawableToBitmap(mChoice.getScenarioType().getIcon(this)))
                 .setColor(mChoice.getScenarioType().getColor(this))
                 .setLights(mChoice.getScenarioType().getColor(this), TIME_NOTIFICATION_LIGHTS, TIME_NOTIFICATION_LIGHTS)
@@ -127,15 +127,18 @@ public class ChoiceActivity extends NoDisplayActivity {
             return;
         }
         List<ShortcutInfo> choiceShortcuts = new ArrayList<>();
+        int rank = 1;
         for (Choice choice : mChoice.choices) {
             ShortcutInfo choiceShortcut = new ShortcutInfo.Builder(this, IdUtil.getRandomUniqueShortcutId())
                     .setShortLabel(choice.action)
                     .setLongLabel(choice.action)
                     .setDisabledMessage(getString(R.string.shortcut_disabled_message))
-                    .setIcon(Icon.createWithResource(this, R.mipmap.ic_launcher_round))
+                    .setIcon(Icon.createWithResource(this, choice.getActionType().iconResId))
                     .setIntent(IntentUtil.choice(this, choice))
+                    .setRank(rank)
                     .build();
             choiceShortcuts.add(choiceShortcut);
+            rank++;
         }
         shortcutManager.setDynamicShortcuts(choiceShortcuts);
     }

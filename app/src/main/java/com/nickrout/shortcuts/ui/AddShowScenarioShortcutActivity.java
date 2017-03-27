@@ -7,13 +7,13 @@ import android.util.Log;
 
 import com.nickrout.shortcuts.R;
 import com.nickrout.shortcuts.model.Choice;
+import com.nickrout.shortcuts.util.IdUtil;
 import com.nickrout.shortcuts.util.IntentUtil;
 
 import org.simpleframework.xml.Serializer;
 import org.simpleframework.xml.core.Persister;
 
-import java.util.Arrays;
-import java.util.UUID;
+import java.util.Collections;
 
 public class AddShowScenarioShortcutActivity extends NoDisplayActivity {
 
@@ -36,13 +36,14 @@ public class AddShowScenarioShortcutActivity extends NoDisplayActivity {
 
     private void addShowScenarioShortcut() {
         ShortcutManager shortcutManager = getSystemService(ShortcutManager.class);
-        ShortcutInfo showScenarioShortcut = new ShortcutInfo.Builder(this, UUID.randomUUID().toString())
+        ShortcutInfo showScenarioShortcut = new ShortcutInfo.Builder(this, IdUtil.getRandomUniqueShortcutId())
                 .setShortLabel(getString(R.string.shortcut_title_show_scenario))
                 .setLongLabel(getString(R.string.shortcut_title_show_scenario))
                 .setDisabledMessage(getString(R.string.shortcut_disabled_message))
-                .setIcon(Icon.createWithResource(this, R.mipmap.ic_launcher_round))
+                .setIcon(Icon.createWithResource(this, mChoice.getActionType().iconResId))
                 .setIntent(IntentUtil.choice(this, mChoice))
+                .setRank(0)
                 .build();
-        shortcutManager.addDynamicShortcuts(Arrays.asList(showScenarioShortcut));
+        shortcutManager.addDynamicShortcuts(Collections.singletonList(showScenarioShortcut));
     }
 }
