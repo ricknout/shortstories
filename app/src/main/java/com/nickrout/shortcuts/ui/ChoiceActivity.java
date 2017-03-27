@@ -78,7 +78,7 @@ public class ChoiceActivity extends NoDisplayActivity {
         builder.setStyle(new NotificationCompat.BigTextStyle().bigText(mChoice.scenario))
                 .setContentTitle(getString(R.string.title_scenario))
                 .setPriority(mNotificationPriority)
-                .setSmallIcon(R.drawable.ic_launcher_anim) // TODO: Add dedicated small notification icon
+                .setSmallIcon(R.mipmap.ic_launcher) // TODO: Add dedicated small notification icon
                 .setLargeIcon(BitmapUtil.drawableToBitmap(mChoice.getScenarioType().getIcon(this)))
                 .setColor(mChoice.getScenarioType().getColor(this))
                 .setLights(mChoice.getScenarioType().getColor(this), TIME_NOTIFICATION_LIGHTS, TIME_NOTIFICATION_LIGHTS)
