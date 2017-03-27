@@ -8,7 +8,7 @@
         android:icon="@mipmap/ic_launcher_round"
         android:summary="@string/setting_summary_notification_priority"
         android:entries="@array/setting_entries_notification_priority"
-        android:entryValues="@array/setting_entrie_values_notification_priority"
+        android:entryValues="@array/setting_entry_values_notification_priority"
         android:defaultValue="0" />
 
     <CheckBoxPreference

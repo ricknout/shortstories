@@ -30,6 +30,7 @@ public class ChoiceActivity extends NoDisplayActivity {
 
     private static final String TAG = "ChoiceActivity";
     private static final long DELAY_EXPAND_NOTIFICATION_PANEL = 1000;
+    private static final int TIME_NOTIFICATION_LIGHTS = 500;
 
     private Choice mChoice;
     private int mNotificationPriority = NotificationCompat.PRIORITY_DEFAULT;
@@ -80,6 +81,7 @@ public class ChoiceActivity extends NoDisplayActivity {
                 .setSmallIcon(R.mipmap.ic_launcher)
                 .setLargeIcon(BitmapUtil.drawableToBitmap(mChoice.getScenarioType().getIcon(this)))
                 .setColor(mChoice.getScenarioType().getColor(this))
+                .setLights(mChoice.getScenarioType().getColor(this), TIME_NOTIFICATION_LIGHTS, TIME_NOTIFICATION_LIGHTS)
                 .setSound(mChoice.getScenarioType().getSound(this))
                 .setVibrate(mChoice.getScenarioType().vibratePattern)
                 .setContentIntent(pendingScenarioDialogIntent)
