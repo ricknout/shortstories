@@ -2,26 +2,33 @@
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <ListPreference
-        android:key="@string/setting_key_notification_priority"
-        android:title="@string/setting_title_notification_priority"
-        android:icon="@mipmap/ic_launcher_round"
-        android:entries="@array/setting_entries_notification_priority"
-        android:entryValues="@array/setting_entry_values_notification_priority"
-        android:defaultValue="0" />
+    <PreferenceCategory
+        android:title="@string/settings_category_notifications">
 
-    <CheckBoxPreference
-        android:key="@string/setting_key_go_home_new_scenario"
-        android:title="@string/setting_title_go_home_new_scenario"
-        android:icon="@mipmap/ic_launcher_round"
-        android:summary="@string/setting_summary_go_home_new_scenario"
-        android:defaultValue="true" />
+        <ListPreference
+            android:key="@string/setting_key_notification_priority"
+            android:title="@string/setting_title_notification_priority"
+            android:entries="@array/setting_entries_notification_priority"
+            android:entryValues="@array/setting_entry_values_notification_priority"
+            android:defaultValue="0" />
 
-    <CheckBoxPreference
-        android:key="@string/setting_key_expand_notifications_new_scenario"
-        android:title="@string/setting_title_expand_notifications_new_scenario"
-        android:icon="@mipmap/ic_launcher_round"
-        android:summary="@string/setting_summary_expand_notifications_new_scenario"
-        android:defaultValue="true" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/settings_category_system_ui">
+
+        <CheckBoxPreference
+            android:key="@string/setting_key_go_home_new_scenario"
+            android:title="@string/setting_title_go_home_new_scenario"
+            android:summary="@string/setting_summary_go_home_new_scenario"
+            android:defaultValue="true" />
+
+        <CheckBoxPreference
+            android:key="@string/setting_key_expand_notifications_new_scenario"
+            android:title="@string/setting_title_expand_notifications_new_scenario"
+            android:summary="@string/setting_summary_expand_notifications_new_scenario"
+            android:defaultValue="true" />
+
+    </PreferenceCategory>
 
 </PreferenceScreen>
