@@ -30,7 +30,7 @@ public class ChoiceActivity extends NoDisplayActivity {
 
     private static final String TAG = "ChoiceActivity";
     private static final long DELAY_EXPAND_NOTIFICATION_PANEL = 1000;
-    private static final int TIME_NOTIFICATION_LIGHTS = 500;
+    private static final int TIME_NOTIFICATION_LIGHTS = 1000;
 
     private Choice mChoice;
     private int mNotificationPriority = NotificationCompat.PRIORITY_DEFAULT;
