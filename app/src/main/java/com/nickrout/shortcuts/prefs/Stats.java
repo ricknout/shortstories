@@ -15,6 +15,8 @@ public class Stats {
     private static final String TAG = "Stats";
     private static final String SHARED_PREFERENCES_NAME = "stats_shared_preferences";
     private static final int VALUE_NOT_FOUND = -1;
+    private static final int STAT_MIN = 0;
+    private static final int STAT_MAX = 100;
 
     private Context mContext;
     private SharedPreferences mSharedPreferences;
@@ -32,18 +34,21 @@ public class Stats {
     }
 
     public void set(String statName, int value) {
-        // TODO: Impose min/max rules? eg. min = 0, max = 100
+        value = ensureStatWithinRange(value);
         sharedPreferences().edit().putInt(statName, value).apply();
     }
 
     public void adjust(String statName, int adjustValue) {
-        // TODO: Impose min/max rules? eg. min = 0, max = 100
         int currentValue = get(statName);
         if (currentValue == VALUE_NOT_FOUND) {
-            // TODO: Or set value?
             return;
         }
-        set(statName, currentValue + adjustValue);
+        int newValue = ensureStatWithinRange(currentValue + adjustValue);
+        set(statName, newValue);
+    }
+
+    private int ensureStatWithinRange(int value) {
+        return value > STAT_MAX ? STAT_MAX : value < STAT_MIN ? STAT_MIN : value;
     }
 
     public int get(String statName) {

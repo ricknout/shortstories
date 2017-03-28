@@ -14,6 +14,7 @@ public class ScenarioDialogActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
         String scenario = getIntent().getExtras().getString(IntentUtil.EXTRA_SCENARIO);
         ActivityScenarioDialogBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_scenario_dialog);
         binding.scenario.setText(scenario);
