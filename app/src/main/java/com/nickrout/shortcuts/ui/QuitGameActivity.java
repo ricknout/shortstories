@@ -3,6 +3,7 @@ package com.nickrout.shortcuts.ui;
 import android.content.pm.ShortcutManager;
 import android.support.v4.app.NotificationManagerCompat;
 
+import com.nickrout.shortcuts.prefs.Progress;
 import com.nickrout.shortcuts.prefs.Stats;
 import com.nickrout.shortcuts.util.IdUtil;
 
@@ -13,7 +14,7 @@ public class QuitGameActivity extends NoDisplayActivity {
     @Override
     protected void performPreFinishOperations() {
         removeAllShortcuts();
-        clearStats();
+        clearStatsAndProgress();
         cancelScenarioNotification();
     }
 
@@ -22,9 +23,9 @@ public class QuitGameActivity extends NoDisplayActivity {
         shortcutManager.removeAllDynamicShortcuts();
     }
 
-    private void clearStats() {
-        Stats stats = new Stats(this);
-        stats.clear();
+    private void clearStatsAndProgress() {
+        new Stats(this).clear();
+        new Progress(this).setInProgress(false);
     }
 
     private void cancelScenarioNotification() {

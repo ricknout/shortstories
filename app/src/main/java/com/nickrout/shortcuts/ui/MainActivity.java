@@ -10,6 +10,7 @@ import android.view.MenuItem;
 import com.nickrout.shortcuts.R;
 import com.nickrout.shortcuts.databinding.ActivityMainBinding;
 import com.nickrout.shortcuts.model.Game;
+import com.nickrout.shortcuts.prefs.Progress;
 import com.nickrout.shortcuts.prefs.Stats;
 import com.nickrout.shortcuts.util.IntentUtil;
 
@@ -45,8 +46,8 @@ public class MainActivity extends AppCompatActivity implements GameListener {
 
     @Override
     public void startGame(@NonNull Game game) {
-        Stats stats = new Stats(this);
-        stats.setAll(game.stats);
+        new Stats(this).setAll(game.stats);
+        new Progress(this).setInProgress(true);
         finishAndRemoveTask();
         startActivity(IntentUtil.choice(MainActivity.this, game.choice));
     }

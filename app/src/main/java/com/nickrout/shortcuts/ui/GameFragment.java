@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import com.nickrout.shortcuts.R;
 import com.nickrout.shortcuts.databinding.FragmentGameBinding;
 import com.nickrout.shortcuts.model.Game;
+import com.nickrout.shortcuts.prefs.Progress;
 
 import org.simpleframework.xml.Serializer;
 import org.simpleframework.xml.core.Persister;
@@ -31,6 +32,8 @@ public class GameFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         FragmentGameBinding binding = DataBindingUtil.inflate(inflater, R.layout.fragment_game, container, false);
+        boolean inProgress = new Progress(getActivity()).isInProgress();
+        binding.button.setText(inProgress ? R.string.button_restart_game : R.string.button_start_game);
         binding.button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

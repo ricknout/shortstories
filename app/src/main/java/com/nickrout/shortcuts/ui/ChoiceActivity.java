@@ -13,6 +13,7 @@ import android.util.Log;
 import com.nickrout.shortcuts.R;
 import com.nickrout.shortcuts.model.Choice;
 import com.nickrout.shortcuts.model.StatAdjustment;
+import com.nickrout.shortcuts.prefs.Progress;
 import com.nickrout.shortcuts.prefs.Settings;
 import com.nickrout.shortcuts.prefs.Stats;
 import com.nickrout.shortcuts.util.BitmapUtil;
@@ -52,6 +53,7 @@ public class ChoiceActivity extends NoDisplayActivity {
         mGoHomeNewScenario = settings.goHomeNewScenario();
         mExpandNotificationsNewScenario = settings.expandNotificationsNewScenario();
         adjustStats();
+        maybeAdjustProgress();
         showScenarioNotification();
         disableExistingShortcuts();
         addChoiceShortcuts();
@@ -66,6 +68,12 @@ public class ChoiceActivity extends NoDisplayActivity {
         Stats stats = new Stats(this);
         for (StatAdjustment statAdjustment : mChoice.statAdjustments) {
             stats.adjust(statAdjustment.statName, statAdjustment.value);
+        }
+    }
+
+    private void maybeAdjustProgress() {
+        if (mChoice.isFinish()) {
+            new Progress(this).setInProgress(false);
         }
     }
 

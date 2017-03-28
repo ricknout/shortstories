@@ -7,6 +7,7 @@
     <string name="title_scenario">Scenario</string>
     <string name="title_stats">Stats</string>
     <string name="button_start_game">Start game</string>
+    <string name="button_restart_game">Restart game</string>
     <string name="notification_action_view_stats">View stats</string>
     <string name="notification_action_quit_game">Quit game</string>
     <string name="shortcut_title_show_scenario">Show scenario</string>
