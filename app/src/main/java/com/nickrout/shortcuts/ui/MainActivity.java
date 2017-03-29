@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity implements GameListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ActivityMainBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
+        final ActivityMainBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction().replace(R.id.container, GameFragment.newInstance()).commit();
         }
@@ -31,12 +31,22 @@ public class MainActivity extends AppCompatActivity implements GameListener {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()) {
                     case R.id.navigation_game:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.container,
-                                GameFragment.newInstance()).commit();
+                        if (binding.navigation.getSelectedItemId() == R.id.navigation_game) {
+                            return true;
+                        }
+                        getSupportFragmentManager()
+                                .beginTransaction()
+                                .setCustomAnimations(R.anim.scale_up_fade_in, R.anim.scale_down_fade_out)
+                                .replace(R.id.container, GameFragment.newInstance()).commit();
                         return true;
                     case R.id.navigation_settings:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.container,
-                                SettingsFragment.newInstance()).commit();
+                        if (binding.navigation.getSelectedItemId() == R.id.navigation_settings) {
+                            return true;
+                        }
+                        getSupportFragmentManager()
+                                .beginTransaction()
+                                .setCustomAnimations(R.anim.scale_up_fade_in, R.anim.scale_down_fade_out)
+                                .replace(R.id.container, SettingsFragment.newInstance()).commit();
                         return true;
                 }
                 return false;
