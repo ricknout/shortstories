@@ -21,7 +21,7 @@ public class StatsDialogActivity extends AppCompatActivity {
         Stats stats = new Stats(this);
         ActivityStatsDialogBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_stats_dialog);
         binding.recycler.setLayoutManager(new LinearLayoutManager(this));
-        binding.recycler.setAdapter(new StatAdapter(stats.getStats()));
+        binding.recycler.setAdapter(new StatAdapter(stats.getStats(false)));
         binding.recycler.addItemDecoration(new VerticalSpaceItemDecoration(
                 getResources().getDimensionPixelSize(R.dimen.padding_dialog)));
     }
