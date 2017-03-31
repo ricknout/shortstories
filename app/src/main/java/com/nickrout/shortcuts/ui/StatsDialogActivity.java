@@ -20,9 +20,10 @@ public class StatsDialogActivity extends AppCompatActivity {
         overridePendingTransition(R.anim.scale_up_fade_in, R.anim.scale_down_fade_out);
         Stats stats = new Stats(this);
         ActivityStatsDialogBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_stats_dialog);
-        binding.recycler.setLayoutManager(new LinearLayoutManager(this));
-        binding.recycler.setAdapter(new StatAdapter(stats.getStats(false)));
-        binding.recycler.addItemDecoration(new VerticalSpaceItemDecoration(
+        binding.stats.score.setText(String.valueOf(stats.getScore(false)));
+        binding.stats.recycler.setLayoutManager(new LinearLayoutManager(this));
+        binding.stats.recycler.setAdapter(new StatAdapter(stats.getStats(false)));
+        binding.stats.recycler.addItemDecoration(new VerticalSpaceItemDecoration(
                 getResources().getDimensionPixelSize(R.dimen.padding_dialog)));
     }
 }

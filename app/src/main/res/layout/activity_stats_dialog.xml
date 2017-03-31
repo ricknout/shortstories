@@ -4,12 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.nickrout.shortcuts.ui.StatsDialogActivity">
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/recycler"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:paddingTop="@dimen/padding_dialog_half"
-        android:clipToPadding="false"
-        tools:listitem="@layout/item_stat"/>
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/stats"
+            layout="@layout/layout_stats" />
+
+    </LinearLayout>
 
 </layout>

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
     <LinearLayout
         android:orientation="vertical"
@@ -9,13 +8,9 @@
         android:layout_height="match_parent"
         android:gravity="center">
 
-        <TextView
-            android:id="@+id/high_score"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="@dimen/padding_standard"
-            style="@style/TextAppearance.AppCompat.Large"
-            tools:text="100" />
+        <include
+            android:id="@+id/stats"
+            layout="@layout/layout_stats" />
 
         <Button
             android:id="@+id/button"

@@ -101,6 +101,18 @@ public class Stats {
         return stats;
     }
 
+    public int getScore(boolean highScore) {
+        List<Stat> scoreStats = getStats(highScore);
+        if (scoreStats.size() == 0) {
+            return VALUE_NOT_FOUND;
+        }
+        int highScoreTotal = 0;
+        for (Stat stat : scoreStats) {
+            highScoreTotal += stat.value;
+        }
+        return (int) ((float) (highScoreTotal ) / (float) (scoreStats.size()));
+    }
+
     public void saveHighScore() {
         int currentTotal = 0, newTotal = 0;
         for (Stat stat : getStats(true)) {
@@ -116,17 +128,5 @@ public class Stats {
         for (Stat stat : stats) {
             set(stat.name, stat.value, true);
         }
-    }
-
-    public int getHighScore() {
-        List<Stat> highScoreStats = getStats(true);
-        if (highScoreStats.size() == 0) {
-            return VALUE_NOT_FOUND;
-        }
-        int highScoreTotal = 0;
-        for (Stat stat : highScoreStats) {
-            highScoreTotal += stat.value;
-        }
-        return (int) ((float) (highScoreTotal ) / (float) (highScoreStats.size()));
     }
 }
