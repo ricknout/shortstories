@@ -54,7 +54,6 @@ public class ChoiceActivity extends NoDisplayActivity {
         mExpandNotificationsNewScenario = settings.expandNotificationsNewScenario();
         adjustStats();
         maybeAdjustProgress();
-        maybeSaveHighScore();
         showScenarioNotification();
         disableExistingShortcuts();
         addChoiceShortcuts();
@@ -75,12 +74,6 @@ public class ChoiceActivity extends NoDisplayActivity {
     private void maybeAdjustProgress() {
         if (mChoice.isFinish()) {
             new Progress(this).setInProgress(false);
-        }
-    }
-
-    private void maybeSaveHighScore() {
-        if (mChoice.isFinish()) {
-            new Stats(this).saveHighScore();
         }
     }
 

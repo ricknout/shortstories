@@ -14,7 +14,6 @@ public class Stats {
 
     private static final String TAG = "Stats";
     private static final String SHARED_PREFERENCES_NAME = "stats_shared_preferences";
-    private static final String SHARED_PREFERENCES_NAME_HIGH_SCORE = "high_score_shared_preferences";
     private static final int VALUE_NOT_FOUND = -1;
     private static final int STAT_MIN = 0;
     private static final int STAT_MAX = 100;
@@ -27,14 +26,7 @@ public class Stats {
         mContext = context;
     }
 
-    private SharedPreferences sharedPreferences(boolean highScore) {
-        if (highScore) {
-            if (mSharedPreferencesHighScore == null) {
-                mSharedPreferencesHighScore = mContext.getSharedPreferences(
-                        SHARED_PREFERENCES_NAME_HIGH_SCORE, Context.MODE_PRIVATE);
-            }
-            return mSharedPreferencesHighScore;
-        }
+    private SharedPreferences sharedPreferences() {
         if (mSharedPreferences == null) {
             mSharedPreferences = mContext.getSharedPreferences(
                     SHARED_PREFERENCES_NAME, Context.MODE_PRIVATE);
@@ -42,26 +34,26 @@ public class Stats {
         return mSharedPreferences;
     }
 
-    private void set(String statName, int value, boolean highScore) {
+    private void set(String statName, int value) {
         value = ensureStatWithinRange(value);
-        sharedPreferences(highScore).edit().putInt(statName, value).apply();
+        sharedPreferences().edit().putInt(statName, value).apply();
     }
 
     public void adjust(String statName, int adjustValue) {
-        int currentValue = get(statName, false);
+        int currentValue = get(statName);
         if (currentValue == VALUE_NOT_FOUND) {
             return;
         }
         int newValue = ensureStatWithinRange(currentValue + adjustValue);
-        set(statName, newValue, false);
+        set(statName, newValue);
     }
 
     private int ensureStatWithinRange(int value) {
         return value > STAT_MAX ? STAT_MAX : value < STAT_MIN ? STAT_MIN : value;
     }
 
-    private int get(String statName, boolean highScore) {
-        return sharedPreferences(highScore).getInt(statName, VALUE_NOT_FOUND);
+    private int get(String statName) {
+        return sharedPreferences().getInt(statName, VALUE_NOT_FOUND);
     }
 
     public void setAll(Map<String, Integer> stats) {
@@ -70,14 +62,14 @@ public class Stats {
             return;
         }
         for (Map.Entry<String, Integer> statEntry : stats.entrySet()) {
-            set(statEntry.getKey(), statEntry.getValue(), false);
+            set(statEntry.getKey(), statEntry.getValue());
         }
     }
 
     @SuppressWarnings("unchecked")
-    private Map<String, Integer> getAll(boolean highScore) {
+    private Map<String, Integer> getAll() {
         try {
-            return (Map<String, Integer>) sharedPreferences(highScore).getAll();
+            return (Map<String, Integer>) sharedPreferences().getAll();
         } catch (ClassCastException e) {
             Log.e(TAG, e.toString());
             return null;
@@ -85,12 +77,12 @@ public class Stats {
     }
 
     public void clear() {
-        sharedPreferences(false).edit().clear().apply();
+        sharedPreferences().edit().clear().apply();
     }
 
-    public List<Stat> getStats(boolean highScore) {
+    public List<Stat> getStats() {
         List<Stat> stats = new ArrayList<>();
-        Map<String, Integer> statsMap = getAll(highScore);
+        Map<String, Integer> statsMap = getAll();
         if (statsMap == null || statsMap.isEmpty()) {
             return stats;
         }
@@ -99,34 +91,5 @@ public class Stats {
             stats.add(stat);
         }
         return stats;
-    }
-
-    public int getScore(boolean highScore) {
-        List<Stat> scoreStats = getStats(highScore);
-        if (scoreStats.size() == 0) {
-            return VALUE_NOT_FOUND;
-        }
-        int highScoreTotal = 0;
-        for (Stat stat : scoreStats) {
-            highScoreTotal += stat.value;
-        }
-        return (int) ((float) (highScoreTotal ) / (float) (scoreStats.size()));
-    }
-
-    public void saveHighScore() {
-        int currentTotal = 0, newTotal = 0;
-        for (Stat stat : getStats(true)) {
-            currentTotal += stat.value;
-        }
-        List<Stat> stats = getStats(false);
-        for (Stat stat : stats) {
-            newTotal += stat.value;
-        }
-        if (newTotal <= currentTotal) {
-            return;
-        }
-        for (Stat stat : stats) {
-            set(stat.name, stat.value, true);
-        }
     }
 }
