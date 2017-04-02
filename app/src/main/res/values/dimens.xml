@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <dimen name="padding_standard">16dp</dimen>
+    <dimen name="padding_horizontal">16dp</dimen>
+    <dimen name="padding_vertical">16dp</dimen>
     <dimen name="padding_dialog">24dp</dimen>
     <dimen name="padding_dialog_half">12dp</dimen>
+    <dimen name="padding_category">48dp</dimen>
 
 </resources>

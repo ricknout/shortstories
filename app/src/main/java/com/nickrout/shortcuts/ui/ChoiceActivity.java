@@ -94,7 +94,7 @@ public class ChoiceActivity extends NoDisplayActivity {
                 .setVibrate(mChoice.getScenarioType().vibratePattern)
                 .setContentIntent(pendingScenarioDialogIntent)
                 .addAction(new NotificationCompat.Action(
-                        0, getString(R.string.notification_action_view_stats), pendingStatsDialogIntent));
+                        0, getString(R.string.notification_action_stats), pendingStatsDialogIntent));
         if (!mChoice.isFinish()) {
             Intent addShowScenarioShortcutIntent = IntentUtil.addShowScenarioShortcut(this, mChoice);
             PendingIntent pendingAddShowScenarioShortcutDialogIntent = IntentUtil.makePendingIntent(this, addShowScenarioShortcutIntent);
@@ -102,7 +102,7 @@ public class ChoiceActivity extends NoDisplayActivity {
             Intent quitGameIntent = IntentUtil.quitGame(this);
             PendingIntent pendingQuitGameIntent = IntentUtil.makePendingIntent(this, quitGameIntent);
             builder.addAction(new NotificationCompat.Action(
-                    0, getString(R.string.notification_action_quit_game), pendingQuitGameIntent));
+                    0, getString(R.string.notification_action_quit), pendingQuitGameIntent));
         }
         NotificationManagerCompat.from(this).notify(IdUtil.ID_NOTIFICATION, builder.build());
     }

@@ -75,7 +75,7 @@ public class GameFragment extends Fragment {
         mBinding.author.setText(mGame.author);
         mBinding.description.setText(mGame.description);
         boolean inProgress = new Progress(getActivity()).isInProgress();
-        mBinding.button.setText(inProgress ? R.string.button_restart_game : R.string.button_start_game);
+        mBinding.button.setText(inProgress ? R.string.button_restart : R.string.button_start);
         mBinding.button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
