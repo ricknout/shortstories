@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <game
-    title="Game">
+    title="Game"
+    author="Nick Rout"
+    description="A short, test game intended to assist in development.">
 
-    <!--
-    TODO: Have min of 0 and max of 100?
-    -->
     <stat name="Leadership">50</stat>
     <stat name="Strength">50</stat>
     <stat name="Wealth">50</stat>

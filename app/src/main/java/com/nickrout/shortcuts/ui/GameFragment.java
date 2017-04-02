@@ -1,6 +1,7 @@
 package com.nickrout.shortcuts.ui;
 
 import android.databinding.DataBindingUtil;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -21,6 +22,9 @@ public class GameFragment extends Fragment {
 
     private static final String TAG = "GameFragment";
 
+    private FragmentGameBinding mBinding;
+    private Game mGame;
+
     public GameFragment() {
     }
 
@@ -31,30 +35,59 @@ public class GameFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        FragmentGameBinding binding = DataBindingUtil.inflate(inflater, R.layout.fragment_game, container, false);
+        mBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_game, container, false);
+        return mBinding.getRoot();
+    }
+
+    @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        loadGame();
+    }
+
+    private void loadGame() {
+        new AsyncTask<Void, Void, Game>() {
+            @Override
+            protected Game doInBackground(Void... params) {
+                Serializer serializer = new Persister();
+                Game game = null;
+                try {
+                    game = serializer.read(Game.class, getActivity().getAssets().open("game.xml"));
+                } catch (Exception e) {
+                    // TODO: Show error toast
+                    Log.d(TAG, e.toString());
+                }
+                return game;
+            }
+            @Override
+            protected void onPostExecute(Game game) {
+                if (game == null) {
+                    return;
+                }
+                mGame = game;
+                assignGameToViews();
+            }
+        }.execute();
+    }
+
+    private void assignGameToViews() {
+        mBinding.title.setText(mGame.title);
+        mBinding.author.setText(mGame.author);
+        mBinding.description.setText(mGame.description);
         boolean inProgress = new Progress(getActivity()).isInProgress();
-        binding.button.setText(inProgress ? R.string.button_restart_game : R.string.button_start_game);
-        binding.button.setOnClickListener(new View.OnClickListener() {
+        mBinding.button.setText(inProgress ? R.string.button_restart_game : R.string.button_start_game);
+        mBinding.button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startGame();
             }
         });
-        return binding.getRoot();
     }
 
     private void startGame() {
         if (!(getActivity() instanceof GameListener)) {
             return;
         }
-        Serializer serializer = new Persister();
-        Game game;
-        try {
-            game = serializer.read(Game.class, getActivity().getAssets().open("game.xml"));
-        } catch (Exception e) {
-            Log.d(TAG, e.toString());
-            return;
-        }
-        ((GameListener) getActivity()).startGame(game);
+        ((GameListener) getActivity()).startGame(mGame);
     }
 }
