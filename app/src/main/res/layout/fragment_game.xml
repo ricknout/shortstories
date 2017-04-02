@@ -34,7 +34,8 @@
             android:id="@+id/button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/button_start_game" />
+            android:text="@string/button_start_game"
+            style="@style/Widget.AppCompat.Button.Colored"/>
 
     </LinearLayout>
 
