@@ -4,6 +4,7 @@ import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 
 import com.nickrout.shortcuts.R;
@@ -23,6 +24,8 @@ public class StatsDialogActivity extends AppCompatActivity {
         binding.stats.recycler.setLayoutManager(new LinearLayoutManager(this));
         binding.stats.recycler.setAdapter(new StatAdapter(stats.getStats()));
         binding.stats.recycler.addItemDecoration(new VerticalSpaceItemDecoration(
-                getResources().getDimensionPixelSize(R.dimen.padding_dialog)));
+                getResources().getDimensionPixelSize(R.dimen.padding_vertical)));
+        binding.stats.recycler.addItemDecoration(new DividerItemDecoration(
+                getApplicationContext(), DividerItemDecoration.VERTICAL));
     }
 }

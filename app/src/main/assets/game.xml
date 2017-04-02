@@ -2,7 +2,7 @@
 <game
     title="Game"
     author="Nick Rout"
-    description="A short, test game intended to assist in development.">
+    description="A short, test game intended to assist in development of the shortcuts app.">
 
     <stat name="Leadership">50</stat>
     <stat name="Strength">50</stat>

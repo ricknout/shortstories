@@ -30,7 +30,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             style="?android:attr/textAppearanceMedium"
-            android:textStyle="bold"
+            android:textColor="?android:attr/textColorPrimary"
+            android:gravity="end"
             android:text="@{Integer.toString(obj.value)}"
             tools:text="50" />
 
