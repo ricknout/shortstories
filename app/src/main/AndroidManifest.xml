@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest
     xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.nickrout.shortcuts">
+    package="com.nickrout.shortstories">
 
     <uses-permission android:name="android.permission.EXPAND_STATUS_BAR" />
 
@@ -14,7 +14,7 @@
         android:theme="@style/AppTheme">
 
         <activity
-            android:name=".ui.MainActivity">
+            android:name="com.nickrout.shortstories.ui.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -22,29 +22,29 @@
         </activity>
 
         <activity
-            android:name=".ui.ChoiceActivity"
+            android:name="com.nickrout.shortstories.ui.ChoiceActivity"
             android:theme="@android:style/Theme.NoDisplay"
             android:excludeFromRecents="true" />
 
         <activity
-            android:name=".ui.AddShowScenarioShortcutActivity"
+            android:name="com.nickrout.shortstories.ui.AddShowScenarioShortcutActivity"
             android:theme="@android:style/Theme.NoDisplay"
             android:excludeFromRecents="true" />
 
         <activity
-            android:name=".ui.ScenarioDialogActivity"
+            android:name="com.nickrout.shortstories.ui.ScenarioDialogActivity"
             android:theme="@style/Theme.AppCompat.Light.Dialog.Alert"
             android:label="@string/title_scenario"
             android:excludeFromRecents="true" />
 
         <activity
-            android:name=".ui.StatsDialogActivity"
+            android:name="com.nickrout.shortstories.ui.StatsDialogActivity"
             android:theme="@style/Theme.AppCompat.Light.Dialog.Alert"
             android:label="@string/title_stats"
             android:excludeFromRecents="true"/>
 
         <activity
-            android:name=".ui.QuitStoryActivity"
+            android:name="com.nickrout.shortstories.ui.QuitStoryActivity"
             android:theme="@android:style/Theme.NoDisplay"
             android:excludeFromRecents="true" />
 
