@@ -104,7 +104,7 @@ public class ChoiceActivity extends NoDisplayActivity {
             builder.addAction(new NotificationCompat.Action(
                     0, getString(R.string.notification_action_quit), pendingQuitStoryIntent));
         }
-        NotificationManagerCompat.from(this).notify(IdUtil.ID_NOTIFICATION, builder.build());
+        NotificationManagerCompat.from(this).notify(IdUtil.TAG_NOTIFICATION, IdUtil.ID_NOTIFICATION, builder.build());
     }
 
     private void goHomeToHideShortcuts() {

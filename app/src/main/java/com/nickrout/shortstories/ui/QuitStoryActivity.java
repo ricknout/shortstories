@@ -29,6 +29,6 @@ public class QuitStoryActivity extends NoDisplayActivity {
     }
 
     private void cancelScenarioNotification() {
-        NotificationManagerCompat.from(this).cancel(IdUtil.ID_NOTIFICATION);
+        NotificationManagerCompat.from(this).cancel(IdUtil.TAG_NOTIFICATION, IdUtil.ID_NOTIFICATION);
     }
 }
