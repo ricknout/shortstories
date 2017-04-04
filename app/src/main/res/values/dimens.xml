@@ -4,5 +4,9 @@
     <dimen name="padding_horizontal">16dp</dimen>
     <dimen name="padding_vertical">16dp</dimen>
     <dimen name="padding_dialog">24dp</dimen>
+    <dimen name="inset_shortcut_icon">12dp</dimen>
+    <dimen name="inset_shortcut_icon_background">2dp</dimen>
+    <dimen name="inset_notification_icon">8dp</dimen>
+    <dimen name="inset_notification_icon_background">0dp</dimen>
 
 </resources>

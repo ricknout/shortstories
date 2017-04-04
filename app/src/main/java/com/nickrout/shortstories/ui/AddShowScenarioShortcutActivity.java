@@ -40,7 +40,8 @@ public class AddShowScenarioShortcutActivity extends NoDisplayActivity {
                 .setShortLabel(getString(R.string.shortcut_title_show_scenario))
                 .setLongLabel(getString(R.string.shortcut_title_show_scenario))
                 .setDisabledMessage(getString(R.string.shortcut_disabled_message))
-                .setIcon(Icon.createWithResource(this, mChoice.getActionType().iconResId))
+                // TODO: Replace with dedicated 'info' icon
+                .setIcon(Icon.createWithBitmap(mChoice.getActionType().getIcon(this)))
                 .setIntent(IntentUtil.choice(this, mChoice))
                 .setRank(0)
                 .build();

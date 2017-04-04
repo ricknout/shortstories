@@ -16,7 +16,6 @@ import com.nickrout.shortstories.model.StatAdjustment;
 import com.nickrout.shortstories.prefs.Progress;
 import com.nickrout.shortstories.prefs.Settings;
 import com.nickrout.shortstories.prefs.Stats;
-import com.nickrout.shortstories.util.BitmapUtil;
 import com.nickrout.shortstories.util.IdUtil;
 import com.nickrout.shortstories.util.IntentUtil;
 import com.nickrout.shortstories.util.UiUtil;
@@ -87,7 +86,7 @@ public class ChoiceActivity extends NoDisplayActivity {
                 .setContentTitle(getString(R.string.title_scenario))
                 .setPriority(mNotificationPriority)
                 .setSmallIcon(R.drawable.ic_shortcuts_black_24dp)
-                .setLargeIcon(BitmapUtil.drawableToBitmap(mChoice.getScenarioType().getIcon(this)))
+                .setLargeIcon(mChoice.getScenarioType().getIcon(this))
                 .setColor(mChoice.getScenarioType().getColor(this))
                 .setLights(mChoice.getScenarioType().getColor(this), TIME_NOTIFICATION_LIGHTS, TIME_NOTIFICATION_LIGHTS)
                 .setSound(mChoice.getScenarioType().getSound(this))
@@ -141,7 +140,7 @@ public class ChoiceActivity extends NoDisplayActivity {
                     .setShortLabel(choice.action)
                     .setLongLabel(choice.action)
                     .setDisabledMessage(getString(R.string.shortcut_disabled_message))
-                    .setIcon(Icon.createWithResource(this, choice.getActionType().iconResId))
+                    .setIcon(Icon.createWithBitmap(choice.getActionType().getIcon(this)))
                     .setIntent(IntentUtil.choice(this, choice))
                     .setRank(rank)
                     .build();
