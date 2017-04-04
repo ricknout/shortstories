@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<story
+<Story
     title="Story"
     author="Nick Rout"
     description="A short, test story intended to assist in development of the ShortStories app.">
 
-    <stat name="Leadership">50</stat>
-    <stat name="Strength">50</stat>
-    <stat name="Wealth">50</stat>
+    <Stat name="Leadership">50</Stat>
+    <Stat name="Strength">50</Stat>
+    <Stat name="Wealth">50</Stat>
 
     <!--
     Action types (indicates shortcut color / icon):
@@ -38,101 +38,101 @@
         10: DEFEAT
     -->
 
-    <choice
+    <Choice
         scenario="Your majesty, your people are starving in the streets, and threaten revolution. Our enemies to the west are weak, but they threaten soon to invade. What will you do?"
         scenario_type="4">
         <!-- action="Make pre-emptive war on the western lands." -->
-        <choice
+        <Choice
             action="Make war on western lands"
             action_type="1"
             scenario="If you can seize their territory, your kingdom will flourish. But your army's morale is low and the kingdom's armory is empty. How will you win the war?"
             scenario_type="5">
-            <stat_adjustment stat_name="Leadership">10</stat_adjustment>
+            <StatAdjustment stat_name="Leadership">10</StatAdjustment>
             <!-- action="Drive the peasants like slaves; if we work hard enough, we'll win." -->
-            <choice
+            <Choice
                 action="Enslave peasants"
                 action_type="5"
                 scenario="Unfortunately, morale doesn't work like that. Your army soon turns against you and the kingdom falls to the western barbarians."
                 scenario_type="6">
-                <stat_adjustment stat_name="Leadership">-5</stat_adjustment>
-                <stat_adjustment stat_name="Strength">-10</stat_adjustment>
-                <finish/>
+                <StatAdjustment stat_name="Leadership">-5</StatAdjustment>
+                <StatAdjustment stat_name="Strength">-10</StatAdjustment>
+                <Finish/>
                 <!--
                 leadership: 55 | strength: 40 | wealth: 50
                 -->
-            </choice>
+            </Choice>
             <!-- action="Appoint charismatic knights and give them land, peasants, and resources." -->
-            <choice
+            <Choice
                 action="Appoint knights"
                 action_type="4"
                 scenario="Your majesty's people are eminently resourceful. Your knights win the day, but take care: they may soon demand a convention of parliament."
                 scenario_type="7">
-                <stat_adjustment stat_name="Strength">5</stat_adjustment>
-                <stat_adjustment stat_name="Wealth">-10</stat_adjustment>
-                <finish/>
+                <StatAdjustment stat_name="Strength">5</StatAdjustment>
+                <StatAdjustment stat_name="Wealth">-10</StatAdjustment>
+                <Finish/>
                 <!--
                 leadership: 60 | strength: 55 | wealth: 40
                 -->
-            </choice>
+            </Choice>
             <!-- action="Steal food and weapons from the enemy in the dead of night." -->
-            <choice
+            <Choice
                 action="Steal from enemy"
                 action_type="7"
                 scenario="A cunning plan. Soon your army is a match for the westerners; they choose not to invade for now, but how long can your majesty postpone the inevitable?"
                 scenario_type="8">
-                <stat_adjustment stat_name="Wealth">10</stat_adjustment>
-                <finish/>
+                <StatAdjustment stat_name="Wealth">10</StatAdjustment>
+                <Finish/>
                 <!--
                 leadership: 60 | strength: 50 | wealth: 60
                 -->
-            </choice>
-        </choice>
+            </Choice>
+        </Choice>
         <!-- action="Beat swords to plowshares and trade food to the westerners for protection." -->
-        <choice
+        <Choice
             action="Trade food to westerners"
             action_type="6"
             scenario="The westerners have you at the point of a sword. They demand unfair terms from you."
             scenario_type="9">
-            <stat_adjustment stat_name="Strength">-10</stat_adjustment>
+            <StatAdjustment stat_name="Strength">-10</StatAdjustment>
             <!-- action="Accept the terms for now." -->
-            <choice
+            <Choice
                 action="Accept terms"
                 action_type="10"
                 scenario="Eventually, the barbarian westerners conquer you anyway, destroying their bread basket, and the entire region starves."
                 scenario_type="10">
-                <stat_adjustment stat_name="Leadership">-5</stat_adjustment>
-                <stat_adjustment stat_name="Wealth">-5</stat_adjustment>
-                <finish/>
+                <StatAdjustment stat_name="Leadership">-5</StatAdjustment>
+                <StatAdjustment stat_name="Wealth">-5</StatAdjustment>
+                <Finish/>
                 <!--
                 leadership: 45 | strength: 40 | wealth: 45
                 -->
-            </choice>
+            </Choice>
             <!-- action="Threaten to salt our fields if they don't offer better terms." -->
-            <choice
+            <Choice
                 action="Threaten to salt fields"
                 action_type="8"
                 scenario="They blink. Your majesty gets a fair price for wheat."
                 scenario_type="7">
-                <stat_adjustment stat_name="Leadership">10</stat_adjustment>
-                <stat_adjustment stat_name="Wealth">5</stat_adjustment>
-                <finish/>
+                <StatAdjustment stat_name="Leadership">10</StatAdjustment>
+                <StatAdjustment stat_name="Wealth">5</StatAdjustment>
+                <Finish/>
                 <!--
                 leadership: 60 | strength: 40 | wealth: 55
                 -->
-            </choice>
-        </choice>
+            </Choice>
+        </Choice>
         <!-- action="Abdicate the throne. I have clearly mismanaged this kingdom!" -->
-        <choice
+        <Choice
             action="Abdicate the throne"
             action_type="10"
             scenario="The kingdom descends into chaos, but you manage to escape with your own hide. Perhaps in time you can return to restore order to this fair land."
             scenario_type="6">
-            <stat_adjustment stat_name="Leadership">-15</stat_adjustment>
-            <finish/>
+            <StatAdjustment stat_name="Leadership">-15</StatAdjustment>
+            <Finish/>
             <!--
             leadership: 35 | strength: 50 | wealth: 50
             -->
-        </choice>
-    </choice>
+        </Choice>
+    </Choice>
 
-</story>
+</Story>

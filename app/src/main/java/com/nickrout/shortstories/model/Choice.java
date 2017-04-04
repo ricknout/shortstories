@@ -10,7 +10,7 @@ import org.simpleframework.xml.Root;
 
 import java.util.List;
 
-@Root(name = "choice")
+@Root(name = "Choice")
 public class Choice {
 
     @Attribute(name = "action", required = false)
@@ -31,8 +31,8 @@ public class Choice {
     @ElementList(inline = true, required = false)
     public List<Choice> choices;
 
-    @Element(name = "finish", required = false)
-    public Finish finish;
+    @Element(name = "Finish", required = false)
+    private Finish finish;
 
     public boolean isFinish() {
         return finish != null;

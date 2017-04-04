@@ -2,6 +2,6 @@ package com.nickrout.shortstories.model;
 
 import org.simpleframework.xml.Root;
 
-@Root(name = "finish")
+@Root(name = "Finish")
 public class Finish {
 }
