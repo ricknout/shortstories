@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.nickrout.shortstories.R;
 import com.nickrout.shortstories.databinding.FragmentStoriesBinding;
@@ -54,7 +55,6 @@ public class StoriesFragment extends Fragment {
                 try {
                     story = serializer.read(Story.class, getActivity().getAssets().open("story.xml"));
                 } catch (Exception e) {
-                    // TODO: Show error toast
                     Log.d(TAG, e.toString());
                 }
                 return story;
@@ -62,6 +62,9 @@ public class StoriesFragment extends Fragment {
             @Override
             protected void onPostExecute(Story story) {
                 if (story == null) {
+                    Toast.makeText(getActivity(),
+                            getString(R.string.error_load_story), Toast.LENGTH_SHORT).show();
+                    mBinding.button.setEnabled(false);
                     return;
                 }
                 mStory = story;
