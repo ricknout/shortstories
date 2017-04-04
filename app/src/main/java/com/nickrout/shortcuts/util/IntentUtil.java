@@ -8,7 +8,7 @@ import android.util.Log;
 
 import com.nickrout.shortcuts.ui.AddShowScenarioShortcutActivity;
 import com.nickrout.shortcuts.model.Choice;
-import com.nickrout.shortcuts.ui.QuitGameActivity;
+import com.nickrout.shortcuts.ui.QuitStoryActivity;
 import com.nickrout.shortcuts.ui.ScenarioDialogActivity;
 import com.nickrout.shortcuts.ui.ChoiceActivity;
 import com.nickrout.shortcuts.ui.StatsDialogActivity;
@@ -72,12 +72,12 @@ public class IntentUtil {
         return statsDialogIntent;
     }
 
-    public static Intent quitGame(Context context) {
-        Intent quitGameIntent = new Intent(context, QuitGameActivity.class);
-        quitGameIntent = IntentCompat.makeRestartActivityTask(quitGameIntent.getComponent());
-        quitGameIntent.setAction(Intent.ACTION_VIEW);
-        quitGameIntent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-        return quitGameIntent;
+    public static Intent quitStory(Context context) {
+        Intent quitStoryIntent = new Intent(context, QuitStoryActivity.class);
+        quitStoryIntent = IntentCompat.makeRestartActivityTask(quitStoryIntent.getComponent());
+        quitStoryIntent.setAction(Intent.ACTION_VIEW);
+        quitStoryIntent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+        return quitStoryIntent;
     }
 
     public static PendingIntent makePendingIntent(Context context, Intent intent) {

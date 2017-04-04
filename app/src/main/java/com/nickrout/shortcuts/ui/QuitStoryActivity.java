@@ -7,9 +7,9 @@ import com.nickrout.shortcuts.prefs.Progress;
 import com.nickrout.shortcuts.prefs.Stats;
 import com.nickrout.shortcuts.util.IdUtil;
 
-public class QuitGameActivity extends NoDisplayActivity {
+public class QuitStoryActivity extends NoDisplayActivity {
 
-    private static final String TAG = "QuitGameActivity";
+    private static final String TAG = "QuitStoryActivity";
 
     @Override
     protected void performPreFinishOperations() {

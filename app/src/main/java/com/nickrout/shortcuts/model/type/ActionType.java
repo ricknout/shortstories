@@ -13,17 +13,17 @@ public enum ActionType {
 
     // TODO: Add actual attributes
 
-    UNKNOWN(R.color.colorPrimary, R.mipmap.ic_launcher),
+    UNKNOWN(R.color.colorPrimary, R.mipmap.ic_launcher_round),
     ATTACK(R.color.colorAccent, R.mipmap.ic_launcher_round),
-    DEFEND(R.color.colorPrimary, R.mipmap.ic_launcher),
+    DEFEND(R.color.colorPrimary, R.mipmap.ic_launcher_round),
     MOVE(R.color.colorAccent, R.mipmap.ic_launcher_round),
-    RECRUIT(R.color.colorPrimary, R.mipmap.ic_launcher),
+    RECRUIT(R.color.colorPrimary, R.mipmap.ic_launcher_round),
     COMMAND(R.color.colorAccent, R.mipmap.ic_launcher_round),
-    TRADE(R.color.colorPrimary, R.mipmap.ic_launcher),
+    TRADE(R.color.colorPrimary, R.mipmap.ic_launcher_round),
     STEAL(R.color.colorAccent, R.mipmap.ic_launcher_round),
-    WARN(R.color.colorPrimary, R.mipmap.ic_launcher),
+    WARN(R.color.colorPrimary, R.mipmap.ic_launcher_round),
     WAIT(R.color.colorAccent, R.mipmap.ic_launcher_round),
-    SURRENDER(R.color.colorPrimary, R.mipmap.ic_launcher);
+    SURRENDER(R.color.colorPrimary, R.mipmap.ic_launcher_round);
 
     private @ColorRes int mColorResId;
     public @DrawableRes int iconResId;

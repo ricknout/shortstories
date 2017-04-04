@@ -11,83 +11,83 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.nickrout.shortcuts.R;
-import com.nickrout.shortcuts.databinding.FragmentGameBinding;
-import com.nickrout.shortcuts.model.Game;
+import com.nickrout.shortcuts.databinding.FragmentStoriesBinding;
+import com.nickrout.shortcuts.model.Story;
 import com.nickrout.shortcuts.prefs.Progress;
 
 import org.simpleframework.xml.Serializer;
 import org.simpleframework.xml.core.Persister;
 
-public class GameFragment extends Fragment {
+public class StoriesFragment extends Fragment {
 
-    private static final String TAG = "GameFragment";
+    private static final String TAG = "StoriesFragment";
 
-    private FragmentGameBinding mBinding;
-    private Game mGame;
+    private FragmentStoriesBinding mBinding;
+    private Story mStory;
 
-    public GameFragment() {
+    public StoriesFragment() {
     }
 
-    public static GameFragment newInstance() {
-        return new GameFragment();
+    public static StoriesFragment newInstance() {
+        return new StoriesFragment();
     }
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        mBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_game, container, false);
+        mBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_stories, container, false);
         return mBinding.getRoot();
     }
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        loadGame();
+        loadStory();
     }
 
-    private void loadGame() {
-        new AsyncTask<Void, Void, Game>() {
+    private void loadStory() {
+        new AsyncTask<Void, Void, Story>() {
             @Override
-            protected Game doInBackground(Void... params) {
+            protected Story doInBackground(Void... params) {
                 Serializer serializer = new Persister();
-                Game game = null;
+                Story story = null;
                 try {
-                    game = serializer.read(Game.class, getActivity().getAssets().open("game.xml"));
+                    story = serializer.read(Story.class, getActivity().getAssets().open("story.xml"));
                 } catch (Exception e) {
                     // TODO: Show error toast
                     Log.d(TAG, e.toString());
                 }
-                return game;
+                return story;
             }
             @Override
-            protected void onPostExecute(Game game) {
-                if (game == null) {
+            protected void onPostExecute(Story story) {
+                if (story == null) {
                     return;
                 }
-                mGame = game;
-                assignGameToViews();
+                mStory = story;
+                assignStoryToViews();
             }
         }.execute();
     }
 
-    private void assignGameToViews() {
-        mBinding.title.setText(mGame.title);
-        mBinding.author.setText(mGame.author);
-        mBinding.description.setText(mGame.description);
+    private void assignStoryToViews() {
+        mBinding.title.setText(mStory.title);
+        mBinding.author.setText(mStory.author);
+        mBinding.description.setText(mStory.description);
         boolean inProgress = new Progress(getActivity()).isInProgress();
         mBinding.button.setText(inProgress ? R.string.button_restart : R.string.button_start);
         mBinding.button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startGame();
+                startStory();
             }
         });
     }
 
-    private void startGame() {
-        if (!(getActivity() instanceof GameListener)) {
+    private void startStory() {
+        if (!(getActivity() instanceof StoryListener)) {
             return;
         }
-        ((GameListener) getActivity()).startGame(mGame);
+        ((StoryListener) getActivity()).startStory(mStory);
     }
 }

@@ -6,7 +6,7 @@
     <string translatable="false" name="setting_key_notification_priority">notification_priority</string>
     <string name="settings_category_system_ui">System UI</string>
     <string name="setting_title_go_home_new_scenario">Go home on new scenario</string>
-    <string name="setting_summary_go_home_new_scenario">Return to the launcher home screen for each new scenario. This hides the current list of app shortcuts (choices).</string>
+    <string name="setting_summary_go_home_new_scenario">Return to the launcher home screen for each new scenario. This dismisses the current list of app shortcuts (choices), if showing.</string>
     <string translatable="false" name="setting_key_go_home_new_scenario">go_home_new_scenario</string>
     <string name="setting_title_expand_notifications_new_scenario">Expand notification panel</string>
     <string name="setting_summary_expand_notifications_new_scenario">Attempt to drop down the notification panel for each new scenario notification.</string>

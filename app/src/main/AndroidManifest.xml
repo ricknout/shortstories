@@ -44,7 +44,7 @@
             android:excludeFromRecents="true"/>
 
         <activity
-            android:name=".ui.QuitGameActivity"
+            android:name=".ui.QuitStoryActivity"
             android:theme="@android:style/Theme.NoDisplay"
             android:excludeFromRecents="true" />
 

@@ -99,10 +99,10 @@ public class ChoiceActivity extends NoDisplayActivity {
             Intent addShowScenarioShortcutIntent = IntentUtil.addShowScenarioShortcut(this, mChoice);
             PendingIntent pendingAddShowScenarioShortcutDialogIntent = IntentUtil.makePendingIntent(this, addShowScenarioShortcutIntent);
             builder.setDeleteIntent(pendingAddShowScenarioShortcutDialogIntent);
-            Intent quitGameIntent = IntentUtil.quitGame(this);
-            PendingIntent pendingQuitGameIntent = IntentUtil.makePendingIntent(this, quitGameIntent);
+            Intent quitStoryIntent = IntentUtil.quitStory(this);
+            PendingIntent pendingQuitStoryIntent = IntentUtil.makePendingIntent(this, quitStoryIntent);
             builder.addAction(new NotificationCompat.Action(
-                    0, getString(R.string.notification_action_quit), pendingQuitGameIntent));
+                    0, getString(R.string.notification_action_quit), pendingQuitStoryIntent));
         }
         NotificationManagerCompat.from(this).notify(IdUtil.ID_NOTIFICATION, builder.build());
     }

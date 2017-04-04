@@ -3,9 +3,9 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/navigation_game"
+        android:id="@+id/navigation_stories"
         android:icon="@drawable/ic_shortcuts_black_24dp"
-        android:title="@string/title_game"/>
+        android:title="@string/title_stories"/>
 
     <item
         android:id="@+id/navigation_settings"

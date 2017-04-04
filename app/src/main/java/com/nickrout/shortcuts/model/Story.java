@@ -7,8 +7,8 @@ import org.simpleframework.xml.Root;
 
 import java.util.Map;
 
-@Root(name="game")
-public class Game {
+@Root(name="story")
+public class Story {
 
     @Attribute(name = "title")
     public String title;
