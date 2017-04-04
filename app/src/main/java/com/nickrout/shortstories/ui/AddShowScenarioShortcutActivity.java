@@ -3,10 +3,12 @@ package com.nickrout.shortstories.ui;
 import android.content.pm.ShortcutInfo;
 import android.content.pm.ShortcutManager;
 import android.graphics.drawable.Icon;
+import android.support.v4.content.ContextCompat;
 import android.util.Log;
 
 import com.nickrout.shortstories.R;
 import com.nickrout.shortstories.model.Choice;
+import com.nickrout.shortstories.util.BitmapUtil;
 import com.nickrout.shortstories.util.IdUtil;
 import com.nickrout.shortstories.util.IntentUtil;
 
@@ -40,8 +42,9 @@ public class AddShowScenarioShortcutActivity extends NoDisplayActivity {
                 .setShortLabel(getString(R.string.shortcut_title_show_scenario))
                 .setLongLabel(getString(R.string.shortcut_title_show_scenario))
                 .setDisabledMessage(getString(R.string.shortcut_disabled_message))
-                // TODO: Replace with dedicated 'info' icon
-                .setIcon(Icon.createWithBitmap(mChoice.getActionType().getIcon(this)))
+                .setIcon(Icon.createWithBitmap(BitmapUtil.getShortcutIcon(
+                        this, ContextCompat.getColor(this, R.color.colorShortcutBackground),
+                        R.drawable.ic_info_black_24dp, ContextCompat.getColor(this, R.color.colorPrimary))))
                 .setIntent(IntentUtil.choice(this, mChoice))
                 .setRank(0)
                 .build();
