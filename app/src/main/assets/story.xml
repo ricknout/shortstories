@@ -21,9 +21,10 @@ Rumours of a mysterious thirteenth treat begin to appear as your story unfolds..
     <Achievement name="O"/>
 
     <!-- General requirements -->
-    <!-- Provide a single Finish and optional Achievement/s at each story ending -->
+    <!-- Sub-choices should not exceed an amount of 3 (as per App Shortcuts limit of 4 requirement, 1 reserved for 'Show scenario' -->
     <!-- Choice actions should be <= 25 characters in length (due to App Shortcuts limits) -->
     <!-- Provide a valid action_type for each Action, and a valid scenario_type for each Scenario (see below) -->
+    <!-- Provide a single Finish and optional Achievement/s at each story ending -->
 
     <!--
     Action types (determines shortcut color / icon):
@@ -81,67 +82,97 @@ Rumours of a mysterious thirteenth treat begin to appear as your story unfolds..
     -->
 
     <Choice
-        scenario="Your majesty, your people are starving in the streets, and threaten revolution. Our enemies to the west are weak, but they threaten soon to invade. What will you do?"
-        scenario_type="4">
+        scenario="You have arrived at the Plex interchange. Four doors are in front of you. Which will you choose?"
+        scenario_type="1">
         <Choice
-            action="Make war on western lands"
+            action="Ancient door"
             action_type="1"
-            scenario="If you can seize their territory, your kingdom will flourish. But your army's morale is low and the kingdom's armory is empty. How will you win the war?"
-            scenario_type="5">
+            scenario="You enter a room with four more doors. Which will you choose?"
+            scenario_type="1">
             <Choice
-                action="Enslave peasants"
-                action_type="5"
-                scenario="Unfortunately, morale doesn't work like that. Your army soon turns against you and the kingdom falls to the western barbarians."
-                scenario_type="6">
+                action="Cupcake door"
+                action_type="1"
+                scenario="You have found the Cupcake treat!"
+                scenario_type="1">
                 <Achieve achievement_name="Cupcake"/>
                 <Finish/>
             </Choice>
             <Choice
-                action="Appoint knights"
-                action_type="4"
-                scenario="Your majesty's people are eminently resourceful. Your knights win the day, but take care: they may soon demand a convention of parliament."
-                scenario_type="7">
+                action="Donut door"
+                action_type="1"
+                scenario="You have found the Donut treat!"
+                scenario_type="1">
                 <Achieve achievement_name="Donut"/>
                 <Finish/>
             </Choice>
             <Choice
-                action="Steal from enemy"
-                action_type="7"
-                scenario="A cunning plan. Soon your army is a match for the westerners; they choose not to invade for now, but how long can your majesty postpone the inevitable?"
-                scenario_type="8">
+                action="Eclair door"
+                action_type="1"
+                scenario="You have found the Eclair treat!"
+                scenario_type="1">
                 <Achieve achievement_name="Eclair"/>
                 <Finish/>
             </Choice>
         </Choice>
         <Choice
-            action="Trade food to westerners"
-            action_type="6"
-            scenario="The westerners have you at the point of a sword. They demand unfair terms from you."
-            scenario_type="9">
+            action="Mid-century door"
+            action_type="1"
+            scenario="You enter a room with four more doors. Which will you choose?"
+            scenario_type="1">
             <Choice
-                action="Accept terms"
-                action_type="10"
-                scenario="Eventually, the barbarian westerners conquer you anyway, destroying their bread basket, and the entire region starves."
-                scenario_type="10">
+                action="Froyo door"
+                action_type="1"
+                scenario="You have found the Froyo treat!"
+                scenario_type="1">
                 <Achieve achievement_name="Froyo"/>
                 <Finish/>
             </Choice>
             <Choice
-                action="Threaten to salt fields"
-                action_type="8"
-                scenario="They blink. Your majesty gets a fair price for wheat."
-                scenario_type="7">
+                action="Gingerbread door"
+                action_type="1"
+                scenario="You have found the Gingerbread treat!"
+                scenario_type="1">
                 <Achieve achievement_name="Gingerbread"/>
+                <Finish/>
+            </Choice>
+            <Choice
+                action="Honeycomb door"
+                action_type="1"
+                scenario="You have found the Honeycomb treat!"
+                scenario_type="1">
+                <Achieve achievement_name="Honeycomb"/>
                 <Finish/>
             </Choice>
         </Choice>
         <Choice
-            action="Abdicate the throne"
-            action_type="10"
-            scenario="The kingdom descends into chaos, but you manage to escape with your own hide. Perhaps in time you can return to restore order to this fair land."
-            scenario_type="6">
-            <Achieve achievement_name="Honeycomb"/>
-            <Finish/>
+            action="Modern door"
+            action_type="1"
+            scenario="You enter a room with four more doors. Which will you choose?"
+            scenario_type="1">
+            <Choice
+                action="KitKat door"
+                action_type="1"
+                scenario="You have found the KitKat treat!"
+                scenario_type="1">
+                <Achieve achievement_name="KitKat"/>
+                <Finish/>
+            </Choice>
+            <Choice
+                action="Lollipop door"
+                action_type="1"
+                scenario="You have found the Lollipop treat!"
+                scenario_type="1">
+                <Achieve achievement_name="Lollipop"/>
+                <Finish/>
+            </Choice>
+            <Choice
+                action="Marshmallow door"
+                action_type="1"
+                scenario="You have found the Marshmallow treat!"
+                scenario_type="1">
+                <Achieve achievement_name="Marshmallow"/>
+                <Finish/>
+            </Choice>
         </Choice>
     </Choice>
 

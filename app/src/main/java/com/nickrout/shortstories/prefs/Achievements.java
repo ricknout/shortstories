@@ -47,7 +47,7 @@ public class Achievements {
             if (contains(achievementEntry.getKey())) {
                 continue;
             }
-            set(achievementEntry.getKey(), achievementEntry.getValue());
+            set(achievementEntry.getKey(), achievementEntry.getValue() == null ? false : achievementEntry.getValue());
         }
     }
 
