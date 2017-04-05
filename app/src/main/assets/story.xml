@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Story
-    title="Story"
+    title="An Android's Tale"
     author="Nick Rout"
-    description="A short, test story intended to assist in development of the ShortStories app.">
+    description="Play the role of Andy the Android as you embark on a quest in the fictional realm of Plex.
+Your aim is to aquire each of the twelve sweet treats, scattered far and wide.
+Rumours of a mysterious thirteenth treat begin to appear as your story unfolds...">
 
     <Achievement name="Cupcake"/>
     <Achievement name="Donut"/>
@@ -51,13 +53,11 @@
     <Choice
         scenario="Your majesty, your people are starving in the streets, and threaten revolution. Our enemies to the west are weak, but they threaten soon to invade. What will you do?"
         scenario_type="4">
-        <!-- action="Make pre-emptive war on the western lands." -->
         <Choice
             action="Make war on western lands"
             action_type="1"
             scenario="If you can seize their territory, your kingdom will flourish. But your army's morale is low and the kingdom's armory is empty. How will you win the war?"
             scenario_type="5">
-            <!-- action="Drive the peasants like slaves; if we work hard enough, we'll win." -->
             <Choice
                 action="Enslave peasants"
                 action_type="5"
@@ -66,7 +66,6 @@
                 <Achieve achievement_name="Cupcake"/>
                 <Finish/>
             </Choice>
-            <!-- action="Appoint charismatic knights and give them land, peasants, and resources." -->
             <Choice
                 action="Appoint knights"
                 action_type="4"
@@ -75,7 +74,6 @@
                 <Achieve achievement_name="Donut"/>
                 <Finish/>
             </Choice>
-            <!-- action="Steal food and weapons from the enemy in the dead of night." -->
             <Choice
                 action="Steal from enemy"
                 action_type="7"
@@ -85,13 +83,11 @@
                 <Finish/>
             </Choice>
         </Choice>
-        <!-- action="Beat swords to plowshares and trade food to the westerners for protection." -->
         <Choice
             action="Trade food to westerners"
             action_type="6"
             scenario="The westerners have you at the point of a sword. They demand unfair terms from you."
             scenario_type="9">
-            <!-- action="Accept the terms for now." -->
             <Choice
                 action="Accept terms"
                 action_type="10"
@@ -100,7 +96,6 @@
                 <Achieve achievement_name="Froyo"/>
                 <Finish/>
             </Choice>
-            <!-- action="Threaten to salt our fields if they don't offer better terms." -->
             <Choice
                 action="Threaten to salt fields"
                 action_type="8"
@@ -110,7 +105,6 @@
                 <Finish/>
             </Choice>
         </Choice>
-        <!-- action="Abdicate the throne. I have clearly mismanaged this kingdom!" -->
         <Choice
             action="Abdicate the throne"
             action_type="10"
