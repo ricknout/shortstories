@@ -21,38 +21,63 @@ Rumours of a mysterious thirteenth treat begin to appear as your story unfolds..
     <Achievement name="O"/>
 
     <!-- General requirements -->
-    <!-- Provide a Finish and Achievement tag at each ending -->
-    <!-- Actions should be <= 25 characters in length (due to App Shortcuts limits) -->
+    <!-- Provide a single Finish and optional Achievement/s at each story ending -->
+    <!-- Choice actions should be <= 25 characters in length (due to App Shortcuts limits) -->
     <!-- Provide a valid action_type for each Action, and a valid scenario_type for each Scenario (see below) -->
 
     <!--
-    Action types (indicates shortcut color / icon):
-        0: UNKNOWN
-        1: ATTACK
-        2: DEFEND
-        3: MOVE
-        4: RECRUIT
-        5: COMMAND
-        6: TRADE
-        7: STEAL
-        8: WARN
-        9: WAIT
-        10: SURRENDER
+    Action types (determines shortcut color / icon):
+        0 - Unknown
+        1 - Wait
+        2 - Stop
+        3 - Proceed
+        4 - Move Left
+        5 - Move Right
+        6 - Flee
+        7 - Engage
+        8 - Rest
+        9 - Exercise
+        10 - Buy
+        11 - Sell
+        12 - Eat
+        13 - Drink
+        14 - Agree
+        15 - Disagree
+        16 - Inspect
+        17 - Keep
+        18 - Discard
+        19 - Use
+        20 - Play
+        21 - Attack
+        22 - Defend
+        23 - Learn
+        24 - Ideate
+        25 - Fix
+        26 - Numeric_1
+        27 - Numeric_2
+        28 - Numeric_3
+        29 - Numeric_4
+        30 - Numeric_5
     -->
 
     <!--
-    Scenario types (indicates notification color / icon / sound / vibrate pattern):
-        0: UNKNOWN
-        1: NEUTRAL
-        2: SURPRISE
-        3: MYSTERY
-        4: DESPAIR
-        5: HOPE
-        6: REVOLT
-        7: VICTORY
-        8: PEACE
-        9: DANGER
-        10: DEFEAT
+    Scenario types (determines notification color / icon / sound / vibrate pattern):
+        0 - Unknown
+        1 - Challenge
+        2 - Direction
+        3 - Proposal
+        4 - Meeting
+        5 - Conflict
+        6 - Item
+        7 - Requirement
+        8 - Transaction
+        9 - Game
+        10 - Puzzle
+        11 - Numeric
+        12 - Problem
+        13 - Preparation
+        14 - Achievement
+        15 - Ending
     -->
 
     <Choice
