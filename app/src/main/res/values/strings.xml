@@ -14,6 +14,6 @@
     <string name="notification_action_quit">Quit</string>
     <string name="shortcut_title_show_scenario">Show scenario</string>
     <string name="shortcut_disabled_message">This choice is no longer available!</string>
-    <string name="error_load_story">Faiiled to load story</string>
+    <string name="error_load_story">Failed to load story</string>
 
 </resources>
