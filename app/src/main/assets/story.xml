@@ -20,6 +20,11 @@ Rumours of a mysterious thirteenth treat begin to appear as your story unfolds..
     <Achievement name="Nougat"/>
     <Achievement name="O"/>
 
+    <!-- General requirements -->
+    <!-- Provide a Finish and Achievement tag at each ending -->
+    <!-- Actions should be <= 25 characters in length (due to App Shortcuts limits) -->
+    <!-- Provide a valid action_type for each Action, and a valid scenario_type for each Scenario (see below) -->
+
     <!--
     Action types (indicates shortcut color / icon):
         0: UNKNOWN
