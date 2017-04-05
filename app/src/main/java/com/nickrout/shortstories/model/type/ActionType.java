@@ -15,7 +15,7 @@ public enum ActionType {
 
     // TODO: Add actual attributes
 
-    UNKNOWN(R.color.colorPrimary, R.drawable.ic_shortcuts_black_24dp),
+    UNKNOWN(R.color.colorPrimary, R.drawable.ic_unknown_black_24dp),
     ATTACK(R.color.colorAccent, R.drawable.ic_shortcuts_black_24dp),
     DEFEND(R.color.colorPrimary, R.drawable.ic_shortcuts_black_24dp),
     MOVE(R.color.colorAccent, R.drawable.ic_shortcuts_black_24dp),
