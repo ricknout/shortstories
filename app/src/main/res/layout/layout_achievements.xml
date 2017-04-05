@@ -9,6 +9,6 @@
             android:layout_height="wrap_content"
             android:paddingTop="@dimen/padding_dialog"
             android:clipToPadding="false"
-            tools:listitem="@layout/item_stat" />
+            tools:listitem="@layout/item_achievement" />
 
 </layout>

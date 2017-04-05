@@ -11,7 +11,7 @@ import com.nickrout.shortstories.model.Choice;
 import com.nickrout.shortstories.ui.QuitStoryActivity;
 import com.nickrout.shortstories.ui.ScenarioDialogActivity;
 import com.nickrout.shortstories.ui.ChoiceActivity;
-import com.nickrout.shortstories.ui.StatsDialogActivity;
+import com.nickrout.shortstories.ui.AchievementsDialogActivity;
 
 import org.simpleframework.xml.Serializer;
 import org.simpleframework.xml.core.Persister;
@@ -66,10 +66,10 @@ public class IntentUtil {
         return scenarioDialogIntent;
     }
 
-    public static Intent statsDialog(Context context) {
-        Intent statsDialogIntent = new Intent(context, StatsDialogActivity.class);
-        statsDialogIntent = IntentCompat.makeRestartActivityTask(statsDialogIntent.getComponent());
-        return statsDialogIntent;
+    public static Intent achievementsDialog(Context context) {
+        Intent achievementsDialogIntent = new Intent(context, AchievementsDialogActivity.class);
+        achievementsDialogIntent = IntentCompat.makeRestartActivityTask(achievementsDialogIntent.getComponent());
+        return achievementsDialogIntent;
     }
 
     public static Intent quitStory(Context context) {

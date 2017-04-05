@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable name="obj" type="com.nickrout.shortstories.model.Achievement" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/padding_dialog"
+        android:paddingEnd="@dimen/padding_dialog">
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toStartOf="@+id/achieved"
+            style="?android:attr/textAppearanceMedium"
+            android:text="@{obj.name}"
+            tools:text="Achievement" />
+
+        <ImageView
+            android:id="@+id/achieved"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/padding_horizontal"
+            android:layout_alignParentEnd="true"
+            android:src="@{obj.achieved ? @drawable/ic_done_black_24dp : null}"
+            tools:ignore="contentDescription, RtlSymmetry"
+            tools:src="@drawable/ic_done_black_24dp" />
+
+    </RelativeLayout>
+
+</layout>

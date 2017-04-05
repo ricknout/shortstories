@@ -38,9 +38,9 @@
             android:excludeFromRecents="true" />
 
         <activity
-            android:name="com.nickrout.shortstories.ui.StatsDialogActivity"
+            android:name="com.nickrout.shortstories.ui.AchievementsDialogActivity"
             android:theme="@style/Theme.AppCompat.Light.Dialog.Alert"
-            android:label="@string/title_stats"
+            android:label="@string/title_achievements"
             android:excludeFromRecents="true"/>
 
         <activity

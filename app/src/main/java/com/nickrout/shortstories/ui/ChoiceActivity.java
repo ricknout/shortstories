@@ -11,11 +11,11 @@ import android.support.v4.app.NotificationManagerCompat;
 import android.util.Log;
 
 import com.nickrout.shortstories.R;
+import com.nickrout.shortstories.model.Achieve;
 import com.nickrout.shortstories.model.Choice;
-import com.nickrout.shortstories.model.StatAdjustment;
+import com.nickrout.shortstories.prefs.Achievements;
 import com.nickrout.shortstories.prefs.Progress;
 import com.nickrout.shortstories.prefs.Settings;
-import com.nickrout.shortstories.prefs.Stats;
 import com.nickrout.shortstories.util.IdUtil;
 import com.nickrout.shortstories.util.IntentUtil;
 import com.nickrout.shortstories.util.UiUtil;
@@ -51,7 +51,7 @@ public class ChoiceActivity extends NoDisplayActivity {
         mNotificationPriority = settings.notificationPriority();
         mGoHomeNewScenario = settings.goHomeNewScenario();
         mExpandNotificationsNewScenario = settings.expandNotificationsNewScenario();
-        adjustStats();
+        setAchievements();
         maybeAdjustProgress();
         showScenarioNotification();
         disableExistingShortcuts();
@@ -60,13 +60,13 @@ public class ChoiceActivity extends NoDisplayActivity {
         expandNotificationsPanelDelayed();
     }
 
-    private void adjustStats() {
-        if (mChoice.statAdjustments == null || mChoice.statAdjustments.isEmpty()) {
+    private void setAchievements() {
+        if (mChoice.achievements == null || mChoice.achievements.isEmpty()) {
             return;
         }
-        Stats stats = new Stats(this);
-        for (StatAdjustment statAdjustment : mChoice.statAdjustments) {
-            stats.adjust(statAdjustment.statName, statAdjustment.value);
+        Achievements achievements = new Achievements(this);
+        for (Achieve achieve : mChoice.achievements) {
+            achievements.achieve(achieve.achievementName);
         }
     }
 
@@ -79,8 +79,8 @@ public class ChoiceActivity extends NoDisplayActivity {
     private void showScenarioNotification() {
         Intent scenarioDialogIntent = IntentUtil.scenarioDialog(this, mChoice.scenario);
         PendingIntent pendingScenarioDialogIntent = IntentUtil.makePendingIntent(this, scenarioDialogIntent);
-        Intent statsDialogIntent = IntentUtil.statsDialog(this);
-        PendingIntent pendingStatsDialogIntent = IntentUtil.makePendingIntent(this, statsDialogIntent);
+        Intent achievementsDialogIntent = IntentUtil.achievementsDialog(this);
+        PendingIntent pendingAchievementsDialogIntent = IntentUtil.makePendingIntent(this, achievementsDialogIntent);
         NotificationCompat.Builder builder = new NotificationCompat.Builder(this);
         builder.setStyle(new NotificationCompat.BigTextStyle().bigText(mChoice.scenario))
                 .setContentTitle(getString(R.string.title_scenario))
@@ -93,7 +93,7 @@ public class ChoiceActivity extends NoDisplayActivity {
                 .setVibrate(mChoice.getScenarioType().vibratePattern)
                 .setContentIntent(pendingScenarioDialogIntent)
                 .addAction(new NotificationCompat.Action(
-                        0, getString(R.string.notification_action_stats), pendingStatsDialogIntent));
+                        0, getString(R.string.notification_action_achievements), pendingAchievementsDialogIntent));
         if (!mChoice.isFinish()) {
             Intent addShowScenarioShortcutIntent = IntentUtil.addShowScenarioShortcut(this, mChoice);
             PendingIntent pendingAddShowScenarioShortcutDialogIntent = IntentUtil.makePendingIntent(this, addShowScenarioShortcutIntent);

@@ -26,7 +26,7 @@ public class Choice {
     private int mScenarioType;
 
     @ElementList(inline = true, required = false)
-    public List<StatAdjustment> statAdjustments;
+    public List<Achieve> achievements;
 
     @ElementList(inline = true, required = false)
     public List<Choice> choices;

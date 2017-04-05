@@ -10,8 +10,8 @@ import android.view.MenuItem;
 import com.nickrout.shortstories.R;
 import com.nickrout.shortstories.databinding.ActivityMainBinding;
 import com.nickrout.shortstories.model.Story;
+import com.nickrout.shortstories.prefs.Achievements;
 import com.nickrout.shortstories.prefs.Progress;
-import com.nickrout.shortstories.prefs.Stats;
 import com.nickrout.shortstories.util.IntentUtil;
 
 public class MainActivity extends AppCompatActivity implements StoryListener {
@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity implements StoryListener {
 
     @Override
     public void startStory(@NonNull Story story) {
-        new Stats(this).setAll(story.stats);
+        new Achievements(this).setAll(story.achievements);
         new Progress(this).setInProgress(true);
         finishAndRemoveTask();
         startActivity(IntentUtil.choice(MainActivity.this, story.choice));

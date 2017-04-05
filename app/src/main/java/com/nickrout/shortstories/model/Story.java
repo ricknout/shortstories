@@ -19,8 +19,8 @@ public class Story {
     @Attribute(name = "description")
     public String description;
 
-    @ElementMap(entry = "Stat", key = "name", attribute = true, inline = true, valueType = Integer.class)
-    public Map<String, Integer> stats;
+    @ElementMap(entry = "Achievement", key = "name", attribute = true, inline = true, valueType = Boolean.class, value = "false")
+    public Map<String, Boolean> achievements;
 
     @Element(name = "Choice")
     public Choice choice;
