@@ -17,7 +17,7 @@ public enum ScenarioType {
 
     // TODO: Add actual attributes
 
-    UNKNOWN(R.color.colorPrimary, R.drawable.ic_unknown_black_24dp, R.raw.notification, new long[] {0, 300}),
+    UNKNOWN(R.color.colorPrimary, R.drawable.ic_shortcuts_black_24dp, R.raw.notification, new long[] {0, 100, 100, 100}),
     NEUTRAL(R.color.colorAccent, R.drawable.ic_shortcuts_black_24dp, R.raw.notification, new long[] {0, 100, 100, 100}),
     SURPRISE(R.color.colorPrimary, R.drawable.ic_shortcuts_black_24dp, R.raw.notification, new long[] {0, 100, 100, 100}),
     MYSTERY(R.color.colorAccent, R.drawable.ic_shortcuts_black_24dp, R.raw.notification, new long[] {0, 100, 100, 100}),
