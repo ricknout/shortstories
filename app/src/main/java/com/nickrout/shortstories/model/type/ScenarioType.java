@@ -18,21 +18,21 @@ public enum ScenarioType {
     // TODO: Add actual attributes
 
     UNKNOWN(R.color.color_primary, R.drawable.ic_shortcuts_black_24dp, R.raw.notification, new long[] {0, 100, 100, 100}),
-    ACHIEVEMENT(R.color.color_accent, R.drawable.ic_shortcuts_black_24dp, R.raw.notification, new long[] {0, 100, 100, 100}),
-    CHALLENGE(R.color.color_accent, R.drawable.ic_shortcuts_black_24dp, R.raw.notification, new long[] {0, 100, 100, 100}),
-    CONFLICT(R.color.color_accent, R.drawable.ic_shortcuts_black_24dp, R.raw.notification, new long[] {0, 100, 100, 100}),
-    DIRECTION(R.color.color_primary, R.drawable.ic_shortcuts_black_24dp, R.raw.notification, new long[] {0, 100, 100, 100}),
-    ENDING(R.color.color_primary, R.drawable.ic_shortcuts_black_24dp, R.raw.notification, new long[] {0, 100, 100, 100}),
-    GAME(R.color.color_accent, R.drawable.ic_shortcuts_black_24dp, R.raw.notification, new long[] {0, 100, 100, 100}),
-    ITEM(R.color.color_primary, R.drawable.ic_shortcuts_black_24dp, R.raw.notification, new long[] {0, 100, 100, 100}),
-    MEETING(R.color.color_primary, R.drawable.ic_shortcuts_black_24dp, R.raw.notification, new long[] {0, 100, 100, 100}),
-    NUMERIC(R.color.color_primary, R.drawable.ic_shortcuts_black_24dp, R.raw.notification, new long[] {0, 100, 100, 100}),
-    PREPARATION(R.color.color_primary, R.drawable.ic_shortcuts_black_24dp, R.raw.notification, new long[] {0, 100, 100, 100}),
-    PROBLEM(R.color.color_accent, R.drawable.ic_shortcuts_black_24dp, R.raw.notification, new long[] {0, 100, 100, 100}),
-    PROPOSAL(R.color.color_accent, R.drawable.ic_shortcuts_black_24dp, R.raw.notification, new long[] {0, 100, 100, 100}),
-    PUZZLE(R.color.color_primary, R.drawable.ic_shortcuts_black_24dp, R.raw.notification, new long[] {0, 100, 100, 100}),
-    REQUIREMENT(R.color.color_accent, R.drawable.ic_shortcuts_black_24dp, R.raw.notification, new long[] {0, 100, 100, 100}),
-    TRANSACTION(R.color.color_primary, R.drawable.ic_shortcuts_black_24dp, R.raw.notification, new long[] {0, 100, 100, 100});
+    ACHIEVEMENT(R.color.amber_500, R.drawable.ic_shortcuts_black_24dp, R.raw.notification, new long[] {0, 100, 100, 100}),
+    CHALLENGE(R.color.yellow_500, R.drawable.ic_shortcuts_black_24dp, R.raw.notification, new long[] {0, 100, 100, 100}),
+    CONFLICT(R.color.red_500, R.drawable.ic_shortcuts_black_24dp, R.raw.notification, new long[] {0, 100, 100, 100}),
+    DIRECTION(R.color.brown_500, R.drawable.ic_shortcuts_black_24dp, R.raw.notification, new long[] {0, 100, 100, 100}),
+    ENDING(R.color.black, R.drawable.ic_shortcuts_black_24dp, R.raw.notification, new long[] {0, 100, 100, 100}),
+    GAME(R.color.blue_500, R.drawable.ic_shortcuts_black_24dp, R.raw.notification, new long[] {0, 100, 100, 100}),
+    ITEM(R.color.indigo_500, R.drawable.ic_shortcuts_black_24dp, R.raw.notification, new long[] {0, 100, 100, 100}),
+    MEETING(R.color.orange_500, R.drawable.ic_shortcuts_black_24dp, R.raw.notification, new long[] {0, 100, 100, 100}),
+    NUMERIC(R.color.grey_500, R.drawable.ic_shortcuts_black_24dp, R.raw.notification, new long[] {0, 100, 100, 100}),
+    PREPARATION(R.color.pink_500, R.drawable.ic_shortcuts_black_24dp, R.raw.notification, new long[] {0, 100, 100, 100}),
+    PROBLEM(R.color.light_green_500, R.drawable.ic_shortcuts_black_24dp, R.raw.notification, new long[] {0, 100, 100, 100}),
+    PROPOSAL(R.color.teal_500, R.drawable.ic_shortcuts_black_24dp, R.raw.notification, new long[] {0, 100, 100, 100}),
+    PUZZLE(R.color.purple_500, R.drawable.ic_shortcuts_black_24dp, R.raw.notification, new long[] {0, 100, 100, 100}),
+    REQUIREMENT(R.color.lime_500, R.drawable.ic_shortcuts_black_24dp, R.raw.notification, new long[] {0, 100, 100, 100}),
+    TRANSACTION(R.color.green_500, R.drawable.ic_shortcuts_black_24dp, R.raw.notification, new long[] {0, 100, 100, 100});
 
     private @ColorRes int mColorResId;
     private @DrawableRes int mIconResId;
