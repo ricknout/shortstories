@@ -15,24 +15,27 @@ import com.nickrout.shortstories.util.BitmapUtil;
 
 public enum ScenarioType {
 
-    // TODO: Add actual attributes
+    // TODO: Add sounds and vibration patterns
 
-    UNKNOWN(R.color.color_primary, R.drawable.ic_shortcuts_black_24dp, R.raw.notification, new long[] {0, 100, 100, 100}),
-    ACHIEVEMENT(R.color.amber_500, R.drawable.ic_shortcuts_black_24dp, R.raw.notification, new long[] {0, 100, 100, 100}),
-    CHALLENGE(R.color.yellow_500, R.drawable.ic_shortcuts_black_24dp, R.raw.notification, new long[] {0, 100, 100, 100}),
-    CONFLICT(R.color.red_500, R.drawable.ic_shortcuts_black_24dp, R.raw.notification, new long[] {0, 100, 100, 100}),
-    DIRECTION(R.color.brown_500, R.drawable.ic_shortcuts_black_24dp, R.raw.notification, new long[] {0, 100, 100, 100}),
-    ENDING(R.color.black, R.drawable.ic_shortcuts_black_24dp, R.raw.notification, new long[] {0, 100, 100, 100}),
-    GAME(R.color.blue_500, R.drawable.ic_shortcuts_black_24dp, R.raw.notification, new long[] {0, 100, 100, 100}),
-    ITEM(R.color.indigo_500, R.drawable.ic_shortcuts_black_24dp, R.raw.notification, new long[] {0, 100, 100, 100}),
-    MEETING(R.color.orange_500, R.drawable.ic_shortcuts_black_24dp, R.raw.notification, new long[] {0, 100, 100, 100}),
-    NUMERIC(R.color.grey_500, R.drawable.ic_shortcuts_black_24dp, R.raw.notification, new long[] {0, 100, 100, 100}),
-    PREPARATION(R.color.pink_500, R.drawable.ic_shortcuts_black_24dp, R.raw.notification, new long[] {0, 100, 100, 100}),
-    PROBLEM(R.color.light_green_500, R.drawable.ic_shortcuts_black_24dp, R.raw.notification, new long[] {0, 100, 100, 100}),
-    PROPOSAL(R.color.teal_500, R.drawable.ic_shortcuts_black_24dp, R.raw.notification, new long[] {0, 100, 100, 100}),
-    PUZZLE(R.color.purple_500, R.drawable.ic_shortcuts_black_24dp, R.raw.notification, new long[] {0, 100, 100, 100}),
-    REQUIREMENT(R.color.lime_500, R.drawable.ic_shortcuts_black_24dp, R.raw.notification, new long[] {0, 100, 100, 100}),
-    TRANSACTION(R.color.green_500, R.drawable.ic_shortcuts_black_24dp, R.raw.notification, new long[] {0, 100, 100, 100});
+    UNKNOWN(R.color.color_primary, R.drawable.ic_unknown_black_24dp, R.raw.notification, new long[] {0, 100, 100, 100}),
+    ACHIEVEMENT(R.color.amber_500, R.drawable.ic_trophy_black_24dp, R.raw.notification, new long[] {0, 100, 100, 100}),
+    CHALLENGE(R.color.yellow_600, R.drawable.ic_terrain_black_24dp, R.raw.notification, new long[] {0, 100, 100, 100}),
+    CONFLICT(R.color.red_500, R.drawable.ic_sword_cross_black_24dp, R.raw.notification, new long[] {0, 100, 100, 100}),
+    DIRECTION(R.color.brown_500, R.drawable.ic_split_black_24dp, R.raw.notification, new long[] {0, 100, 100, 100}),
+    ENDING(R.color.black, R.drawable.ic_book_black_24dp, R.raw.notification, new long[] {0, 100, 100, 100}),
+    GAME(R.color.blue_500, R.drawable.ic_dice_multiple_black_24dp, R.raw.notification, new long[] {0, 100, 100, 100}),
+    HAPPY(R.color.deep_purple_a200, R.drawable.ic_happy_black_24dp, R.raw.notification, new long[] {0, 100, 100, 100}),
+    ITEM(R.color.indigo_500, R.drawable.ic_cube_outline_black_24dp, R.raw.notification, new long[] {0, 100, 100, 100}),
+    MEETING(R.color.orange_500, R.drawable.ic_people_black_24dp, R.raw.notification, new long[] {0, 100, 100, 100}),
+    NUMERIC(R.color.grey_500, R.drawable.ic_numeric_black_24dp, R.raw.notification, new long[] {0, 100, 100, 100}),
+    OFFER(R.color.teal_500, R.drawable.ic_redeem_black_24dp, R.raw.notification, new long[] {0, 100, 100, 100}),
+    PREPARATION(R.color.pink_500, R.drawable.ic_checklist_black_24dp, R.raw.notification, new long[] {0, 100, 100, 100}),
+    PROBLEM(R.color.light_green_500, R.drawable.ic_alert_black_24dp, R.raw.notification, new long[] {0, 100, 100, 100}),
+    PUZZLE(R.color.purple_500, R.drawable.ic_puzzle_black_24dp, R.raw.notification, new long[] {0, 100, 100, 100}),
+    REQUIREMENT(R.color.lime_500, R.drawable.ic_inbox_black_24dp, R.raw.notification, new long[] {0, 100, 100, 100}),
+    SAD(R.color.blue_800, R.drawable.ic_sad_black_24dp, R.raw.notification, new long[] {0, 100, 100, 100}),
+    TRANSACTION(R.color.green_500, R.drawable.ic_local_atm_black_24dp, R.raw.notification, new long[] {0, 100, 100, 100}),
+    YES_NO(R.color.purple_700, R.drawable.ic_thumbs_up_down_black_24dp, R.raw.notification, new long[] {0, 100, 100, 100});
 
     private @ColorRes int mColorResId;
     private @DrawableRes int mIconResId;
