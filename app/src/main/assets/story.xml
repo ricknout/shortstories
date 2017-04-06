@@ -29,56 +29,54 @@ Rumours of a mysterious thirteenth treat begin to appear as your story unfolds..
     <!--
     Action types (determines shortcut color / icon):
         0 - Unknown
-        1 - Wait
-        2 - Stop
-        3 - Proceed
-        4 - Move Left
-        5 - Move Right
-        6 - Flee
-        7 - Engage
-        8 - Rest
-        9 - Exercise
-        10 - Buy
-        11 - Sell
-        12 - Eat
-        13 - Drink
-        14 - Agree
-        15 - Disagree
-        16 - Inspect
-        17 - Keep
-        18 - Discard
-        19 - Use
-        20 - Play
-        21 - Attack
-        22 - Defend
-        23 - Learn
-        24 - Ideate
-        25 - Fix
-        26 - Numeric_1
-        27 - Numeric_2
-        28 - Numeric_3
-        29 - Numeric_4
-        30 - Numeric_5
+        1 - Agree
+        2 - Attack
+        3 - Buy
+        4 - Defend
+        5 - Disagree
+        6 - Discard
+        7 - Drink
+        8 - Eat
+        9 - Engage
+        10 - Exercise
+        11 - Fix
+        12 - Flee
+        13 - Idea
+        14 - Inspect
+        15 - Keep
+        16 - Learn
+        17 - Move Left
+        18 - Move Right
+        19 - Numeric_1
+        20 - Numeric_2
+        21 - Numeric_3
+        22 - Play
+        23 - Proceed
+        24 - Rest
+        25 - Sell
+        26 - Stop
+        27 - Use
+        28 - Wait
     -->
 
     <!--
     Scenario types (determines notification color / icon / sound / vibrate pattern):
         0 - Unknown
-        1 - Challenge
-        2 - Direction
-        3 - Proposal
-        4 - Meeting
-        5 - Conflict
-        6 - Item
-        7 - Requirement
-        8 - Transaction
-        9 - Game
-        10 - Puzzle
-        11 - Numeric
-        12 - Problem
-        13 - Preparation
-        14 - Achievement
-        15 - Ending
+        1 - Achievement
+        2 - Challenge
+        3 - Conflict
+        4 - Direction
+        5 - Ending
+        6 - Game
+        7 - Item
+        8 - Meeting
+        9 - Numeric
+        10 - Preparation
+        11 - Problem
+        12 - Proposal
+        13 - Puzzle
+        14 - Requirement
+        15 - Transaction
     -->
 
     <Choice
