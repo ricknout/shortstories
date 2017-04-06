@@ -4,15 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.nickrout.shortstories.ui.AchievementsDialogActivity">
 
-    <LinearLayout
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
-
-        <include
-            android:id="@+id/stats"
-            layout="@layout/layout_achievements" />
-
-    </LinearLayout>
+        android:paddingTop="@dimen/padding_dialog"
+        android:clipToPadding="false"
+        tools:listitem="@layout/item_achievement" />
 
 </layout>

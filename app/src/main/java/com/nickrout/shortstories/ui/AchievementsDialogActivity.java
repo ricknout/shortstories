@@ -20,11 +20,11 @@ public class AchievementsDialogActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         overridePendingTransition(R.anim.scale_up_fade_in, R.anim.scale_down_fade_out);
         ActivityAchievementsDialogBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_achievements_dialog);
-        binding.stats.recycler.setLayoutManager(new LinearLayoutManager(this));
-        binding.stats.recycler.setAdapter(new AchievementAdapter(new Achievements(this).getAchievements()));
-        binding.stats.recycler.addItemDecoration(new VerticalSpaceItemDecoration(
+        binding.recycler.setLayoutManager(new LinearLayoutManager(this));
+        binding.recycler.setAdapter(new AchievementAdapter(new Achievements(this).getAchievements()));
+        binding.recycler.addItemDecoration(new VerticalSpaceItemDecoration(
                 getResources().getDimensionPixelSize(R.dimen.padding_vertical)));
-        binding.stats.recycler.addItemDecoration(new DividerItemDecoration(
+        binding.recycler.addItemDecoration(new DividerItemDecoration(
                 getApplicationContext(), DividerItemDecoration.VERTICAL));
     }
 }
