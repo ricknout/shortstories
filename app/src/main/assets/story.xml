@@ -4,7 +4,8 @@
     author="Nick Rout"
     description="Play the role of Andy the Android as you embark on a quest in the fictional realm of Plex.
 Your aim is to acquire each of the twelve sweet treats, scattered far and wide.
-Rumours of a mysterious thirteenth treat begin to appear as your story unfolds...">
+Rumours of a mysterious thirteenth treat begin to appear as your story unfolds..."
+    image="http://www.trutower.com/wp-content/uploads/2012/07/android-desserts-ics-ice-cream-sandwich1.jpg">
 
     <Achievement name="Cupcake"/>
     <Achievement name="Donut"/>

@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.nickrout.shortstories.R;
 import com.nickrout.shortstories.databinding.FragmentStoriesBinding;
 import com.nickrout.shortstories.model.Story;
@@ -77,6 +78,7 @@ public class StoriesFragment extends Fragment {
         mBinding.title.setText(mStory.title);
         mBinding.author.setText(mStory.author);
         mBinding.description.setText(mStory.description);
+        Glide.with(this).load(mStory.image).into(mBinding.image);
         boolean inProgress = new Progress(getActivity()).isInProgress();
         mBinding.button.setText(inProgress ? R.string.button_restart : R.string.button_start);
         mBinding.button.setOnClickListener(new View.OnClickListener() {
