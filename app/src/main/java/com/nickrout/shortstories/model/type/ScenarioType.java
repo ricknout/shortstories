@@ -17,22 +17,22 @@ public enum ScenarioType {
 
     // TODO: Add actual attributes
 
-    UNKNOWN(R.color.colorPrimary, R.drawable.ic_shortcuts_black_24dp, R.raw.notification, new long[] {0, 100, 100, 100}),
-    ACHIEVEMENT(R.color.colorAccent, R.drawable.ic_shortcuts_black_24dp, R.raw.notification, new long[] {0, 100, 100, 100}),
-    CHALLENGE(R.color.colorAccent, R.drawable.ic_shortcuts_black_24dp, R.raw.notification, new long[] {0, 100, 100, 100}),
-    CONFLICT(R.color.colorAccent, R.drawable.ic_shortcuts_black_24dp, R.raw.notification, new long[] {0, 100, 100, 100}),
-    DIRECTION(R.color.colorPrimary, R.drawable.ic_shortcuts_black_24dp, R.raw.notification, new long[] {0, 100, 100, 100}),
-    ENDING(R.color.colorPrimary, R.drawable.ic_shortcuts_black_24dp, R.raw.notification, new long[] {0, 100, 100, 100}),
-    GAME(R.color.colorAccent, R.drawable.ic_shortcuts_black_24dp, R.raw.notification, new long[] {0, 100, 100, 100}),
-    ITEM(R.color.colorPrimary, R.drawable.ic_shortcuts_black_24dp, R.raw.notification, new long[] {0, 100, 100, 100}),
-    MEETING(R.color.colorPrimary, R.drawable.ic_shortcuts_black_24dp, R.raw.notification, new long[] {0, 100, 100, 100}),
-    NUMERIC(R.color.colorPrimary, R.drawable.ic_shortcuts_black_24dp, R.raw.notification, new long[] {0, 100, 100, 100}),
-    PREPARATION(R.color.colorPrimary, R.drawable.ic_shortcuts_black_24dp, R.raw.notification, new long[] {0, 100, 100, 100}),
-    PROBLEM(R.color.colorAccent, R.drawable.ic_shortcuts_black_24dp, R.raw.notification, new long[] {0, 100, 100, 100}),
-    PROPOSAL(R.color.colorAccent, R.drawable.ic_shortcuts_black_24dp, R.raw.notification, new long[] {0, 100, 100, 100}),
-    PUZZLE(R.color.colorPrimary, R.drawable.ic_shortcuts_black_24dp, R.raw.notification, new long[] {0, 100, 100, 100}),
-    REQUIREMENT(R.color.colorAccent, R.drawable.ic_shortcuts_black_24dp, R.raw.notification, new long[] {0, 100, 100, 100}),
-    TRANSACTION(R.color.colorPrimary, R.drawable.ic_shortcuts_black_24dp, R.raw.notification, new long[] {0, 100, 100, 100});
+    UNKNOWN(R.color.color_primary, R.drawable.ic_shortcuts_black_24dp, R.raw.notification, new long[] {0, 100, 100, 100}),
+    ACHIEVEMENT(R.color.color_accent, R.drawable.ic_shortcuts_black_24dp, R.raw.notification, new long[] {0, 100, 100, 100}),
+    CHALLENGE(R.color.color_accent, R.drawable.ic_shortcuts_black_24dp, R.raw.notification, new long[] {0, 100, 100, 100}),
+    CONFLICT(R.color.color_accent, R.drawable.ic_shortcuts_black_24dp, R.raw.notification, new long[] {0, 100, 100, 100}),
+    DIRECTION(R.color.color_primary, R.drawable.ic_shortcuts_black_24dp, R.raw.notification, new long[] {0, 100, 100, 100}),
+    ENDING(R.color.color_primary, R.drawable.ic_shortcuts_black_24dp, R.raw.notification, new long[] {0, 100, 100, 100}),
+    GAME(R.color.color_accent, R.drawable.ic_shortcuts_black_24dp, R.raw.notification, new long[] {0, 100, 100, 100}),
+    ITEM(R.color.color_primary, R.drawable.ic_shortcuts_black_24dp, R.raw.notification, new long[] {0, 100, 100, 100}),
+    MEETING(R.color.color_primary, R.drawable.ic_shortcuts_black_24dp, R.raw.notification, new long[] {0, 100, 100, 100}),
+    NUMERIC(R.color.color_primary, R.drawable.ic_shortcuts_black_24dp, R.raw.notification, new long[] {0, 100, 100, 100}),
+    PREPARATION(R.color.color_primary, R.drawable.ic_shortcuts_black_24dp, R.raw.notification, new long[] {0, 100, 100, 100}),
+    PROBLEM(R.color.color_accent, R.drawable.ic_shortcuts_black_24dp, R.raw.notification, new long[] {0, 100, 100, 100}),
+    PROPOSAL(R.color.color_accent, R.drawable.ic_shortcuts_black_24dp, R.raw.notification, new long[] {0, 100, 100, 100}),
+    PUZZLE(R.color.color_primary, R.drawable.ic_shortcuts_black_24dp, R.raw.notification, new long[] {0, 100, 100, 100}),
+    REQUIREMENT(R.color.color_accent, R.drawable.ic_shortcuts_black_24dp, R.raw.notification, new long[] {0, 100, 100, 100}),
+    TRANSACTION(R.color.color_primary, R.drawable.ic_shortcuts_black_24dp, R.raw.notification, new long[] {0, 100, 100, 100});
 
     private @ColorRes int mColorResId;
     private @DrawableRes int mIconResId;

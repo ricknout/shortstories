@@ -43,8 +43,8 @@ public class AddShowScenarioShortcutActivity extends NoDisplayActivity {
                 .setLongLabel(getString(R.string.shortcut_title_show_scenario))
                 .setDisabledMessage(getString(R.string.shortcut_disabled_message))
                 .setIcon(Icon.createWithBitmap(BitmapUtil.getShortcutIcon(
-                        this, ContextCompat.getColor(this, R.color.colorShortcutBackground),
-                        R.drawable.ic_info_outline_black_24dp, ContextCompat.getColor(this, R.color.colorPrimary))))
+                        this, ContextCompat.getColor(this, R.color.color_shortcut_background),
+                        R.drawable.ic_info_outline_black_24dp, ContextCompat.getColor(this, R.color.color_primary))))
                 .setIntent(IntentUtil.choice(this, mChoice))
                 .setRank(0)
                 .build();
