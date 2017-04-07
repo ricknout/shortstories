@@ -1,4 +1,4 @@
-package com.nickrout.shortstories.ui.recyclerview;
+package com.nickrout.shortstories.ui.databinding;
 
 public abstract class SingleLayoutDataBindingAdapter extends DataBindingAdapter {
 

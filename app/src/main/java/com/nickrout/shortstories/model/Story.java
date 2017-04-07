@@ -27,4 +27,8 @@ public class Story {
 
     @Element(name = "Choice")
     public Choice choice;
+
+    public String file;
+
+    public boolean inProgress;
 }

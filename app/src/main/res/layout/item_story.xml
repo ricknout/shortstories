@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="item"
+            type="com.nickrout.shortstories.model.Story" />
+        <variable
+            name="listener"
+            type="com.nickrout.shortstories.ui.StoryListener" />
+    </data>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/image"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:imageUrl="@{item.image}"
+                tools:ignore="contentDescription" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingStart="@dimen/padding_horizontal"
+                android:paddingEnd="@dimen/padding_horizontal"
+                android:paddingTop="@dimen/padding_vertical"
+                android:paddingBottom="@dimen/padding_vertical"
+                android:clipToPadding="false">
+
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:layout_gravity="center"
+                    android:paddingBottom="@dimen/padding_vertical"
+                    android:text="@{item.title}"
+                    tools:text="Title" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceListItem"
+                    android:text="@string/subtitle_author" />
+
+                <TextView
+                    android:id="@+id/author"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceListItemSecondary"
+                    android:textColor="?android:attr/textColorSecondary"
+                    android:paddingBottom="@dimen/padding_vertical"
+                    android:text="@{item.author}"
+                    tools:text="Author" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceListItem"
+                    android:text="@string/subtitle_description" />
+
+                <TextView
+                    android:id="@+id/description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceListItemSecondary"
+                    android:textColor="?android:attr/textColorSecondary"
+                    android:text="@{item.description}"
+                    tools:text="Description" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?android:attr/listDivider" />
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{item.inProgress ? @string/button_restart : @string/button_start}"
+                style="@style/Widget.AppCompat.Button.Borderless.Colored"
+                android:layout_gravity="end"
+                android:onClick="@{() -> listener.startStory(item)}" />
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+</layout>

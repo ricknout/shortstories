@@ -23,7 +23,7 @@ public class QuitStoryActivity extends NoDisplayActivity {
     }
 
     private void clearStatsAndProgress() {
-        new Progress(this).setInProgress(false);
+        new Progress(this).setNotInProgress();
     }
 
     private void cancelScenarioNotification() {

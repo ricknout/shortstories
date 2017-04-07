@@ -72,7 +72,7 @@ public class ChoiceActivity extends NoDisplayActivity {
 
     private void maybeAdjustProgress() {
         if (mChoice.isFinish()) {
-            new Progress(this).setInProgress(false);
+            new Progress(this).setNotInProgress();
         }
     }
 

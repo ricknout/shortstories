@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-        <variable name="obj" type="com.nickrout.shortstories.model.Achievement" />
+        <variable
+            name="item"
+            type="com.nickrout.shortstories.model.Achievement" />
     </data>
 
     <RelativeLayout
@@ -19,7 +21,7 @@
             android:layout_height="wrap_content"
             android:layout_toStartOf="@+id/achieved"
             style="?android:attr/textAppearanceMedium"
-            android:text="@{obj.name}"
+            android:text="@{item.name}"
             tools:text="Achievement" />
 
         <ImageView
@@ -28,7 +30,7 @@
             android:layout_height="wrap_content"
             android:paddingStart="@dimen/padding_horizontal"
             android:layout_alignParentEnd="true"
-            android:src="@{obj.achieved ? @drawable/ic_done_black_24dp : null}"
+            android:src="@{item.achieved ? @drawable/ic_done_black_24dp : null}"
             tools:ignore="contentDescription, RtlSymmetry"
             tools:src="@drawable/ic_done_black_24dp" />
 

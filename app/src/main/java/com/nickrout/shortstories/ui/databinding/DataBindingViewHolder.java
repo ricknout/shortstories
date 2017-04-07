@@ -1,4 +1,4 @@
-package com.nickrout.shortstories.ui.recyclerview;
+package com.nickrout.shortstories.ui.databinding;
 
 import android.databinding.ViewDataBinding;
 import android.support.v7.widget.RecyclerView;
@@ -14,8 +14,12 @@ public class DataBindingViewHolder extends RecyclerView.ViewHolder {
         mBinding = binding;
     }
 
-    public void bind(Object obj) {
-        mBinding.setVariable(BR.obj, obj);
+    public void bind(Object item) {
+        mBinding.setVariable(BR.item, item);
         mBinding.executePendingBindings();
+    }
+
+    public ViewDataBinding getBinding() {
+        return mBinding;
     }
 }

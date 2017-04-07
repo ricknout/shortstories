@@ -2,6 +2,7 @@ package com.nickrout.shortstories.prefs;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.text.TextUtils;
 
 public class Progress {
 
@@ -24,11 +25,16 @@ public class Progress {
         return mSharedPreferences;
     }
 
-    public void setInProgress(boolean inProgress) {
-        sharedPreferences().edit().putBoolean(KEY_IN_PROGRESS, inProgress).apply();
+    public void setInProgress(String storyFile) {
+        sharedPreferences().edit().putString(KEY_IN_PROGRESS, storyFile).apply();
     }
 
-    public boolean isInProgress() {
-        return sharedPreferences().getBoolean(KEY_IN_PROGRESS, false);
+    public void setNotInProgress() {
+        setInProgress(null);
+    }
+
+    public boolean isInProgress(String storyFile) {
+        return TextUtils.equals(
+                storyFile, sharedPreferences().getString(KEY_IN_PROGRESS, null));
     }
 }

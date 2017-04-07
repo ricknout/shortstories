@@ -3,29 +3,35 @@ package com.nickrout.shortstories.ui;
 import android.databinding.DataBindingUtil;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
-import com.bumptech.glide.Glide;
 import com.nickrout.shortstories.R;
 import com.nickrout.shortstories.databinding.FragmentStoriesBinding;
 import com.nickrout.shortstories.model.Story;
 import com.nickrout.shortstories.prefs.Progress;
+import com.nickrout.shortstories.ui.recyclerview.StoryAdapter;
+import com.nickrout.shortstories.ui.recyclerview.VerticalSpaceItemDecoration;
 
 import org.simpleframework.xml.Serializer;
 import org.simpleframework.xml.core.Persister;
 
-public class StoriesFragment extends Fragment {
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+public class StoriesFragment extends Fragment implements StoryListener {
 
     private static final String TAG = "StoriesFragment";
 
     private FragmentStoriesBinding mBinding;
-    private Story mStory;
+    private static final List<String> STORY_FILES = new ArrayList<>(Arrays.asList("story.xml"));
 
     public StoriesFragment() {
     }
@@ -38,61 +44,60 @@ public class StoriesFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         mBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_stories, container, false);
+        mBinding.recycler.setLayoutManager(new LinearLayoutManager(getActivity()));
+        mBinding.recycler.addItemDecoration(new VerticalSpaceItemDecoration(
+                getResources().getDimensionPixelSize(R.dimen.padding_vertical), false));
         return mBinding.getRoot();
     }
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        loadStory();
+        loadStories(STORY_FILES);
     }
 
-    private void loadStory() {
-        new AsyncTask<Void, Void, Story>() {
+    private void loadStories(@NonNull final List<String> storyFiles) {
+        new AsyncTask<Void, Void, List<Story>>() {
             @Override
-            protected Story doInBackground(Void... params) {
+            protected List<Story> doInBackground(Void... params) {
                 Serializer serializer = new Persister();
-                Story story = null;
-                try {
-                    story = serializer.read(Story.class, getActivity().getAssets().open("story.xml"));
-                } catch (Exception e) {
-                    Log.d(TAG, e.toString());
+                Progress progress = new Progress(getActivity());
+                boolean foundInProgressStory = false;
+                List<Story> stories = new ArrayList<>();
+                for (String storyFile : storyFiles) {
+                    try {
+                        Story story = serializer.read(Story.class, getActivity().getAssets().open(storyFile));
+                        story.file = storyFile;
+                        if (!foundInProgressStory) {
+                            boolean inProgress = progress.isInProgress(storyFile);
+                            story.inProgress = inProgress;
+                            foundInProgressStory = inProgress;
+                        } else {
+                            story.inProgress = false;
+                        }
+                        stories.add(story);
+                    } catch (Exception e) {
+                        Log.d(TAG, e.toString());
+                    }
                 }
-                return story;
+                return stories;
             }
             @Override
-            protected void onPostExecute(Story story) {
-                if (story == null) {
-                    Toast.makeText(getActivity(),
-                            getString(R.string.error_load_story), Toast.LENGTH_SHORT).show();
-                    mBinding.button.setEnabled(false);
-                    return;
-                }
-                mStory = story;
-                assignStoryToViews();
+            protected void onPostExecute(List<Story> stories) {
+                assignStoriesToView(stories);
             }
         }.execute();
     }
 
-    private void assignStoryToViews() {
-        mBinding.title.setText(mStory.title);
-        mBinding.author.setText(mStory.author);
-        mBinding.description.setText(mStory.description);
-        Glide.with(this).load(mStory.image).into(mBinding.image);
-        boolean inProgress = new Progress(getActivity()).isInProgress();
-        mBinding.button.setText(inProgress ? R.string.button_restart : R.string.button_start);
-        mBinding.button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startStory();
-            }
-        });
+    private void assignStoriesToView(@NonNull List<Story> stories) {
+        mBinding.recycler.setAdapter(new StoryAdapter(stories, this));
     }
 
-    private void startStory() {
+    @Override
+    public void startStory(@NonNull Story story) {
         if (!(getActivity() instanceof StoryListener)) {
             return;
         }
-        ((StoryListener) getActivity()).startStory(mStory);
+        ((StoryListener) getActivity()).startStory(story);
     }
 }

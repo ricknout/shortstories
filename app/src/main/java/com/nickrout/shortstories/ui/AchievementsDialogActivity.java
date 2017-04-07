@@ -23,7 +23,7 @@ public class AchievementsDialogActivity extends AppCompatActivity {
         binding.recycler.setLayoutManager(new LinearLayoutManager(this));
         binding.recycler.setAdapter(new AchievementAdapter(new Achievements(this).getAchievements()));
         binding.recycler.addItemDecoration(new VerticalSpaceItemDecoration(
-                getResources().getDimensionPixelSize(R.dimen.padding_vertical)));
+                getResources().getDimensionPixelSize(R.dimen.padding_vertical), true));
         binding.recycler.addItemDecoration(new DividerItemDecoration(
                 getApplicationContext(), DividerItemDecoration.VERTICAL));
     }

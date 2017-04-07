@@ -2,6 +2,7 @@ package com.nickrout.shortstories.ui.recyclerview;
 
 import com.nickrout.shortstories.R;
 import com.nickrout.shortstories.model.Achievement;
+import com.nickrout.shortstories.ui.databinding.SingleLayoutDataBindingAdapter;
 
 import java.util.List;
 
@@ -20,7 +21,7 @@ public class AchievementAdapter extends SingleLayoutDataBindingAdapter {
     }
 
     @Override
-    protected Object getObjForPosition(int position) {
+    protected Object getItemForPosition(int position) {
         return mAchievements == null || mAchievements.isEmpty() ? null : mAchievements.get(position);
     }
 }

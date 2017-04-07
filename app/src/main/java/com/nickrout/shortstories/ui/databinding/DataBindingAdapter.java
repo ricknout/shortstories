@@ -1,4 +1,4 @@
-package com.nickrout.shortstories.ui.recyclerview;
+package com.nickrout.shortstories.ui.databinding;
 
 import android.databinding.DataBindingUtil;
 import android.databinding.ViewDataBinding;
@@ -15,8 +15,8 @@ public abstract class DataBindingAdapter extends RecyclerView.Adapter<DataBindin
     }
 
     public void onBindViewHolder(DataBindingViewHolder holder, int position) {
-        Object obj = getObjForPosition(position);
-        holder.bind(obj);
+        Object item = getItemForPosition(position);
+        holder.bind(item);
     }
 
     @Override
@@ -24,7 +24,7 @@ public abstract class DataBindingAdapter extends RecyclerView.Adapter<DataBindin
         return getLayoutIdForPosition(position);
     }
 
-    protected abstract Object getObjForPosition(int position);
+    protected abstract Object getItemForPosition(int position);
 
     protected abstract int getLayoutIdForPosition(int position);
 }
