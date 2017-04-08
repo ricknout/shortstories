@@ -1,6 +1,6 @@
 # ShortStories
 
-## Interactive stories told through App Shortcuts and Notifications.
+## Interactive stories told through App Shortcuts and Notifications
 
 ShortStories provides a platform to play text-based games using the various elements of the Android System UI:
 
