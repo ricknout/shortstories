@@ -64,7 +64,8 @@ public class ChoiceActivity extends NoDisplayActivity {
         if (mChoice.achievements == null || mChoice.achievements.isEmpty()) {
             return;
         }
-        Achievements achievements = new Achievements(this);
+        String storyFile = new Progress(this).getStoryFile();
+        Achievements achievements = new Achievements(this, storyFile);
         for (Achieve achieve : mChoice.achievements) {
             achievements.achieve(achieve.achievementName);
         }

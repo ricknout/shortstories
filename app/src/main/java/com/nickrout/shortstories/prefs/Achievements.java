@@ -15,9 +15,9 @@ import java.util.Map;
 public class Achievements {
 
     private static final String TAG = "Achievements";
-    private static final String SHARED_PREFERENCES_NAME = "achievements_shared_preferences";
 
     private Context mContext;
+    private String mSharedPreferencesName;
     private SharedPreferences mSharedPreferences;
     private Comparator<Achievement> mAchievementComparator = new Comparator<Achievement>() {
         @Override
@@ -26,14 +26,15 @@ public class Achievements {
         }
     };
 
-    public Achievements(Context context) {
+    public Achievements(Context context, String sharedPreferencesName) {
         mContext = context;
+        mSharedPreferencesName = sharedPreferencesName;
     }
 
     private SharedPreferences sharedPreferences() {
         if (mSharedPreferences == null) {
             mSharedPreferences = mContext.getSharedPreferences(
-                    SHARED_PREFERENCES_NAME, Context.MODE_PRIVATE);
+                    mSharedPreferencesName, Context.MODE_PRIVATE);
         }
         return mSharedPreferences;
     }

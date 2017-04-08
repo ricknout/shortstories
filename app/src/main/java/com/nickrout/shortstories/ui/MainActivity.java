@@ -75,7 +75,7 @@ public class MainActivity extends AppCompatActivity implements StoryListener {
 
     @Override
     public void startStory(@NonNull Story story) {
-        new Achievements(this).setAll(story.achievements);
+        new Achievements(this, story.file).setAll(story.achievements);
         new Progress(this).setInProgress(story.file);
         finishAndRemoveTask();
         startActivity(IntentUtil.choice(MainActivity.this, story.choice));
