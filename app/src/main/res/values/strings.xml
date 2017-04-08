@@ -7,6 +7,8 @@
     <string name="title_scenario">Scenario</string>
     <string name="title_achievements">Achievements</string>
     <string name="title_about">About</string>
+    <string name="title_share">Share</string>
+    <string name="title_send_to">Send to</string>
     <string name="subtitle_author">Author</string>
     <string name="subtitle_description">Description</string>
     <string name="button_start">Start</string>
@@ -17,5 +19,8 @@
     <string name="shortcut_disabled_message">This choice is no longer available!</string>
     <string name="error_load_story">Failed to load story</string>
     <string name="text_about"><![CDATA[Interactive stories told through App Shortcuts and Notifications.<br><br>ShortStories provides a platform to play text-based games using the various elements of the Android System UI:<br><br><b>• Notifications indicate scenarios in a story, posing a situation in which the user the user needs to make a choice<br><br>• App Shortcuts provide a means of making a choice, and making a choice poses a new scenario<br><br>• Dialogs provide a means of viewing your list of story achievements gained over time</b><br><br>Unique colors, icons, vibration patterns and sounds exist for different types of scenarios and actions, and are used to theme the Notifications and App Shortcuts.<br><br>Stories are defined in XML. A basic structure of <b>Story</b>, <b>Choice</b>, <b>Achievement</b> and <b>Finish</b> tags allows ShortStories to parse and play almost any kind of text-based, multiple choice game.<br><br>ShortStories is written by Nick Rout<br><a href="https://twitter.com/ricknout">Twitter</a> | <a href="https://plus.google.com/+NicholasRout">Google+</a><br><br>The source code and resources are available on <a href="https://github.com/nicholasrout/shortstories">Github</a>]]></string>
+    <string name="subject_share">Get the ShortStories app</string>
+    <!-- TODO: Include link to ShortStories app on Play Store in share text -->
+    <string name="text_share">Interactive stories told through App Shortcuts and Notifications.\n\nGet the ShortStories app:\n</string>
 
 </resources>

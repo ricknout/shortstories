@@ -69,6 +69,9 @@ public class MainActivity extends AppCompatActivity implements StoryListener {
                 startActivity(IntentUtil.about(this));
                 overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
                 return true;
+            case R.id.share:
+                startActivity(IntentUtil.share(this));
+                return true;
         }
         return super.onOptionsItemSelected(item);
     }

@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.support.v4.content.IntentCompat;
 import android.util.Log;
 
+import com.nickrout.shortstories.R;
 import com.nickrout.shortstories.ui.AboutActivity;
 import com.nickrout.shortstories.ui.AddShowScenarioShortcutActivity;
 import com.nickrout.shortstories.model.Choice;
@@ -83,6 +84,15 @@ public class IntentUtil {
 
     public static Intent about(Context context) {
         return new Intent(context, AboutActivity.class);
+    }
+
+    public static Intent share(Context context) {
+        Intent intent = new Intent();
+        intent.setAction(Intent.ACTION_SEND);
+        intent.putExtra(Intent.EXTRA_SUBJECT, context.getString(R.string.subject_share));
+        intent.putExtra(Intent.EXTRA_TEXT, context.getString(R.string.text_share));
+        intent.setType("text/plain");
+        return Intent.createChooser(intent, context.getString(R.string.title_send_to));
     }
 
     public static PendingIntent makePendingIntent(Context context, Intent intent) {
