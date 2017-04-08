@@ -86,8 +86,4 @@ public class Achievements {
             return null;
         }
     }
-
-    private boolean get(String achievementName) {
-        return sharedPreferences().getBoolean(achievementName, false);
-    }
 }
