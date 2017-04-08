@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.support.v4.content.IntentCompat;
 import android.util.Log;
 
+import com.nickrout.shortstories.ui.AboutActivity;
 import com.nickrout.shortstories.ui.AddShowScenarioShortcutActivity;
 import com.nickrout.shortstories.model.Choice;
 import com.nickrout.shortstories.ui.QuitStoryActivity;
@@ -78,6 +79,10 @@ public class IntentUtil {
         quitStoryIntent.setAction(Intent.ACTION_VIEW);
         quitStoryIntent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
         return quitStoryIntent;
+    }
+
+    public static Intent about(Context context) {
+        return new Intent(context, AboutActivity.class);
     }
 
     public static PendingIntent makePendingIntent(Context context, Intent intent) {

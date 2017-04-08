@@ -49,6 +49,10 @@
             android:theme="@android:style/Theme.NoDisplay"
             android:excludeFromRecents="true" />
 
+        <activity
+            android:name=".ui.AboutActivity"
+            android:label="@string/title_about" />
+
     </application>
 
 </manifest>

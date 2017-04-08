@@ -5,6 +5,8 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 
 import com.nickrout.shortstories.R;
@@ -21,7 +23,6 @@ public class MainActivity extends AppCompatActivity implements StoryListener {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
         final ActivityMainBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction().replace(R.id.container, StoriesFragment.newInstance()).commit();
@@ -52,6 +53,24 @@ public class MainActivity extends AppCompatActivity implements StoryListener {
                 return false;
             }
         });
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.about:
+                startActivity(IntentUtil.about(this));
+                overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     @Override
