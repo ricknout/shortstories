@@ -26,7 +26,7 @@ public enum ActionType {
     EXERCISE(R.color.pink_a400, R.drawable.ic_dumbbell_black_24dp),
     FIX(R.color.grey_600, R.drawable.ic_wrench_black_24dp),
     FLEE(R.color.lime_600, R.drawable.ic_run_black_24dp),
-    IDEA(R.color.yellow_a400, R.drawable.ic_lightbulb_on_outline_black_24dp),
+    IDEA(R.color.yellow_a700, R.drawable.ic_lightbulb_on_outline_black_24dp),
     INSPECT(R.color.blue_grey_800, R.drawable.ic_eye_black_24dp),
     KEEP(R.color.teal_a400, R.drawable.ic_briefcase_black_24dp),
     LEARN(R.color.green_800, R.drawable.ic_school_black_24dp),

@@ -87,97 +87,18 @@ Rumours of a mysterious thirteenth treat begin to appear as your story unfolds..
     -->
 
     <Choice
-        scenario="You have arrived at the Plex interchange. Four doors are in front of you. Which will you choose?"
-        scenario_type="0">
+        scenario="While immersed in a Daydream, a distant chime catches your attention.
+You think nothing of it and drift off...
+The sound rings again, this time louder and more urgent.
+You lift up your headset to see a colorful bicycle whizzing towards you!"
+        scenario_type="13">
         <Choice
-            action="Ancient door"
-            action_type="0"
-            scenario="You enter a room with four more doors. Which will you choose?"
-            scenario_type="1">
-            <Choice
-                action="Cupcake door"
-                action_type="1"
-                scenario="You have found the Cupcake treat!"
-                scenario_type="2">
-                <Achieve achievement_name="Cupcake"/>
-                <Finish/>
-            </Choice>
-            <Choice
-                action="Donut door"
-                action_type="2"
-                scenario="You have found the Donut treat!"
-                scenario_type="3">
-                <Achieve achievement_name="Donut"/>
-                <Finish/>
-            </Choice>
-            <Choice
-                action="Eclair door"
-                action_type="3"
-                scenario="You have found the Eclair treat!"
-                scenario_type="4">
-                <Achieve achievement_name="Eclair"/>
-                <Finish/>
-            </Choice>
-        </Choice>
-        <Choice
-            action="Mid-century door"
-            action_type="4"
-            scenario="You enter a room with four more doors. Which will you choose?"
+            action="Move out the way"
+            action_type="17"
+            scenario="The bicycle narrowly misses you and hurtles in to the distance.
+Your CPU clock ticking rapidly, you decide to put your Daydream away."
             scenario_type="5">
-            <Choice
-                action="Froyo door"
-                action_type="5"
-                scenario="You have found the Froyo treat!"
-                scenario_type="6">
-                <Achieve achievement_name="Froyo"/>
-                <Finish/>
-            </Choice>
-            <Choice
-                action="Gingerbread door"
-                action_type="6"
-                scenario="You have found the Gingerbread treat!"
-                scenario_type="7">
-                <Achieve achievement_name="Gingerbread"/>
-                <Finish/>
-            </Choice>
-            <Choice
-                action="Honeycomb door"
-                action_type="7"
-                scenario="You have found the Honeycomb treat!"
-                scenario_type="8">
-                <Achieve achievement_name="Honeycomb"/>
-                <Finish/>
-            </Choice>
-        </Choice>
-        <Choice
-            action="Modern door"
-            action_type="8"
-            scenario="You enter a room with four more doors. Which will you choose?"
-            scenario_type="9">
-            <Choice
-                action="KitKat door"
-                action_type="9"
-                scenario="You have found the KitKat treat!"
-                scenario_type="10">
-                <Achieve achievement_name="KitKat"/>
-                <Finish/>
-            </Choice>
-            <Choice
-                action="Lollipop door"
-                action_type="10"
-                scenario="You have found the Lollipop treat!"
-                scenario_type="11">
-                <Achieve achievement_name="Lollipop"/>
-                <Finish/>
-            </Choice>
-            <Choice
-                action="Marshmallow door"
-                action_type="11"
-                scenario="You have found the Marshmallow treat!"
-                scenario_type="12">
-                <Achieve achievement_name="Marshmallow"/>
-                <Finish/>
-            </Choice>
+            <Finish/>
         </Choice>
     </Choice>
 
