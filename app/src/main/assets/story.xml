@@ -74,16 +74,17 @@ Rumours of a mysterious thirteenth treat begin to appear as your story unfolds..
         6 - Game
         7 - Happy
         8 - Item
-        9 - Meeting
-        10 - Numeric
-        11 - Offer
-        12 - Preparation
-        13 - Problem
-        14 - Puzzle
-        15 - Requirement
-        16 - Sad
-        17 - Transaction
-        18 - Yes No
+        9 - Meal
+        10 - Meeting
+        11 - Numeric
+        12 - Offer
+        13 - Preparation
+        14 - Problem
+        15 - Puzzle
+        16 - Requirement
+        17 - Sad
+        18 - Transaction
+        19 - Yes No
     -->
 
     <Choice
@@ -91,14 +92,114 @@ Rumours of a mysterious thirteenth treat begin to appear as your story unfolds..
 You think nothing of it and drift off...
 The sound rings again, this time louder and more urgent.
 You lift up your headset to see a colorful bicycle whizzing towards you!"
-        scenario_type="13">
+        scenario_type="14">
         <Choice
             action="Move out the way"
             action_type="17"
             scenario="The bicycle narrowly misses you and hurtles in to the distance.
-Your CPU clock ticking rapidly, you decide to put your Daydream away."
-            scenario_type="5">
-            <Finish/>
+It's a bright, busy day in Plex with hundreds of Androids bustling about the common area.
+You decide to put your Daydream away and head inside to the cafeteria.
+What would you like to eat?"
+            scenario_type="9">
+            <Choice
+                action="Brussel sprouts"
+                action_type="8"
+                scenario="You pick up a luke-warm green parcel and take a bite.
+Brussel sprouts is of one of the two staple foods in Plex.
+While you chew on the tasteless, leafy substance, an elderly Android approaches you.
+&quot;Are you enjoying that?&quot; he asks."
+                scenario_type="19">
+                <Choice
+                    action="Yes"
+                    action_type="1"
+                    scenario="The elderly Android looks disappointed, and bids you farewell.
+You continue eating your brussel sprouts, wondering if you have done anything wrong."
+                    scenario_type="5">
+                    <Finish/>
+                </Choice>
+                <Choice
+                    action="No"
+                    action_type="5"
+                    scenario="The elderly Android lights up.
+&quot;There was a time when sweet confectioneries and delicious treats were in abundance!&quot; he says.
+&quot;Come with me&quot; he whispers, as he hurries out of the cafeteria with surprising speed.
+You follow him across the common area, through various alleyways and arrive at a small trapdoor.
+You crouch, step through and work your way down a small spiral of stairs into a dimly-lit room.
+You find the elderly Android standing in the centre of the room, pointing at six markings etched on the floor.
+They include a cylindrical shape, four thin bars and a small, badly-drawn oval.
+&quot;These drawings depict half of the sweet treats enjoyed by Androids many clock cycles ago&quot; he says.
+&quot;Will you help me restore them?&quot;"
+                    scenario_type="2">
+                    <Choice
+                        action="No thanks"
+                        action_type="5"
+                        scenario="You give a hurried goodbye to the elderly Android, head back up the stairs and exit through the trapdoor.
+A mixture of confusion and intrigue runs through your CPU as you slowly walk away."
+                        scenario_type="5">
+                        <Finish/>
+                    </Choice>
+                    <Choice
+                        action="Sure!"
+                        action_type="1"
+                        scenario="The elderly Android grins.
+&quot;I can offer one of my possessions to assist you on your journey&quot; he says.
+You wonder where you will be journeying to and how you will get there, but the excitement of it all overwhelms you.
+He holds out his hand, ushering you to choose one of three items. Which one will you take?"
+                        scenario_type="8">
+                        <Finish/>
+                    </Choice>
+                </Choice>
+            </Choice>
+            <Choice
+                action="Porridge"
+                action_type="8"
+                scenario="You take a spoonful.
+Porridge is one of the two staple foods in Plex.
+While you chew on the tasteless, gooey substance, an elderly Android approaches you.
+&quot;Are you enjoying that?&quot; he asks."
+                scenario_type="19">
+                <Choice
+                    action="Yes"
+                    action_type="1"
+                    scenario="The elderly Android looks disappointed, and bids you farewell.
+You continue eating your porridge, wondering if you have done anything wrong."
+                    scenario_type="5">
+                    <Finish/>
+                </Choice>
+                <Choice
+                    action="No"
+                    action_type="5"
+                    scenario="The elderly Android lights up.
+&quot;There was a time when sweet confectioneries and delicious treats were in abundance!&quot; he says.
+&quot;Come with me&quot; he whispers, as he hurries out of the cafeteria with surprising speed.
+You follow him across the common area, through various alleyways and arrive at a small, run-down building.
+You step through the open door.
+The room is empty.
+You find the elderly Android standing next to a dusty wall, pointing at six markings on its surface.
+They include some kind of ring, a hexagonal structure and what appears to be a small figure.
+&quot;These drawings depict half of the sweet treats enjoyed by Androids many clock cycles ago&quot; he says.
+&quot;Will you help me restore them?&quot;"
+                    scenario_type="2">
+                    <Choice
+                        action="No ways"
+                        action_type="5"
+                        scenario="You give a hurried goodbye to the elderly Android and exit the small building.
+A mixture of confusion and intrigue runs through your CPU as you slowly walk away."
+                        scenario_type="5">
+                        <Finish/>
+                    </Choice>
+                    <Choice
+                        action="I'm in!"
+                        action_type="1"
+                        scenario="The elderly Android grins.
+&quot;You journey will not be easy, but I am willing to part ways with one of my possessions&quot; he says.
+You wonder where you will be journeying to and how you will get there, but the excitement of it all overwhelms you.
+He holds out his hand, ushering you to choose one of three items. Which one will you take?"
+                        scenario_type="8">
+                        <Finish/>
+                    </Choice>
+                </Choice>
+            </Choice>
         </Choice>
     </Choice>
 

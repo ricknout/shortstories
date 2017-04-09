@@ -26,6 +26,7 @@ public enum ScenarioType {
     GAME(R.color.blue_500, R.drawable.ic_dice_multiple_black_24dp, R.raw.notification, new long[] {0, 100, 100, 100}),
     HAPPY(R.color.deep_purple_a200, R.drawable.ic_happy_black_24dp, R.raw.notification, new long[] {0, 100, 100, 100}),
     ITEM(R.color.indigo_500, R.drawable.ic_cube_outline_black_24dp, R.raw.notification, new long[] {0, 100, 100, 100}),
+    MEAL(R.color.deep_orange_500, R.drawable.ic_meal_black_24dp, R.raw.notification, new long[] {0, 100, 100, 100}),
     MEETING(R.color.orange_500, R.drawable.ic_people_black_24dp, R.raw.notification, new long[] {0, 100, 100, 100}),
     NUMERIC(R.color.grey_500, R.drawable.ic_numeric_black_24dp, R.raw.notification, new long[] {0, 100, 100, 100}),
     OFFER(R.color.teal_500, R.drawable.ic_redeem_black_24dp, R.raw.notification, new long[] {0, 100, 100, 100}),
