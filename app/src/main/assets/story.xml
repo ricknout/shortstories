@@ -95,7 +95,7 @@ You lift up your headset to see a colorful bicycle whizzing towards you!"
         scenario_type="14">
         <Choice
             action="Move out the way"
-            action_type="17"
+            action_type="12"
             scenario="The bicycle narrowly misses you and hurtles in to the distance.
 It's a bright, busy day in Plex with hundreds of Androids bustling about the common area.
 You decide to put your Daydream away and head inside to the cafeteria.
@@ -128,7 +128,7 @@ You crouch, step through and work your way down a small spiral of stairs into a 
 You find the elderly Android standing in the centre of the room, pointing at six markings etched on the floor.
 They include a cylindrical shape, four thin bars and a small, badly-drawn oval.
 &quot;These drawings depict half of the sweet treats enjoyed by Androids many clock cycles ago&quot; he says.
-&quot;Will you help me restore them?&quot;"
+&quot;Would you like to taste them for yourself?&quot;"
                     scenario_type="2">
                     <Choice
                         action="No thanks"
@@ -142,11 +142,61 @@ A mixture of confusion and intrigue runs through your CPU as you slowly walk awa
                         action="Sure!"
                         action_type="1"
                         scenario="The elderly Android grins.
-&quot;I can offer one of my possessions to assist you on your journey&quot; he says.
+&quot;I can offer one of my possessions to assist you on your sugary journey&quot; he says.
 You wonder where you will be journeying to and how you will get there, but the excitement of it all overwhelms you.
 He holds out his hand, ushering you to choose one of three items. Which one will you take?"
                         scenario_type="8">
-                        <Finish/>
+                        <Choice
+                            action="Spoon"
+                            action_type="19"
+                            scenario="You stow the spoon, wondering what it could be used for.
+Suddenly, you feel a magnetic pull as the floor seems to sink beneath your feet.
+You catch a glimpse of the elderly Android waving goodbye as a blinding light engulfs you.
+Before you can say 'Nexus' you land on a grassy patch of land, your image sensors adjusting back to normal light.
+&quot;Where am I?&quot; you wonder.
+The general topography of the area feels familiar yet different, almost as if you have gone back in time.
+You snap out of it and remember that your goal is to locate the sweet treats the elderly Android spoke of.
+To your left lies a path that leads into a thick maze of trees.
+To your right you notice a young Android dressed in unfamiliar clothes.
+What will you do?"
+                            scenario_type="4">
+                            <!-- Walk down path -->
+                            <!-- Approach young Android -->
+                            <Finish/>
+                        </Choice>
+                        <Choice
+                            action="Charging cable"
+                            action_type="20"
+                            scenario="You put away the charging cable, wondering what it could be used for.
+Suddenly, you feel a magnetic pull as the floor seems to sink beneath your feet.
+You catch a glimpse of the elderly Android waving goodbye as a blinding light engulfs you.
+Before you can say 'Pixel' you land in what appears to be a small village.
+&quot;What is this place?&quot; you wonder.
+The general topography of the area feels familiar yet different, almost as if you have gone back in time.
+You snap out of it and remember that your goal is to locate the sweet treats the elderly Android spoke of.
+To your surprise you notice an angry-looking Android running towards you!
+What will you do?"
+                            scenario_type="3">
+                            <!-- Use the rope -->
+                            <!-- Keep floating -->
+                            <Finish/>
+                        </Choice>
+                        <Choice
+                            action="Rope"
+                            action_type="21"
+                            scenario="You tie the rope around your waist, wondering what it could be used for.
+Suddenly, you feel a magnetic pull as the floor seems to sink beneath your feet.
+You catch a glimpse of the elderly Android waving goodbye as a blinding light engulfs you.
+Before you can say 'Galaxy' you land with a splash in a rapid river.
+&quot;Help!&quot; you yell with all of your speakers' might, but there is no one in sight.
+You calm down and remember that your goal is to locate the sweet treats the elderly Android spoke of.
+Realising you need to act fast, you notice a patch of reeds between yourself and the river bank.
+What will you do?"
+                            scenario_type="14">
+                            <!-- Use the rope -->
+                            <!-- Keep floating -->
+                            <Finish/>
+                        </Choice>
                     </Choice>
                 </Choice>
             </Choice>
@@ -178,7 +228,7 @@ The room is empty.
 You find the elderly Android standing next to a dusty wall, pointing at six markings on its surface.
 They include some kind of ring, a hexagonal structure and what appears to be a small figure.
 &quot;These drawings depict half of the sweet treats enjoyed by Androids many clock cycles ago&quot; he says.
-&quot;Will you help me restore them?&quot;"
+&quot;Do you want to experience their sugary goodness?&quot;"
                     scenario_type="2">
                     <Choice
                         action="No ways"
@@ -189,17 +239,76 @@ A mixture of confusion and intrigue runs through your CPU as you slowly walk awa
                         <Finish/>
                     </Choice>
                     <Choice
-                        action="I'm in!"
+                        action="Definitely!"
                         action_type="1"
                         scenario="The elderly Android grins.
-&quot;You journey will not be easy, but I am willing to part ways with one of my possessions&quot; he says.
+&quot;You tasty journey will not be easy, but I am willing to part ways with one of my possessions&quot; he says.
 You wonder where you will be journeying to and how you will get there, but the excitement of it all overwhelms you.
 He holds out his hand, ushering you to choose one of three items. Which one will you take?"
                         scenario_type="8">
-                        <Finish/>
+                        <Choice
+                            action="LED bulb"
+                            action_type="19"
+                            scenario="You stash the LED bulb, wondering what it could be used for.
+Suddenly, you feel a magnetic pull as the walls seems close in on you.
+You catch a glimpse of the elderly Android waving goodbye as a blinding light engulfs you.
+Before you can say 'Optimus' you land in a rocky cave with very little light.
+&quot;What is this?&quot; you wonder.
+You come to your senses and remember that your goal is to locate the sweet treats the elderly Android spoke of.
+You see a small, metal device device on the floor and pick it up.
+You notice it has two small openings on the top.
+What will you do?"
+                            scenario_type="15">
+                            <!-- Insert LED -->
+                            <!-- Continue into cave -->
+                            <Finish/>
+                        </Choice>
+                        <Choice
+                            action="A pair of boots"
+                            action_type="20"
+                            scenario="You put on the boots, wondering if they will come in handy.
+Suddenly, you feel a magnetic pull as the walls seems close in on you.
+You catch a glimpse of the elderly Android waving goodbye as a blinding light engulfs you.
+Before you can say 'Xperia' you land on a snowy slope, a blizzard howling around you.
+You let out an audible &quot;Brrr&quot; as your thermometer begins to drop.
+You try to ignore the temperature and remember that your goal is to locate the sweet treats the elderly Android spoke of.
+Thankfully, your boots prevent you from slipping on the ice and allow you to move around.
+The slope looks like a challenging climb, but it's not impossible.
+What will you do?"
+                            scenario_type="2">
+                            <!-- Climb -->
+                            <!-- Clear the snow -->
+                            <Finish/>
+                        </Choice>
+                        <Choice
+                            action="Bottle of water"
+                            action_type="21"
+                            scenario="You tuck away the button, unsure of its significance.
+Suddenly, you feel a magnetic pull as the walls seems close in on you.
+You catch a glimpse of the elderly Android waving goodbye as a blinding light engulfs you.
+Before you can say 'OnePlus' you land in the centre of a field.
+You can barely see past the tops of the beige-colored plants.
+You remember that your goal is to locate the sweet treats the elderly Android spoke of, but you are rather fatigued.
+What will you do?"
+                            scenario_type="13">
+                            <!-- Rest -->
+                            <!-- Drink water -->
+                            <Finish/>
+                        </Choice>
                     </Choice>
                 </Choice>
             </Choice>
+        </Choice>
+        <Choice
+            action="Stand still"
+            action_type="28"
+            scenario="The bicycle begins to slow down rapidly as the rider hastily applies the breaks.
+It stops just before you and the owner is not impressed.
+The Android huffs and rides away.
+&quot;That was close&quot; you mutter out loud, wondering how you could have handled the situation better.
+You decide to get back to Daydreaming in order to stop thinking about it."
+            scenario_type="5">
+            <Finish/>
         </Choice>
     </Choice>
 
