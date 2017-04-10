@@ -19,11 +19,8 @@ public class Choice {
     @Attribute(name = "action_type", required = false)
     private int mActionType;
 
-    @Attribute(name = "scenario")
-    public String scenario;
-
-    @Attribute(name = "scenario_type")
-    private int mScenarioType;
+    @Element(name = "Scenario")
+    private Scenario mScenario;
 
     @ElementList(inline = true, required = false)
     public List<Achieve> achievements;
@@ -46,11 +43,13 @@ public class Choice {
         return actionTypes[mActionType];
     }
 
+    public String getScenario() {
+        return mScenario == null ?
+                null : mScenario.scenario.trim();
+    }
+
     public ScenarioType getScenarioType() {
-        ScenarioType[] scenarioTypes = ScenarioType.values();
-        if (mScenarioType > scenarioTypes.length - 1) {
-            return ScenarioType.UNKNOWN;
-        }
-        return scenarioTypes[mScenarioType];
+        return mScenario == null ?
+                ScenarioType.UNKNOWN : mScenario.getScenarioType();
     }
 }
