@@ -34,8 +34,8 @@ public enum ScenarioType {
     PROBLEM(R.color.light_green_500, R.drawable.ic_alert_black_24dp, R.raw.notification, new long[] {0, 100, 100, 100}),
     PUZZLE(R.color.purple_500, R.drawable.ic_puzzle_black_24dp, R.raw.notification, new long[] {0, 100, 100, 100}),
     REQUIREMENT(R.color.lime_500, R.drawable.ic_inbox_black_24dp, R.raw.notification, new long[] {0, 100, 100, 100}),
-    SAD(R.color.blue_800, R.drawable.ic_sad_black_24dp, R.raw.notification, new long[] {0, 100, 100, 100}),
     TRANSACTION(R.color.green_500, R.drawable.ic_local_atm_black_24dp, R.raw.notification, new long[] {0, 100, 100, 100}),
+    UNHAPPY(R.color.blue_800, R.drawable.ic_sad_black_24dp, R.raw.notification, new long[] {0, 100, 100, 100}),
     YES_NO(R.color.purple_700, R.drawable.ic_thumbs_up_down_black_24dp, R.raw.notification, new long[] {0, 100, 100, 100});
 
     private @ColorRes int mColorResId;

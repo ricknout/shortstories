@@ -82,8 +82,8 @@ Rumours of a mysterious thirteenth treat begin to appear as your story unfolds..
         14 - Problem
         15 - Puzzle
         16 - Requirement
-        17 - Sad
-        18 - Transaction
+        17 - Transaction
+        18 - Unhappy
         19 - Yes No
     -->
 
@@ -172,17 +172,83 @@ What will you do?
                                 action="Walk down path"
                                 action_type="17">
                                 <Scenario
-                                    scenario_type="23">You venture down the path, the foliage growing denser with every step.
+                                    scenario_type="0">You venture down the path, the foliage growing denser with every step.
 At one point, you notice the floor crunch beneath your feet.
 You find this a bit odd as the ground appears to be soft, due to the layers of leaves and mud.
 At one point, the crunching sound is very audible.
 You peer down and notice that specks of dark brown and white nestled between the grass.
 The specks appears to lead in to a small opening in the trees.
-Will you follow them?
+What will you do?
                                 </Scenario>
-                                <!-- No, carry on -->
-                                <!-- Yes -->
-                                <Finish/>
+                                <Choice
+                                    action="Proceed on path"
+                                    action_type="23">
+                                    <Scenario
+                                        scenario_type="18">As you reach the end of the path, a humming sound grows gradually louder.
+Something buzzes past your ear.
+You have a strong dislike for bugs.
+"I'm lost" you mutter, noticing a dead end in front of you.
+Your disappointment turns to fear as you look up in horror to see hundreds of winged creatures flying towards you!
+You notice a small opening in the trees, a soft golden glow emanating from it.
+Act fast!
+                                    </Scenario>
+                                    <Choice
+                                        action="Run inside"
+                                        action_type="12">
+                                        <Scenario
+                                            scenario_type="1">You burst through the opening just in time.
+Thankfully, your winged opponents do not follow you inside.
+While catching your breath, you notice strange hexagonal openings in the walls.
+The yellow glow of the room calms your nerves and you decide to inspect them.
+Each hexagon appears to hold a thick, golden liquid.
+Without thinking, you dip your finger in to one of them and taste it.
+It's floral, sticky and sweet.
+It's delicious, and unlike anything you have tasted before.
+You have found the Honeycomb treat!
+As you finish savouring on it, you feel the same magnetic pull that brought you to this place.
+With a bright flash of light, you are pulled away and thrown back in to Plex.
+Upon arrival, you seem to have only cached a vague memory of your adventure.
+"Did I imagine that?" you wonder.
+Unsure of it all, you decide to relax for now and postpone thinking about it until lunch time.
+You put on your Daydream headset...
+                                        </Scenario>
+                                        <Achieve achievement_name="Honeycomb"/>
+                                        <Finish/>
+                                    </Choice>
+                                </Choice>
+                                <Choice
+                                    action="Follow them"
+                                    action_type="14">
+                                    <Scenario
+                                        scenario_type="15">You approach the small opening in the trees.
+You lean down, placing your hand next to the opening in order to peer in.
+The plants give way and your lose your balance, falling into a small, hollow clearing.
+Geometric shapes arranged in a circular pattern are marked on the muddy ground.
+Dazed and a little confused, you look up to see a clear glass jar placed on a rock, like a shrine, in the middle of the area.
+You cautiously approach it.
+What will you do next?
+                                    </Scenario>
+                                    <Choice
+                                        action="Open the jar"
+                                        action_type="9">
+                                        <Scenario
+                                            scenario_type="1">A delicious smell escapes the jar and instantly fills the enclosure.
+You notice disc-like items in the jar, each dark brown in color with a milky white centre.
+You extract one and feel compelled to take a bite.
+It's chocolaty, crunchy and sweet.
+It's delicious, and unlike anything you have tasted before.
+You have found the mysterious 'O' treat!
+As you finish savouring on it, you feel the same magnetic pull that brought you to this place.
+With a bright flash of light, you are pulled away and thrown back in to Plex.
+Upon arrival, you seem to have only cached a vague memory of your adventure.
+"Was that real?" you wonder.
+Unsure of it all, you decide to relax for now and postpone thinking about it until lunch time.
+You put on your Daydream headset...
+                                        </Scenario>
+                                        <Achieve achievement_name="O"/>
+                                        <Finish/>
+                                    </Choice>
+                                </Choice>
                             </Choice>
                             <Choice
                                 action="Approach Android"
@@ -210,7 +276,7 @@ As you finish savouring on it, you feel the same magnetic pull that brought you 
 With a bright flash of light, you are pulled away and thrown back in to Plex.
 Upon arrival, you seem to have only cached a vague memory of your adventure.
 "Did that really happen?" you wonder.
-Unsure of it all, you decide to relax for now and think on it over lunch.
+Unsure of it all, you decide to relax for now and postpone thinking about it until lunch time.
 You put on your Daydream headset...
                                     </Scenario>
                                     <Achieve achievement_name="Froyo"/>
@@ -303,7 +369,8 @@ A mixture of confusion and intrigue runs through your CPU as you slowly walk awa
                         action_type="1">
                         <Scenario
                             scenario_type="8">The elderly Android grins.
-"You tasty journey will not be easy, but I am willing to part ways with one of my possessions" he says.
+"You may need assistance on your tasty journey." he says.
+"I am willing to part with one of my possessions."
 You wonder where you will be journeying to and how you will get there, but the excitement of it all overwhelms you.
 He holds out his hand, ushering you to choose one of three items.
 Which one will you take?
