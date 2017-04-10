@@ -109,7 +109,7 @@ What would you like to eat?
                     scenario_type="19">You pick up a luke-warm green parcel and take a bite.
 Brussel sprouts is of one of the two staple foods in Plex.
 While you chew on the tasteless, leafy substance, an elderly Android approaches you.
-&quot;Are you enjoying that?&quot; he asks.
+"Are you enjoying that?" he asks.
                 </Scenario>
                 <Choice
                     action="Yes"
@@ -125,14 +125,14 @@ You continue eating your brussel sprouts, wondering if you have done anything wr
                     action_type="5">
                     <Scenario
                         scenario_type="2">The elderly Android lights up.
-&quot;There was a time when sweet confectioneries and delicious treats were in abundance!&quot; he says.
-&quot;Come with me&quot; he whispers, as he hurries out of the cafeteria with surprising speed.
+"There was a time when sweet confectioneries and delicious treats were in abundance!" he says.
+"Come with me" he whispers, as he hurries out of the cafeteria with surprising speed.
 You follow him across the common area, through various alleyways and arrive at a small trapdoor.
 You crouch, step through and work your way down a small spiral of stairs into a dimly-lit room.
 You find the elderly Android standing in the centre of the room, pointing at six markings etched on the floor.
 They include a cylindrical shape, four thin bars and a small, badly-drawn oval.
-&quot;These drawings depict half of the sweet treats enjoyed by Androids many clock cycles ago&quot; he says.
-&quot;Would you like to taste them for yourself?&quot;
+"These drawings depict half of the sweet treats enjoyed by Androids many clock cycles ago" he says.
+"Would you like to taste them for yourself?"
                     </Scenario>
                     <Choice
                         action="No thanks"
@@ -148,7 +148,7 @@ A mixture of confusion and intrigue runs through your CPU as you slowly walk awa
                         action_type="1">
                         <Scenario
                             scenario_type="8">The elderly Android grins.
-&quot;I can offer one of my possessions to assist you on your sugary journey&quot; he says.
+"I can offer one of my possessions to assist you on your sugary journey" he says.
 You wonder where you will be journeying to and how you will get there, but the excitement of it all overwhelms you.
 He holds out his hand, ushering you to choose one of three items.
 Which one will you take?
@@ -161,16 +161,62 @@ Which one will you take?
 Suddenly, you feel a magnetic pull as the floor seems to sink beneath your feet.
 You catch a glimpse of the elderly Android waving goodbye as a blinding light engulfs you.
 Before you can say 'Nexus' you land on a grassy patch of land, your image sensors adjusting back to normal light.
-&quot;Where am I?&quot; you wonder.
+"Where am I?" you wonder.
 The general topography of the area feels familiar yet different, almost as if you have gone back in time.
 You snap out of it and remember that your goal is to locate the sweet treats the elderly Android spoke of.
 To your left lies a path that leads into a thick maze of trees.
 To your right you notice a young Android dressed in unfamiliar clothes.
 What will you do?
                             </Scenario>
-                            <!-- Walk down path -->
-                            <!-- Approach young Android -->
-                            <Finish/>
+                            <Choice
+                                action="Walk down path"
+                                action_type="17">
+                                <Scenario
+                                    scenario_type="23">You venture down the path, the foliage growing denser with every step.
+At one point, you notice the floor crunch beneath your feet.
+You find this a bit odd as the ground appears to be soft, due to the layers of leaves and mud.
+At one point, the crunching sound is very audible.
+You peer down and notice that specks of dark brown and white nestled between the grass.
+The specks appears to lead in to a small opening in the trees.
+Will you follow them?
+                                </Scenario>
+                                <!-- No, carry on -->
+                                <!-- Yes -->
+                                <Finish/>
+                            </Choice>
+                            <Choice
+                                action="Approach Android"
+                                action_type="18">
+                                <Scenario scenario_type="10">You cautiously approach the young Android.
+She turns around, startled but seemingly happy to see you.
+"Hello! Who are you?" she says.
+"I'm Andy" you reply.
+You notice she is holding a small white container, holding a smooth substance that points up from the top.
+"I've brought this along to enjoy, but I have nothing to eat it with" she declares.
+"I'd offer you some if that weren't the case".
+What will you do?
+                                </Scenario>
+                                <Choice
+                                    action="Use the spoon"
+                                    action_type="27">
+                                    <Scenario
+                                        scenario_type="1">You present the spoon and the young Android smiles.
+"Here we go, have the first taste" she says, holding up the container.
+You take a scoop of the glossy substance place it in your mouth.
+It's cold, creamy and sweet.
+It's delicious, and unlike anything you have tasted before.
+You have found the Froyo treat!
+As you finish savouring on it, you feel the same magnetic pull that brought you to this place.
+With a bright flash of light, you are pulled away and thrown back in to Plex.
+Upon arrival, you seem to have only cached a vague memory of your adventure.
+"Did that really happen?" you wonder.
+Unsure of it all, you decide to relax for now and think on it over lunch.
+You put on your Daydream headset...
+                                    </Scenario>
+                                    <Achieve achievement_name="Froyo"/>
+                                    <Finish/>
+                                </Choice>
+                            </Choice>
                         </Choice>
                         <Choice
                             action="Charging cable"
@@ -180,7 +226,7 @@ What will you do?
 Suddenly, you feel a magnetic pull as the floor seems to sink beneath your feet.
 You catch a glimpse of the elderly Android waving goodbye as a blinding light engulfs you.
 Before you can say 'Pixel' you land in what appears to be a small village.
-&quot;What is this place?&quot; you wonder.
+"What is this place?" you wonder.
 The general topography of the area feels familiar yet different, almost as if you have gone back in time.
 You snap out of it and remember that your goal is to locate the sweet treats the elderly Android spoke of.
 To your surprise you notice an angry-looking Android running towards you!
@@ -198,7 +244,7 @@ What will you do?
 Suddenly, you feel a magnetic pull as the floor seems to sink beneath your feet.
 You catch a glimpse of the elderly Android waving goodbye as a blinding light engulfs you.
 Before you can say 'Galaxy' you land with a splash in a rapid river.
-&quot;Help!&quot; you yell with all of your speakers' might, but there is no one in sight.
+"Help!" you yell with all of your speakers' might, but there is no one in sight.
 You calm down and remember that your goal is to locate the sweet treats the elderly Android spoke of.
 Realising you need to act fast, you notice a patch of reeds between yourself and the river bank.
 What will you do?
@@ -217,7 +263,7 @@ What will you do?
                     scenario_type="19">You take a spoonful.
 Porridge is one of the two staple foods in Plex.
 While you chew on the tasteless, gooey substance, an elderly Android approaches you.
-&quot;Are you enjoying that?&quot; he asks.
+"Are you enjoying that?" he asks.
                 </Scenario>
                 <Choice
                     action="Yes"
@@ -233,15 +279,15 @@ You continue eating your porridge, wondering if you have done anything wrong.
                     action_type="5">
                     <Scenario
                         scenario_type="2">The elderly Android lights up.
-&quot;There was a time when sweet confectioneries and delicious treats were in abundance!&quot; he says.
-&quot;Come with me&quot; he whispers, as he hurries out of the cafeteria with surprising speed.
+"There was a time when sweet confectioneries and delicious treats were in abundance!" he says.
+"Come with me" he whispers, as he hurries out of the cafeteria with surprising speed.
 You follow him across the common area, through various alleyways and arrive at a small, run-down building.
 You step through the open door.
 The room is empty.
 You find the elderly Android standing next to a dusty wall, pointing at six markings on its surface.
 They include some kind of ring, a hexagonal structure and what appears to be a small figure.
-&quot;These drawings depict half of the sweet treats enjoyed by Androids many clock cycles ago&quot; he says.
-&quot;Do you want to experience their sugary goodness?&quot;
+"These drawings depict half of the sweet treats enjoyed by Androids many clock cycles ago" he says.
+"Do you want to experience their sugary goodness?"
                     </Scenario>
                     <Choice
                         action="No ways"
@@ -257,7 +303,7 @@ A mixture of confusion and intrigue runs through your CPU as you slowly walk awa
                         action_type="1">
                         <Scenario
                             scenario_type="8">The elderly Android grins.
-&quot;You tasty journey will not be easy, but I am willing to part ways with one of my possessions&quot; he says.
+"You tasty journey will not be easy, but I am willing to part ways with one of my possessions" he says.
 You wonder where you will be journeying to and how you will get there, but the excitement of it all overwhelms you.
 He holds out his hand, ushering you to choose one of three items.
 Which one will you take?
@@ -270,7 +316,7 @@ Which one will you take?
 Suddenly, you feel a magnetic pull as the walls seems close in on you.
 You catch a glimpse of the elderly Android waving goodbye as a blinding light engulfs you.
 Before you can say 'Optimus' you land in a rocky cave with very little light.
-&quot;What is this?&quot; you wonder.
+"What is this?" you wonder.
 You come to your senses and remember that your goal is to locate the sweet treats the elderly Android spoke of.
 You see a small, metal device device on the floor and pick it up.
 You notice it has two small openings on the top.
@@ -288,7 +334,7 @@ What will you do?
 Suddenly, you feel a magnetic pull as the walls seems close in on you.
 You catch a glimpse of the elderly Android waving goodbye as a blinding light engulfs you.
 Before you can say 'Xperia' you land on a snowy slope, a blizzard howling around you.
-You let out an audible &quot;Brrr&quot; as your thermometer begins to drop.
+You let out an audible "Brrr" as your thermometer begins to drop.
 You try to ignore the temperature and remember that your goal is to locate the sweet treats the elderly Android spoke of.
 Thankfully, your boots prevent you from slipping on the ice and allow you to move around.
 The slope looks like a challenging climb, but it's not impossible.
@@ -325,7 +371,7 @@ What will you do?
                 scenario_type="5">The bicycle begins to slow down rapidly as the rider hastily applies the breaks.
 It stops just before you and the owner is not impressed.
 The Android huffs and rides away.
-&quot;That was close&quot; you mutter out loud, wondering how you could have handled the situation better.
+"That was close" you mutter out loud, wondering how you could have handled the situation better.
 You decide to get back to Daydreaming in order to stop thinking about it.
             </Scenario>
             <Finish/>
