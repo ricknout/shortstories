@@ -1,5 +1,7 @@
 package com.nickrout.shortstories.model;
 
+import android.text.TextUtils;
+
 import com.nickrout.shortstories.model.type.ActionType;
 import com.nickrout.shortstories.model.type.ScenarioType;
 
@@ -44,7 +46,7 @@ public class Choice {
     }
 
     public String getScenario() {
-        return mScenario == null ?
+        return mScenario == null || TextUtils.isEmpty(mScenario.scenario) ?
                 null : mScenario.scenario.trim();
     }
 
