@@ -24,7 +24,7 @@ Rumours of a mysterious thirteenth treat begin to appear as your story unfolds..
     <Achievement name="Nougat"/>
     <Achievement name="O"/>
 
-    <!-- General requirements -->
+    <!-- General requirements: -->
     <!-- Sub-choices should not exceed an amount of 3 (as per App Shortcuts limit of 4 requirement, 1 reserved for 'Show scenario' -->
     <!-- Choice actions should be <= 25 characters in length (due to App Shortcuts limits) -->
     <!-- Provide a valid action_type for each Action, and a valid scenario_type for each Scenario (see below) -->
@@ -555,7 +555,7 @@ You have found the Lollipop treat!
 As you finish savouring on it, you feel the same magnetic pull that brought you to this place.
 With a bright flash of light, you are pulled away and thrown back in to Plex.
 Upon arrival, you seem to have only cached a vague memory of your adventure.
-"Strange..." you think.
+"Interesting..." you think.
 Unsure of it all, you decide to relax for now and postpone thinking about it until lunch time.
 You put on your Daydream headset...
                                     </Scenario>
@@ -612,9 +612,72 @@ Thankfully, your boots prevent you from slipping on the ice and allow you to mov
 The slope looks like a challenging climb, but it's not impossible.
 What will you do?
                             </Scenario>
-                            <!-- Climb -->
-                            <!-- Clear the snow -->
-                            <Finish/>
+                            <Choice
+                                action="Climb"
+                                action_type="10">
+                                <Scenario
+                                    scenario_type="17">The boots come in handy as you traverse up the slope.
+It seems like an eternity but you manage to reach a plateau where you notice a large cube of ice and a pick axe lying next to it.
+Inside the cube, you spot a vague outline of an item, brown and white in color.
+"What is that?" you wonder.
+What will you do?
+                                </Scenario>
+                                <Choice
+                                    action="Dig!"
+                                    action_type="9">
+                                    <Scenario
+                                        scenario_type="1">You pick up the axe and begin to chip away at the surface.
+It takes a long time but you are compelled to get to the item at the centre.
+You reach it and it falls from the cube, on to the snow.
+You pick it up and notice a frozen white substance nestled between two brown, pitted layers.
+You're exhausted and, somehow, the item seems edible.
+You sink your teeth in to it, despite how cold it is.
+It's cold, creamy, and sweet with a chewy outer layer.
+You have found the Ice Cream Sandwich treat!
+
+As you finish savouring on it, you feel the same magnetic pull that brought you to this place.
+With a bright flash of light, you are pulled away and thrown back in to Plex.
+Upon arrival, you seem to have only cached a vague memory of your adventure.
+"That's odd" you mumble.
+Unsure of it all, you decide to relax for now and postpone thinking about it until lunch time.
+You put on your Daydream headset...
+                                    </Scenario>
+                                    <Achieve achievement_name="Ice Cream Sandwich"/>
+                                    <Finish/>
+                                </Choice>
+                            </Choice>
+                            <Choice
+                                action="Clear the snow"
+                                action_type="13">
+                                <Scenario
+                                    scenario_type="8">You decide to clear the immediate snow around you to build a bunker to shelter you.
+You dig and dig, almost endlessly, but you eventually form some kind of a shelter.
+On your last scoop of snow, your hand hits a wooden surface.
+Your energy rejuvenated by intrigue, you keep digging and unearth a small box.
+What will you do?
+                                </Scenario>
+                                <Choice
+                                    action="Open the box"
+                                    action_type="9">
+                                    <Scenario
+                                        scenario_type="1">Inside the box you find two cylindrical objects, one a light pink and the other white.
+They remind you of clouds and they feel soft to the touch.
+All this digging in the cold has made you hungry.
+Without thinking, you pop one of the objects in to your mouth.
+It's soft, fluffy, and sweet.
+You have found the Marshmallow treat!
+
+As you finish savouring on it, you feel the same magnetic pull that brought you to this place.
+With a bright flash of light, you are pulled away and thrown back in to Plex.
+Upon arrival, you seem to have only cached a vague memory of your adventure.
+"I wonder..." you mumble.
+Unsure of it all, you decide to relax for now and postpone thinking about it until lunch time.
+You put on your Daydream headset...
+                                    </Scenario>
+                                    <Achieve achievement_name="Marshmallow"/>
+                                    <Finish/>
+                                </Choice>
+                            </Choice>
                         </Choice>
                         <Choice
                             action="Bottle of water"
