@@ -359,7 +359,7 @@ She points at them.
                                         scenario_type="1">She holds up a NFC pad and you tap your watch on it, transferring some credits.
 She hands you one of the objects.
 You find the Android shape strange, but the aroma is enticing and you bite in to it.
-It's crunchy, fruity, and sweet with an melts in your mouth.
+It's crunchy, fruity, and sweet and melts in your mouth.
 It's delicious, and unlike anything you have tasted before.
 You have found the Gingerbread treat!
 As you finish savouring on it, you feel the same magnetic pull that brought you to this place.
@@ -387,9 +387,80 @@ You calm down and remember that your goal is to locate the sweet treats the elde
 Realising you need to act fast, you notice a patch of reeds between yourself and the river bank.
 What will you do?
                             </Scenario>
-                            <!-- Use the rope -->
-                            <!-- Keep floating -->
-                            <Finish/>
+                            <Choice
+                                action="Use the rope"
+                                action_type="27">
+                                <Scenario
+                                    scenario_type="11">You untie the rope from your waist and sling it towards the reeds.
+Luckily, they latch on and hold tight.
+You pull yourself towards the river bank, exhausted and drenched in water.
+You take a look back at the reeds and notice they are uniform in shape and texture.
+"I must be imagining things" you mutter, but you have a nagging suspicion.
+What will you do?
+                                </Scenario>
+                                <Choice
+                                    action="Take one"
+                                    action_type="15">
+                                    <Scenario
+                                        scenario_type="1">You were right!
+You quickly notice that it is certainly not a reed.
+The outside is brown and glossy, with writing - in a language you don't recognise - engraved in the surface.
+The inside is appears dry and almost hollow.
+Your exhaustion has lead to hunger and you decide to take a bite.
+It's crispy, chocolaty, and sweet.
+It's delicious, and unlike anything you have tasted before.
+You have found the KitKat treat!
+As you finish savouring on it, you feel the same magnetic pull that brought you to this place.
+With a bright flash of light, you are pulled away and thrown back in to Plex.
+Upon arrival, you seem to have only cached a vague memory of your adventure.
+"I must be going crazy" you think.
+Unsure of it all, you decide to relax for now and postpone thinking about it until lunch time.
+You put on your Daydream headset...
+                                    </Scenario>
+                                    <Achieve achievement_name="KitKat"/>
+                                    <Finish/>
+                                </Choice>
+                            </Choice>
+                            <Choice
+                                action="Keep floating"
+                                action_type="28">
+                                <Scenario
+                                    scenario_type="6">You have all but given up hope, when you feel yourself being lurched to the side.
+A Android has grabbed hold of you and is swimming you to the river bank.
+When you reach the side, he laughs and pats you on the back.
+"That was a close one!" he exclaims.
+"Thank you for saving me" you say, breathing a sigh of relief.
+"Is there anything I can do to repay you?"
+He scratches his head and appears to quickly make up his mind.
+He extracts a pack of cards, with markings on them you've never seen, and holds them out towards you.
+"I've been practising my magic but I don't have anyone to test it on, so pick one!" he exclaims.
+"Wanna play?"
+                                </Scenario>
+                                <Choice
+                                    action="Pick a card"
+                                    action_type="22">
+                                    <Scenario
+                                        scenario_type="1">You draw a card, being careful not to show him.
+He puts it back in to the deck, shuffles, performs some magic and extracts it.
+"Is this the one?" he asks.
+After inspecting it and seeing that it is your card, you nod, much to his enjoyment.
+"You look worn out from your river adventure" he says.
+"Here, take this" he says, offering you some kind of a puffy item wrapped in colorful paper.
+Figuring it is some kind of food, you take a bite.
+It's light, fluffy, and sweet with a sugary layer on top.
+It's delicious, and unlike anything you have tasted before.
+You have found the Cupcake treat!
+As you finish savouring on it, you feel the same magnetic pull that brought you to this place.
+With a bright flash of light, you are pulled away and thrown back in to Plex.
+Upon arrival, you seem to have only cached a vague memory of your adventure.
+"I must be going crazy" you think.
+Unsure of it all, you decide to relax for now and postpone thinking about it until lunch time.
+You put on your Daydream headset...
+                                    </Scenario>
+                                    <Achieve achievement_name="Cupcake"/>
+                                    <Finish/>
+                                </Choice>
+                            </Choice>
                         </Choice>
                     </Choice>
                 </Choice>
