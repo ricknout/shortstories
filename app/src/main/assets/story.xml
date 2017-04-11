@@ -296,12 +296,83 @@ Before you can say 'Pixel' you land in what appears to be a small village.
 "What is this place?" you wonder.
 The general topography of the area feels familiar yet different, almost as if you have gone back in time.
 You snap out of it and remember that your goal is to locate the sweet treats the elderly Android spoke of.
-To your surprise you notice an angry-looking Android running towards you!
+To your surprise you notice an angry-looking Android, wielding his fists, running towards you!
 What will you do?
                             </Scenario>
-                            <!-- Use the rope -->
-                            <!-- Keep floating -->
-                            <Finish/>
+                            <Choice
+                                action="Stand your ground"
+                                action_type="4">
+                                <Scenario
+                                    scenario_type="17">The Android slows down as he approaches you, his expression turning from angry to sheepish and his fists lowering.
+"Ummm, my job is to defend this village" he stutters.
+"I thought you would be afraid."
+Although you were startled, you admit to him that he is not very scary.
+You strike up a conversation and learn that the village has become quite hostile as a result of the main energy unit having failed.
+The inhabitants are without power and it has made them frustrated.
+He shows you the energy unit, a large Lithium-ion battery.
+You notice that the main cable is bent and frayed towards the base.
+Can you fix it?
+                                </Scenario>
+                                <Choice
+                                    action="Use charging cable"
+                                    action_type="11">
+                                    <Scenario
+                                        scenario_type="1">The charging cable is perfect for patching the energy unit.
+The battery hums and lights tinkle as the energy flows through the village.
+You hear cries of delight all around you and you receive an overwhelming hug from the Android.
+"Please, take this, it is the least I can offer for restoring our energy" he says.
+He hands you a light-colored item with a cuboid shape, a bit sticky and surprisingly light.
+There appear to be items embedded in it
+You decide to take a bite.
+It's light, chewy, and sweet with an occasional nutty crunch.
+It's delicious, and unlike anything you have tasted before.
+You have found the Nougat treat!
+As you finish savouring on it, you feel the same magnetic pull that brought you to this place.
+With a bright flash of light, you are pulled away and thrown back in to Plex.
+Upon arrival, you seem to have only cached a vague memory of your adventure.
+"What was that?" you wonder.
+Unsure of it all, you decide to relax for now and postpone thinking about it until lunch time.
+You put on your Daydream headset...
+                                    </Scenario>
+                                    <Achieve achievement_name="Nougat"/>
+                                    <Finish/>
+                                </Choice>
+                            </Choice>
+                            <Choice
+                                action="Attack!"
+                                action_type="2">
+                                <Scenario
+                                    scenario_type="18">You run towards the Android but, to your surprise, he turns around in fear and runs in the opposite direction.
+Perplexed, you stand next to a small village hut and decide to inspect your surroundings.
+You don't get very far until an elderly female Android emerges from the hut and confronts you.
+She ushers you to come inside.
+A rich aroma fills your smell sensors.
+She points towards a table on which fifty or so small, Android-shaped objects are laid down.
+They are flat and a golden-brown color.
+She points at them.
+"Would you like to buy one?" she asks.
+                                </Scenario>
+                                <Choice
+                                    action="Yes please"
+                                    action_type="3">
+                                    <Scenario
+                                        scenario_type="1">She holds up a NFC pad and you tap your watch on it, transferring some credits.
+She hands you one of the objects.
+You find the Android shape strange, but the aroma is enticing and you bite in to it.
+It's crunchy, fruity, and sweet with an melts in your mouth.
+It's delicious, and unlike anything you have tasted before.
+You have found the Gingerbread treat!
+As you finish savouring on it, you feel the same magnetic pull that brought you to this place.
+With a bright flash of light, you are pulled away and thrown back in to Plex.
+Upon arrival, you seem to have only cached a vague memory of your adventure.
+"What on Plex..." you wonder.
+Unsure of it all, you decide to relax for now and postpone thinking about it until lunch time.
+You put on your Daydream headset...
+                                    </Scenario>
+                                    <Achieve achievement_name="Gingerbread"/>
+                                    <Finish/>
+                                </Choice>
+                            </Choice>
                         </Choice>
                         <Choice
                             action="Rope"
