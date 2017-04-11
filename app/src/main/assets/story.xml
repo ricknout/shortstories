@@ -76,20 +76,21 @@ Rumours of a mysterious thirteenth treat begin to appear as your story unfolds..
         8 - Item
         9 - Meal
         10 - Meeting
-        11 - Numeric
-        12 - Offer
-        13 - Preparation
-        14 - Problem
-        15 - Puzzle
-        16 - Requirement
-        17 - Transaction
-        18 - Unhappy
-        19 - Yes No
+        11 - Neutral
+        12 - Numeric
+        13 - Offer
+        14 - Preparation
+        15 - Problem
+        16 - Puzzle
+        17 - Requirement
+        18 - Transaction
+        19 - Unhappy
+        20 - Yes No
     -->
 
     <Choice>
         <Scenario
-            scenario_type="14">While immersed in a Daydream, a distant chime catches your attention.
+            scenario_type="15">While immersed in a Daydream, a distant chime catches your attention.
 The sound rings again, this time louder and more urgent.
 You lift up your headset to see a colorful bicycle whizzing towards you!
         </Scenario>
@@ -106,7 +107,7 @@ What would you like to eat?
                 action="Brussel sprouts"
                 action_type="8">
                 <Scenario
-                    scenario_type="19">You pick up a luke-warm green parcel and take a bite.
+                    scenario_type="20">You pick up a luke-warm green parcel and take a bite.
 Brussel sprouts is of one of the two staple foods in Plex.
 While you chew on the tasteless, leafy substance, an elderly Android approaches you.
 "Are you enjoying that?" he asks.
@@ -184,7 +185,7 @@ What will you do?
                                     action="Proceed on path"
                                     action_type="23">
                                     <Scenario
-                                        scenario_type="18">As you reach the end of the path, a humming sound grows gradually louder.
+                                        scenario_type="19">As you reach the end of the path, a humming sound grows gradually louder.
 Something buzzes past your ear.
 You have a strong dislike for bugs.
 "I'm lost" you mutter, noticing a dead end in front of you.
@@ -220,7 +221,7 @@ You put on your Daydream headset...
                                     action="Follow them"
                                     action_type="14">
                                     <Scenario
-                                        scenario_type="15">You approach the small opening in the trees.
+                                        scenario_type="16">You approach the small opening in the trees.
 You lean down, placing your hand next to the opening in order to peer in.
 The plants give way and your lose your balance, falling into a small, hollow clearing.
 Geometric shapes arranged in a circular pattern are marked on the muddy ground.
@@ -306,7 +307,7 @@ What will you do?
                             action="Rope"
                             action_type="21">
                             <Scenario
-                                scenario_type="14">You tie the rope around your waist, wondering what it could be used for.
+                                scenario_type="15">You tie the rope around your waist, wondering what it could be used for.
 Suddenly, you feel a magnetic pull as the floor seems to sink beneath your feet.
 You catch a glimpse of the elderly Android waving goodbye as a blinding light engulfs you.
 Before you can say 'Galaxy' you land with a splash in a rapid river.
@@ -326,7 +327,7 @@ What will you do?
                 action="Porridge"
                 action_type="8">
                 <Scenario
-                    scenario_type="19">You take a spoonful.
+                    scenario_type="20">You take a spoonful.
 Porridge is one of the two staple foods in Plex.
 While you chew on the tasteless, gooey substance, an elderly Android approaches you.
 "Are you enjoying that?" he asks.
@@ -379,7 +380,7 @@ Which one will you take?
                             action="LED bulb"
                             action_type="19">
                             <Scenario
-                                scenario_type="15">You stash the LED bulb, wondering what it could be used for.
+                                scenario_type="16">You stash the LED bulb, wondering what it could be used for.
 Suddenly, you feel a magnetic pull as the walls seems close in on you.
 You catch a glimpse of the elderly Android waving goodbye as a blinding light engulfs you.
 Before you can say 'Optimus' you land in a rocky cave with very little light.
@@ -415,7 +416,7 @@ What will you do?
                             action="Bottle of water"
                             action_type="21">
                             <Scenario
-                                scenario_type="13">You tuck away the button, unsure of its significance.
+                                scenario_type="14">You tuck away the button, unsure of its significance.
 Suddenly, you feel a magnetic pull as the walls seems close in on you.
 You catch a glimpse of the elderly Android waving goodbye as a blinding light engulfs you.
 Before you can say 'OnePlus' you land in the centre of a field.
