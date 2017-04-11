@@ -206,6 +206,7 @@ Without thinking, you dip your finger in to one of them and taste it.
 It's floral, sticky and sweet.
 It's delicious, and unlike anything you have tasted before.
 You have found the Honeycomb treat!
+
 As you finish savouring on it, you feel the same magnetic pull that brought you to this place.
 With a bright flash of light, you are pulled away and thrown back in to Plex.
 Upon arrival, you seem to have only cached a vague memory of your adventure.
@@ -239,6 +240,7 @@ You extract one and feel compelled to take a bite.
 It's chocolaty, crunchy and sweet.
 It's delicious, and unlike anything you have tasted before.
 You have found the mysterious 'O' treat!
+
 As you finish savouring on it, you feel the same magnetic pull that brought you to this place.
 With a bright flash of light, you are pulled away and thrown back in to Plex.
 Upon arrival, you seem to have only cached a vague memory of your adventure.
@@ -273,6 +275,7 @@ You take a scoop of the glossy substance place it in your mouth.
 It's cold, creamy and sweet.
 It's delicious, and unlike anything you have tasted before.
 You have found the Froyo treat!
+
 As you finish savouring on it, you feel the same magnetic pull that brought you to this place.
 With a bright flash of light, you are pulled away and thrown back in to Plex.
 Upon arrival, you seem to have only cached a vague memory of your adventure.
@@ -327,6 +330,7 @@ You decide to take a bite.
 It's light, chewy, and sweet with an occasional nutty crunch.
 It's delicious, and unlike anything you have tasted before.
 You have found the Nougat treat!
+
 As you finish savouring on it, you feel the same magnetic pull that brought you to this place.
 With a bright flash of light, you are pulled away and thrown back in to Plex.
 Upon arrival, you seem to have only cached a vague memory of your adventure.
@@ -362,6 +366,7 @@ You find the Android shape strange, but the aroma is enticing and you bite in to
 It's crunchy, fruity, and sweet and melts in your mouth.
 It's delicious, and unlike anything you have tasted before.
 You have found the Gingerbread treat!
+
 As you finish savouring on it, you feel the same magnetic pull that brought you to this place.
 With a bright flash of light, you are pulled away and thrown back in to Plex.
 Upon arrival, you seem to have only cached a vague memory of your adventure.
@@ -410,6 +415,7 @@ Your exhaustion has lead to hunger and you decide to take a bite.
 It's crispy, chocolaty, and sweet.
 It's delicious, and unlike anything you have tasted before.
 You have found the KitKat treat!
+
 As you finish savouring on it, you feel the same magnetic pull that brought you to this place.
 With a bright flash of light, you are pulled away and thrown back in to Plex.
 Upon arrival, you seem to have only cached a vague memory of your adventure.
@@ -450,6 +456,7 @@ Figuring it is some kind of food, you take a bite.
 It's light, fluffy, and sweet with a sugary layer on top.
 It's delicious, and unlike anything you have tasted before.
 You have found the Cupcake treat!
+
 As you finish savouring on it, you feel the same magnetic pull that brought you to this place.
 With a bright flash of light, you are pulled away and thrown back in to Plex.
 Upon arrival, you seem to have only cached a vague memory of your adventure.
@@ -532,9 +539,73 @@ You see a small, metal device device on the floor and pick it up.
 You notice it has two small openings on the top.
 What will you do?
                             </Scenario>
-                            <!-- Insert LED -->
-                            <!-- Continue into cave -->
-                            <Finish/>
+                            <Choice
+                                action="Insert LED"
+                                action_type="13">
+                                <Scenario
+                                    scenario_type="7">To your delight, the device fills the cave with bright light.
+You look around you and notice that strangely-shaped stalactites hang from the ceiling.
+They're long and thin, with spheres of all different colors on their ends.
+They are peculiar but intriguing.
+What will you do?
+                                </Scenario>
+                                <Choice
+                                    action="Break one off"
+                                    action_type="9">
+                                    <Scenario
+                                        scenario_type="1">The object is strangely symmetrical, almost as if it had been hand-crafted.
+It's not rocky, like your surroundings, but glossy and semi-transparent.
+Something compels you to taste it.
+It's fruity and sweet.
+It's delicious, and unlike anything you have tasted before.
+You have found the Lollipop treat!
+
+As you finish savouring on it, you feel the same magnetic pull that brought you to this place.
+With a bright flash of light, you are pulled away and thrown back in to Plex.
+Upon arrival, you seem to have only cached a vague memory of your adventure.
+"Strange..." you think.
+Unsure of it all, you decide to relax for now and postpone thinking about it until lunch time.
+You put on your Daydream headset...
+                                    </Scenario>
+                                    <Achieve achievement_name="Lollipop"/>
+                                    <Finish/>
+                                </Choice>
+                            </Choice>
+                            <Choice
+                                action="Continue"
+                                action_type="23">
+                                <Scenario
+                                    scenario_type="20">The cave is dark and you are barely getting anywhere.
+On top of that, you are quite hungry.
+With no light, you do not have many options.
+What will you do?
+                                </Scenario>
+                                <Choice
+                                    action="Feel around"
+                                    action_type="14">
+                                    <Scenario
+                                        scenario_type="1">You place your hand on the floor in the hope of finding something useful.
+Alas, you find only cave pebbles.
+You hold them in your hand, struggling to come up with any more ideas.
+Strangely, the pebbles seem to be softening in your hands.
+You lift up your hand and a sweet aroma catches your senses.
+"What are these?" you wonder.
+Without thinking, you pop one in your mouth.
+It's fruity, chewy, and sweet with a sour zing.
+It's delicious, and unlike anything you have tasted before.
+You have found the Jelly Bean treat!
+
+As you finish savouring on it, you feel the same magnetic pull that brought you to this place.
+With a bright flash of light, you are pulled away and thrown back in to Plex.
+Upon arrival, you seem to have only cached a vague memory of your adventure.
+"Strange..." you think.
+Unsure of it all, you decide to relax for now and postpone thinking about it until lunch time.
+You put on your Daydream headset...
+                                    </Scenario>
+                                    <Achieve achievement_name="Jelly Bean"/>
+                                    <Finish/>
+                                </Choice>
+                            </Choice>
                         </Choice>
                         <Choice
                             action="A pair of boots"
