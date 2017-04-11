@@ -204,7 +204,6 @@ The yellow glow of the room calms your nerves and you decide to inspect them.
 Each hexagon appears to hold a thick, golden liquid.
 Without thinking, you dip your finger in to one of them and taste it.
 It's floral, sticky and sweet.
-It's delicious, and unlike anything you have tasted before.
 You have found the Honeycomb treat!
 
 As you finish savouring on it, you feel the same magnetic pull that brought you to this place.
@@ -238,7 +237,6 @@ What will you do next?
 You notice disc-like items in the jar, each dark brown in color with a milky white centre.
 You extract one and feel compelled to take a bite.
 It's chocolaty, crunchy and sweet.
-It's delicious, and unlike anything you have tasted before.
 You have found the mysterious 'O' treat!
 
 As you finish savouring on it, you feel the same magnetic pull that brought you to this place.
@@ -273,7 +271,6 @@ What will you do?
 "Here we go, have the first taste" she says, holding up the container.
 You take a scoop of the glossy substance place it in your mouth.
 It's cold, creamy and sweet.
-It's delicious, and unlike anything you have tasted before.
 You have found the Froyo treat!
 
 As you finish savouring on it, you feel the same magnetic pull that brought you to this place.
@@ -328,7 +325,6 @@ He hands you a light-colored item with a cuboid shape, a bit sticky and surprisi
 There appear to be items embedded in it
 You decide to take a bite.
 It's light, chewy, and sweet with an occasional nutty crunch.
-It's delicious, and unlike anything you have tasted before.
 You have found the Nougat treat!
 
 As you finish savouring on it, you feel the same magnetic pull that brought you to this place.
@@ -364,7 +360,6 @@ She points at them.
 She hands you one of the objects.
 You find the Android shape strange, but the aroma is enticing and you bite in to it.
 It's crunchy, fruity, and sweet and melts in your mouth.
-It's delicious, and unlike anything you have tasted before.
 You have found the Gingerbread treat!
 
 As you finish savouring on it, you feel the same magnetic pull that brought you to this place.
@@ -413,7 +408,6 @@ The outside is brown and glossy, with writing - in a language you don't recognis
 The inside is appears dry and almost hollow.
 Your exhaustion has lead to hunger and you decide to take a bite.
 It's crispy, chocolaty, and sweet.
-It's delicious, and unlike anything you have tasted before.
 You have found the KitKat treat!
 
 As you finish savouring on it, you feel the same magnetic pull that brought you to this place.
@@ -454,7 +448,6 @@ After inspecting it and seeing that it is your card, you nod, much to his enjoym
 "Here, take this" he says, offering you some kind of a puffy item wrapped in colorful paper.
 Figuring it is some kind of food, you take a bite.
 It's light, fluffy, and sweet with a sugary layer on top.
-It's delicious, and unlike anything you have tasted before.
 You have found the Cupcake treat!
 
 As you finish savouring on it, you feel the same magnetic pull that brought you to this place.
@@ -557,7 +550,6 @@ What will you do?
 It's not rocky, like your surroundings, but glossy and semi-transparent.
 Something compels you to taste it.
 It's fruity and sweet.
-It's delicious, and unlike anything you have tasted before.
 You have found the Lollipop treat!
 
 As you finish savouring on it, you feel the same magnetic pull that brought you to this place.
@@ -592,7 +584,6 @@ You lift up your hand and a sweet aroma catches your senses.
 "What are these?" you wonder.
 Without thinking, you pop one in your mouth.
 It's fruity, chewy, and sweet with a sour zing.
-It's delicious, and unlike anything you have tasted before.
 You have found the Jelly Bean treat!
 
 As you finish savouring on it, you feel the same magnetic pull that brought you to this place.
@@ -637,9 +628,74 @@ You can barely see past the tops of the beige-colored plants.
 You remember that your goal is to locate the sweet treats the elderly Android spoke of, but you are rather fatigued.
 What will you do?
                             </Scenario>
-                            <!-- Rest -->
-                            <!-- Drink water -->
-                            <Finish/>
+                            <Choice
+                                action="Rest"
+                                action_type="24">
+                                <Scenario
+                                    scenario_type="13">You doze off almost instantly and wake up some time after, feeling revitalised.
+You notice you are not alone in the field.
+A few other Androids dressed in denim are walking around, gathering the dried plants surrounding you.
+You wave at one of them and he makes his way towards you.
+"Howdy, partner" he exclaims.
+After a fair bit of conversation, you determine he comes from a family of 'bakers' (a word you have never heard of).
+"How about a sample of our goods?" he asks.
+                                </Scenario>
+                                <Choice
+                                    action="Sure"
+                                    action_type="1">
+                                    <Scenario
+                                        scenario_type="1">He reaches in to his backpack and pulls out a cardboard carton.
+He opens it up and you take a look inside.
+You see 6 ring-shaped items, each with a glossy shell covering their tops.
+"Well, go ahead" he says.
+You don't hesitate to grab a pink-colored one and take a mouthful.
+It's warm, doughy, and sweet.
+You have found the Donut treat!
+
+As you finish savouring on it, you feel the same magnetic pull that brought you to this place.
+With a bright flash of light, you are pulled away and thrown back in to Plex.
+Upon arrival, you seem to have only cached a vague memory of your adventure.
+"Huh, weird" you think.
+Unsure of it all, you decide to relax for now and postpone thinking about it until lunch time.
+You put on your Daydream headset...
+                                    </Scenario>
+                                    <Achieve achievement_name="Donut"/>
+                                    <Finish/>
+                                </Choice>
+                            </Choice>
+                            <Choice
+                                action="Drink water"
+                                action_type="7">
+                                <Scenario
+                                    scenario_type="10">The water provides you with some much-needed energy.
+You notice a thin wisp of smoke in the distance and decide to walk towards it.
+You find that the source of the smoke is a small, stone house with a sign on it that reads "The Bakers".
+Intrigued by this strange word, you enter the house.
+An Android is sitting at a table, engrossed in a task involving a large, white funnel from which she is piping a strange mixture.
+"Hi there" she says as she looks up.
+"These are fresh out of the oven, would you like to buy one?"
+                                </Scenario>
+                                <Choice
+                                    action="Yeah!"
+                                    action_type="3">
+                                    <Scenario
+                                        scenario_type="1">She hands you an item that appears to be holding the same substance she was piping.
+There is a thin, brown shell on the top of it, which cracks as you take it in yiur hand.
+It looks enticing, so you bite in to it.
+It's creamy, chocolaty, and sweet with a doughy consistency.
+You have found the Eclair treat!
+
+As you finish savouring on it, you feel the same magnetic pull that brought you to this place.
+With a bright flash of light, you are pulled away and thrown back in to Plex.
+Upon arrival, you seem to have only cached a vague memory of your adventure.
+"That can't be real" you think.
+Unsure of it all, you decide to relax for now and postpone thinking about it until lunch time.
+You put on your Daydream headset...
+                                    </Scenario>
+                                    <Achieve achievement_name="Eclair"/>
+                                    <Finish/>
+                                </Choice>
+                            </Choice>
                         </Choice>
                     </Choice>
                 </Choice>
