@@ -2,6 +2,8 @@
 
 ## Interactive stories told through App Shortcuts and Notifications
 
+![Alt text](art/screenshots.png?raw=true "Screenshots")
+
 ShortStories provides a platform to play text-based games using the various elements of the Android System UI:
 
 • <b>Notifications indicate scenarios in a story, posing a situation in which a choice is required</b>
