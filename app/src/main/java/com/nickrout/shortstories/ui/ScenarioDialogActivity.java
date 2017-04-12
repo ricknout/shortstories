@@ -15,8 +15,16 @@ public class ScenarioDialogActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         overridePendingTransition(R.anim.scale_up_fade_in, R.anim.scale_down_fade_out);
-        String scenario = getIntent().getExtras().getString(IntentUtil.EXTRA_SCENARIO);
+        Bundle extras = getIntent().getExtras();
+        String scenario = extras.getString(IntentUtil.EXTRA_SCENARIO);
         ActivityScenarioDialogBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_scenario_dialog);
         binding.scenario.setText(scenario);
+        boolean hasAchievements = extras.getBoolean(IntentUtil.EXTRA_HAS_ACHIEVEMENTS);
+        boolean isFinish = extras.getBoolean(IntentUtil.EXTRA_IS_FINISH);
+        if (hasAchievements) {
+            setTitle(R.string.title_achievement);
+        } else if (isFinish) {
+            setTitle(R.string.title_end);
+        }
     }
 }

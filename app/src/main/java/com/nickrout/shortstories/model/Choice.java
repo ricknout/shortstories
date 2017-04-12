@@ -37,6 +37,10 @@ public class Choice {
         return finish != null;
     }
 
+    public boolean hasAchievements() {
+        return achievements != null && !achievements.isEmpty();
+    }
+
     public ActionType getActionType() {
         ActionType[] actionTypes = ActionType.values();
         if (mActionType > actionTypes.length - 1) {

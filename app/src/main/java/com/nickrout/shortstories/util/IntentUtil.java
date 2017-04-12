@@ -26,6 +26,8 @@ public class IntentUtil {
 
     public static final String EXTRA_CHOICE_XML = "choice_xml";
     public static final String EXTRA_SCENARIO = "scenario";
+    public static final String EXTRA_HAS_ACHIEVEMENTS = "has_achievements";
+    public static final String EXTRA_IS_FINISH = "is_finish";
 
     public static Intent choice(Context context, Choice choice) {
         Intent choiceIntent = new Intent(context, ChoiceActivity.class);
@@ -61,10 +63,12 @@ public class IntentUtil {
         return addShowScenarioShortcutIntent;
     }
 
-    public static Intent scenarioDialog(Context context, String scenario) {
+    public static Intent scenarioDialog(Context context, String scenario, boolean hasAchievements, boolean isFinish) {
         Intent scenarioDialogIntent = new Intent(context, ScenarioDialogActivity.class);
         scenarioDialogIntent = IntentCompat.makeRestartActivityTask(scenarioDialogIntent.getComponent());
         scenarioDialogIntent.putExtra(EXTRA_SCENARIO, scenario);
+        scenarioDialogIntent.putExtra(EXTRA_HAS_ACHIEVEMENTS, hasAchievements);
+        scenarioDialogIntent.putExtra(EXTRA_IS_FINISH, isFinish);
         return scenarioDialogIntent;
     }
 

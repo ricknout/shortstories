@@ -78,13 +78,17 @@ public class ChoiceActivity extends NoDisplayActivity {
     }
 
     private void showScenarioNotification() {
-        Intent scenarioDialogIntent = IntentUtil.scenarioDialog(this, mChoice.getScenario());
+        Intent scenarioDialogIntent = IntentUtil.scenarioDialog(
+                this, mChoice.getScenario(), mChoice.hasAchievements(), mChoice.isFinish());
         PendingIntent pendingScenarioDialogIntent = IntentUtil.makePendingIntent(this, scenarioDialogIntent);
         Intent achievementsDialogIntent = IntentUtil.achievementsDialog(this);
         PendingIntent pendingAchievementsDialogIntent = IntentUtil.makePendingIntent(this, achievementsDialogIntent);
         NotificationCompat.Builder builder = new NotificationCompat.Builder(this);
         builder.setStyle(new NotificationCompat.BigTextStyle().bigText(mChoice.getScenario()))
-                .setContentTitle(getString(R.string.title_scenario))
+                .setContentTitle(
+                        mChoice.hasAchievements() ? getString(R.string.title_achievement) :
+                        mChoice.isFinish() ? getString(R.string.title_end) :
+                                getString(R.string.title_scenario))
                 .setPriority(mNotificationPriority)
                 .setSmallIcon(R.drawable.ic_shortcuts_black_24dp)
                 .setLargeIcon(mChoice.getScenarioType().getIcon(this))
