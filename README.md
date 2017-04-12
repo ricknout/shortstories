@@ -16,6 +16,8 @@ Unique colors, icons, vibration patterns and sounds exist for different types of
 
 Stories are defined in XML. A basic structure of <b>Story</b>, <b>Choice</b>, <b>Scenario</b>, <b>Achievement</b> and <b>Finish</b> tags allows ShortStories to parse and play almost any kind of text-based, multiple choice game.
 
+[![App](art/google-play-badge.png?raw=true)](https://play.google.com/store/apps/details?id=com.nickrout.shortstories)
+
 Available on Android 7.1 (Nougat MR1) and above. Ensure that your launcher supports App Shortcuts (tested and works with Pixel Launcher, Google Now Launcher, Nova Launcher and Action Launcher).
 
 Icons sourced from <a href="https://material.io/icons">Google Material Icons</a> and <a href="https://materialdesignicons.com">Material Design Icons</a>.
