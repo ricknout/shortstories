@@ -91,7 +91,7 @@ public class ChoiceActivity extends NoDisplayActivity {
                                 getString(R.string.title_scenario))
                 .setPriority(mNotificationPriority)
                 .setSmallIcon(R.drawable.ic_shortcuts_black_24dp)
-                .setLargeIcon(mChoice.getScenarioType().getIcon(this))
+                .setLargeIcon(mChoice.getScenarioEmoji(this))
                 .setColor(mChoice.getScenarioType().getColor(this))
                 .setLights(mChoice.getScenarioType().getColor(this), TIME_NOTIFICATION_LIGHTS, TIME_NOTIFICATION_LIGHTS)
                 .setSound(mChoice.getScenarioType().getSound(this))
@@ -145,7 +145,7 @@ public class ChoiceActivity extends NoDisplayActivity {
                     .setShortLabel(choice.action)
                     .setLongLabel(choice.action)
                     .setDisabledMessage(getString(R.string.shortcut_disabled_message))
-                    .setIcon(Icon.createWithBitmap(choice.getActionType().getIcon(this)))
+                    .setIcon(Icon.createWithBitmap(choice.getActionEmoji(this)))
                     .setIntent(IntentUtil.choice(this, choice))
                     .setRank(rank)
                     .build();

@@ -1,9 +1,11 @@
 package com.nickrout.shortstories.model;
 
+import android.content.Context;
+import android.graphics.Bitmap;
 import android.text.TextUtils;
 
-import com.nickrout.shortstories.model.type.ActionType;
 import com.nickrout.shortstories.model.type.ScenarioType;
+import com.nickrout.shortstories.util.BitmapUtil;
 
 import org.simpleframework.xml.Attribute;
 import org.simpleframework.xml.Element;
@@ -18,8 +20,8 @@ public class Choice {
     @Attribute(name = "action", required = false)
     public String action;
 
-    @Attribute(name = "action_type", required = false)
-    private int mActionType;
+    @Attribute(name = "emoji", required = false)
+    private String mEmoji;
 
     @Element(name = "Scenario")
     private Scenario mScenario;
@@ -41,14 +43,6 @@ public class Choice {
         return achievements != null && !achievements.isEmpty();
     }
 
-    public ActionType getActionType() {
-        ActionType[] actionTypes = ActionType.values();
-        if (mActionType > actionTypes.length - 1) {
-            return ActionType.UNKNOWN;
-        }
-        return actionTypes[mActionType];
-    }
-
     public String getScenario() {
         return mScenario == null || TextUtils.isEmpty(mScenario.scenario) ?
                 null : mScenario.scenario.trim();
@@ -57,5 +51,13 @@ public class Choice {
     public ScenarioType getScenarioType() {
         return mScenario == null ?
                 ScenarioType.UNKNOWN : mScenario.getScenarioType();
+    }
+
+    public Bitmap getScenarioEmoji(Context context) {
+        return mScenario.getEmoji(context);
+    }
+
+    public Bitmap getActionEmoji(Context context) {
+        return BitmapUtil.getShortcutEmoji(context, mEmoji);
     }
 }

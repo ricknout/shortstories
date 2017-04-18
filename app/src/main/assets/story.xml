@@ -27,7 +27,8 @@ Rumours of a mysterious thirteenth treat begin to appear as your story unfolds..
     <!-- General requirements: -->
     <!-- Sub-choices should not exceed an amount of 3 (as per App Shortcuts limit of 4 requirement, 1 reserved for 'Show scenario' -->
     <!-- Choice actions should be <= 25 characters in length (due to App Shortcuts limits) -->
-    <!-- Provide a valid action_type for each Action, and a valid scenario_type for each Scenario (see below) -->
+    <!-- Provide a valid scenario_type for each Scenario (see below) -->
+    <!-- Provide a valid emoji unicode for Scenarios and Choices -->
     <!-- Provide a single Finish and optional Achievement/s at each story ending -->
 
     <!--
@@ -90,42 +91,47 @@ Rumours of a mysterious thirteenth treat begin to appear as your story unfolds..
 
     <Choice>
         <Scenario
-            scenario_type="15">While immersed in a Daydream, a distant chime catches your attention.
+            scenario_type="15"
+            emoji="&#xD83D;&#xDE80;">While immersed in a Daydream, a distant chime catches your attention.
 The sound rings again, this time louder and more urgent.
 You lift up your headset to see a colorful bicycle whizzing towards you!
         </Scenario>
         <Choice
             action="Move out the way"
-            action_type="12">
+            emoji="&#xD83D;&#xDE80;">
             <Scenario
-                scenario_type="9">The bicycle narrowly misses you and hurtles in to the distance.
+                scenario_type="9"
+                emoji="&#xD83D;&#xDE80;">The bicycle narrowly misses you and hurtles in to the distance.
 It's a bright, busy day in Plex with hundreds of Androids bustling about the common area.
 You decide to put your Daydream away and head inside to the cafeteria.
 What would you like to eat?
             </Scenario>
             <Choice
                 action="Brussel sprouts"
-                action_type="8">
+                emoji="&#xD83D;&#xDE80;">
                 <Scenario
-                    scenario_type="20">You pick up a luke-warm green parcel and take a bite.
+                    scenario_type="20"
+                    emoji="&#xD83D;&#xDE80;">You pick up a luke-warm green parcel and take a bite.
 Brussel sprouts is of one of the two staple foods in Plex.
 While you chew on the tasteless, leafy substance, an elderly Android approaches you.
 "Are you enjoying that?" he asks.
                 </Scenario>
                 <Choice
                     action="Yes"
-                    action_type="1">
+                    emoji="&#xD83D;&#xDE80;">
                     <Scenario
-                        scenario_type="5">The elderly Android looks disappointed, and bids you farewell.
+                        scenario_type="5"
+                        emoji="&#xD83D;&#xDE80;">The elderly Android looks disappointed, and bids you farewell.
 You continue eating your brussel sprouts, wondering if you have done anything wrong.
                     </Scenario>
                     <Finish/>
                 </Choice>
                 <Choice
                     action="No"
-                    action_type="5">
+                    emoji="&#xD83D;&#xDE80;">
                     <Scenario
-                        scenario_type="2">The elderly Android lights up.
+                        scenario_type="2"
+                        emoji="&#xD83D;&#xDE80;">The elderly Android lights up.
 "There was a time when sweet confectioneries and delicious treats were in abundance!" he says.
 "Come with me" he whispers, as he hurries out of the cafeteria with surprising speed.
 You follow him across the common area, through various alleyways and arrive at a small trapdoor.
@@ -137,18 +143,20 @@ They include a cylindrical shape, four thin bars and a small, badly-drawn oval.
                     </Scenario>
                     <Choice
                         action="No thanks"
-                        action_type="5">
+                        emoji="&#xD83D;&#xDE80;">
                         <Scenario
-                            scenario_type="5">You give a hurried goodbye to the elderly Android, head back up the stairs and exit through the trapdoor.
+                            scenario_type="5"
+                            emoji="&#xD83D;&#xDE80;">You give a hurried goodbye to the elderly Android, head back up the stairs and exit through the trapdoor.
 A mixture of confusion and intrigue runs through your CPU as you slowly walk away.
                         </Scenario>
                         <Finish/>
                     </Choice>
                     <Choice
                         action="Sure!"
-                        action_type="1">
+                        emoji="&#xD83D;&#xDE80;">
                         <Scenario
-                            scenario_type="8">The elderly Android grins.
+                            scenario_type="8"
+                            emoji="&#xD83D;&#xDE80;">The elderly Android grins.
 "I can offer one of my possessions to assist you on your sugary journey" he says.
 You wonder where you will be journeying to and how you will get there, but the excitement of it all overwhelms you.
 He holds out his hand, ushering you to choose one of three items.
@@ -156,9 +164,10 @@ Which one will you take?
                         </Scenario>
                         <Choice
                             action="Spoon"
-                            action_type="19">
+                            emoji="&#xD83D;&#xDE80;">
                             <Scenario
-                                scenario_type="4">You stow the spoon, wondering what it could be used for.
+                                scenario_type="4"
+                                emoji="&#xD83D;&#xDE80;">You stow the spoon, wondering what it could be used for.
 Suddenly, you feel a magnetic pull as the floor seems to sink beneath your feet.
 You catch a glimpse of the elderly Android waving goodbye as a blinding light engulfs you.
 Before you can say 'Nexus' you land on a grassy patch of land, your image sensors adjusting back to normal light.
@@ -171,9 +180,10 @@ What will you do?
                             </Scenario>
                             <Choice
                                 action="Walk down path"
-                                action_type="17">
+                                emoji="&#xD83D;&#xDE80;">
                                 <Scenario
-                                    scenario_type="0">You venture down the path, the foliage growing denser with every step.
+                                    scenario_type="0"
+                                    emoji="&#xD83D;&#xDE80;">You venture down the path, the foliage growing denser with every step.
 At one point, you notice the floor crunch beneath your feet.
 You find this a bit odd as the ground appears to be soft, due to the layers of leaves and mud.
 At one point, the crunching sound is very audible.
@@ -183,9 +193,10 @@ What will you do?
                                 </Scenario>
                                 <Choice
                                     action="Proceed on path"
-                                    action_type="23">
+                                    emoji="&#xD83D;&#xDE80;">
                                     <Scenario
-                                        scenario_type="19">As you reach the end of the path, a humming sound grows gradually louder.
+                                        scenario_type="19"
+                                        emoji="&#xD83D;&#xDE80;">As you reach the end of the path, a humming sound grows gradually louder.
 Something buzzes past your ear.
 You have a strong dislike for bugs.
 "I'm lost" you mutter, noticing a dead end in front of you.
@@ -195,9 +206,10 @@ Act fast!
                                     </Scenario>
                                     <Choice
                                         action="Run inside"
-                                        action_type="12">
+                                        emoji="&#xD83D;&#xDE80;">
                                         <Scenario
-                                            scenario_type="1">You burst through the opening just in time.
+                                            scenario_type="1"
+                                            emoji="&#xD83D;&#xDE80;">You burst through the opening just in time.
 Thankfully, your winged opponents do not follow you inside.
 While catching your breath, you notice strange hexagonal openings in the walls.
 The yellow glow of the room calms your nerves and you decide to inspect them.
@@ -219,9 +231,10 @@ You put on your Daydream headset...
                                 </Choice>
                                 <Choice
                                     action="Follow them"
-                                    action_type="14">
+                                    emoji="&#xD83D;&#xDE80;">
                                     <Scenario
-                                        scenario_type="16">You approach the small opening in the trees.
+                                        scenario_type="16"
+                                        emoji="&#xD83D;&#xDE80;">You approach the small opening in the trees.
 You lean down, placing your hand next to the opening in order to peer in.
 The plants give way and your lose your balance, falling into a small, hollow clearing.
 Geometric shapes arranged in a circular pattern are marked on the muddy ground.
@@ -231,9 +244,10 @@ What will you do next?
                                     </Scenario>
                                     <Choice
                                         action="Open the jar"
-                                        action_type="9">
+                                        emoji="&#xD83D;&#xDE80;">
                                         <Scenario
-                                            scenario_type="1">A delicious smell escapes the jar and instantly fills the enclosure.
+                                            scenario_type="1"
+                                            emoji="&#xD83D;&#xDE80;">A delicious smell escapes the jar and instantly fills the enclosure.
 You notice disc-like items in the jar, each dark brown in color with a milky white centre.
 You extract one and feel compelled to take a bite.
 It's chocolaty, crunchy and sweet.
@@ -253,8 +267,10 @@ You put on your Daydream headset...
                             </Choice>
                             <Choice
                                 action="Approach Android"
-                                action_type="18">
-                                <Scenario scenario_type="10">You cautiously approach the young Android.
+                                emoji="&#xD83D;&#xDE80;">
+                                <Scenario
+                                    scenario_type="10"
+                                    emoji="&#xD83D;&#xDE80;">You cautiously approach the young Android.
 She turns around, startled but seemingly happy to see you.
 "Hello! Who are you?" she says.
 "I'm Andy" you reply.
@@ -265,9 +281,10 @@ What will you do?
                                 </Scenario>
                                 <Choice
                                     action="Use the spoon"
-                                    action_type="27">
+                                    emoji="&#xD83D;&#xDE80;">
                                     <Scenario
-                                        scenario_type="1">You present the spoon and the young Android smiles.
+                                        scenario_type="1"
+                                        emoji="&#xD83D;&#xDE80;">You present the spoon and the young Android smiles.
 "Here we go, have the first taste" she says, holding up the container.
 You take a scoop of the glossy substance place it in your mouth.
 It's cold, creamy and sweet.
@@ -287,9 +304,10 @@ You put on your Daydream headset...
                         </Choice>
                         <Choice
                             action="Charging cable"
-                            action_type="20">
+                            emoji="&#xD83D;&#xDE80;">
                             <Scenario
-                                scenario_type="3">You put away the charging cable, wondering what it could be used for.
+                                scenario_type="3"
+                                emoji="&#xD83D;&#xDE80;">You put away the charging cable, wondering what it could be used for.
 Suddenly, you feel a magnetic pull as the floor seems to sink beneath your feet.
 You catch a glimpse of the elderly Android waving goodbye as a blinding light engulfs you.
 Before you can say 'Pixel' you land in what appears to be a small village.
@@ -301,9 +319,10 @@ What will you do?
                             </Scenario>
                             <Choice
                                 action="Stand your ground"
-                                action_type="4">
+                                emoji="&#xD83D;&#xDE80;">
                                 <Scenario
-                                    scenario_type="17">The Android slows down as he approaches you, his expression turning from angry to sheepish and his fists lowering.
+                                    scenario_type="17"
+                                    emoji="&#xD83D;&#xDE80;">The Android slows down as he approaches you, his expression turning from angry to sheepish and his fists lowering.
 "Ummm, my job is to defend this village" he stutters.
 "I thought you would be afraid."
 Although you were startled, you admit to him that he is not very scary.
@@ -315,9 +334,10 @@ Can you fix it?
                                 </Scenario>
                                 <Choice
                                     action="Use charging cable"
-                                    action_type="11">
+                                    emoji="&#xD83D;&#xDE80;">
                                     <Scenario
-                                        scenario_type="1">The charging cable is perfect for patching the energy unit.
+                                        scenario_type="1"
+                                        emoji="&#xD83D;&#xDE80;">The charging cable is perfect for patching the energy unit.
 The battery hums and lights tinkle as the energy flows through the village.
 You hear cries of delight all around you and you receive an overwhelming hug from the Android.
 "Please, take this, it is the least I can offer for restoring our energy" he says.
@@ -340,9 +360,10 @@ You put on your Daydream headset...
                             </Choice>
                             <Choice
                                 action="Attack!"
-                                action_type="2">
+                                emoji="&#xD83D;&#xDE80;">
                                 <Scenario
-                                    scenario_type="18">You run towards the Android but, to your surprise, he turns around in fear and runs in the opposite direction.
+                                    scenario_type="18"
+                                    emoji="&#xD83D;&#xDE80;">You run towards the Android but, to your surprise, he turns around in fear and runs in the opposite direction.
 Perplexed, you stand next to a small village hut and decide to inspect your surroundings.
 You don't get very far until an elderly female Android emerges from the hut and confronts you.
 She ushers you to come inside.
@@ -354,9 +375,10 @@ She points at them.
                                 </Scenario>
                                 <Choice
                                     action="Yes please"
-                                    action_type="3">
+                                    emoji="&#xD83D;&#xDE80;">
                                     <Scenario
-                                        scenario_type="1">She holds up a NFC pad and you tap your watch on it, transferring some credits.
+                                        scenario_type="1"
+                                        emoji="&#xD83D;&#xDE80;">She holds up a NFC pad and you tap your watch on it, transferring some credits.
 She hands you one of the objects.
 You find the Android shape strange, but the aroma is enticing and you bite in to it.
 It's crunchy, fruity, and sweet and melts in your mouth.
@@ -376,9 +398,10 @@ You put on your Daydream headset...
                         </Choice>
                         <Choice
                             action="Rope"
-                            action_type="21">
+                            emoji="&#xD83D;&#xDE80;">
                             <Scenario
-                                scenario_type="15">You tie the rope around your waist, wondering what it could be used for.
+                                scenario_type="15"
+                                emoji="&#xD83D;&#xDE80;">You tie the rope around your waist, wondering what it could be used for.
 Suddenly, you feel a magnetic pull as the floor seems to sink beneath your feet.
 You catch a glimpse of the elderly Android waving goodbye as a blinding light engulfs you.
 Before you can say 'Galaxy' you land with a splash in a rapid river.
@@ -389,9 +412,10 @@ What will you do?
                             </Scenario>
                             <Choice
                                 action="Use the rope"
-                                action_type="27">
+                                emoji="&#xD83D;&#xDE80;">
                                 <Scenario
-                                    scenario_type="11">You untie the rope from your waist and sling it towards the reeds.
+                                    scenario_type="11"
+                                    emoji="&#xD83D;&#xDE80;">You untie the rope from your waist and sling it towards the reeds.
 Luckily, they latch on and hold tight.
 You pull yourself towards the river bank, exhausted and drenched in water.
 You take a look back at the reeds and notice they are uniform in shape and texture.
@@ -400,9 +424,10 @@ What will you do?
                                 </Scenario>
                                 <Choice
                                     action="Take one"
-                                    action_type="15">
+                                    emoji="&#xD83D;&#xDE80;">
                                     <Scenario
-                                        scenario_type="1">You were right!
+                                        scenario_type="1"
+                                        emoji="&#xD83D;&#xDE80;">You were right!
 You quickly notice that it is certainly not a reed.
 The outside is brown and glossy, with writing - in a language you don't recognise - engraved in the surface.
 The inside is appears dry and almost hollow.
@@ -423,9 +448,10 @@ You put on your Daydream headset...
                             </Choice>
                             <Choice
                                 action="Keep floating"
-                                action_type="28">
+                                emoji="&#xD83D;&#xDE80;">
                                 <Scenario
-                                    scenario_type="6">You have all but given up hope, when you feel yourself being lurched to the side.
+                                    scenario_type="6"
+                                    emoji="&#xD83D;&#xDE80;">You have all but given up hope, when you feel yourself being lurched to the side.
 A Android has grabbed hold of you and is swimming you to the river bank.
 When you reach the side, he laughs and pats you on the back.
 "That was a close one!" he exclaims.
@@ -438,9 +464,10 @@ He extracts a pack of cards, with markings on them you've never seen, and holds 
                                 </Scenario>
                                 <Choice
                                     action="Pick a card"
-                                    action_type="22">
+                                    emoji="&#xD83D;&#xDE80;">
                                     <Scenario
-                                        scenario_type="1">You draw a card, being careful not to show him.
+                                        scenario_type="1"
+                                        emoji="&#xD83D;&#xDE80;">You draw a card, being careful not to show him.
 He puts it back in to the deck, shuffles, performs some magic and extracts it.
 "Is this the one?" he asks.
 After inspecting it and seeing that it is your card, you nod, much to his enjoyment.
@@ -467,27 +494,30 @@ You put on your Daydream headset...
             </Choice>
             <Choice
                 action="Porridge"
-                action_type="8">
+                emoji="&#xD83D;&#xDE80;">
                 <Scenario
-                    scenario_type="20">You take a spoonful.
+                    scenario_type="20"
+                    emoji="&#xD83D;&#xDE80;">You take a spoonful.
 Porridge is one of the two staple foods in Plex.
 While you chew on the tasteless, gooey substance, an elderly Android approaches you.
 "Are you enjoying that?" he asks.
                 </Scenario>
                 <Choice
                     action="Yes"
-                    action_type="1">
+                    emoji="&#xD83D;&#xDE80;">
                     <Scenario
-                        scenario_type="5">The elderly Android looks disappointed, and bids you farewell.
+                        scenario_type="5"
+                        emoji="&#xD83D;&#xDE80;">The elderly Android looks disappointed, and bids you farewell.
 You continue eating your porridge, wondering if you have done anything wrong.
                     </Scenario>
                     <Finish/>
                 </Choice>
                 <Choice
                     action="No"
-                    action_type="5">
+                    emoji="&#xD83D;&#xDE80;">
                     <Scenario
-                        scenario_type="2">The elderly Android lights up.
+                        scenario_type="2"
+                        emoji="&#xD83D;&#xDE80;">The elderly Android lights up.
 "There was a time when sweet confectioneries and delicious treats were in abundance!" he says.
 "Come with me" he whispers, as he hurries out of the cafeteria with surprising speed.
 You follow him across the common area, through various alleyways and arrive at a small, run-down building.
@@ -500,18 +530,20 @@ They include some kind of ring, a hexagonal structure and what appears to be a s
                     </Scenario>
                     <Choice
                         action="No ways"
-                        action_type="5">
+                        emoji="&#xD83D;&#xDE80;">
                         <Scenario
-                            scenario_type="5">You give a hurried goodbye to the elderly Android and exit the small building.
+                            scenario_type="5"
+                            emoji="&#xD83D;&#xDE80;">You give a hurried goodbye to the elderly Android and exit the small building.
 A mixture of confusion and intrigue runs through your CPU as you slowly walk away.
                         </Scenario>
                         <Finish/>
                     </Choice>
                     <Choice
                         action="Definitely!"
-                        action_type="1">
+                        emoji="&#xD83D;&#xDE80;">
                         <Scenario
-                            scenario_type="8">The elderly Android grins.
+                            scenario_type="8"
+                            emoji="&#xD83D;&#xDE80;">The elderly Android grins.
 "You may need assistance on your tasty journey." he says.
 "I am willing to part with one of my possessions."
 You wonder where you will be journeying to and how you will get there, but the excitement of it all overwhelms you.
@@ -520,9 +552,10 @@ Which one will you take?
                         </Scenario>
                         <Choice
                             action="LED bulb"
-                            action_type="19">
+                            emoji="&#xD83D;&#xDE80;">
                             <Scenario
-                                scenario_type="16">You stash the LED bulb, wondering what it could be used for.
+                                scenario_type="16"
+                                emoji="&#xD83D;&#xDE80;">You stash the LED bulb, wondering what it could be used for.
 Suddenly, you feel a magnetic pull as the walls seems close in on you.
 You catch a glimpse of the elderly Android waving goodbye as a blinding light engulfs you.
 Before you can say 'Optimus' you land in a rocky cave with very little light.
@@ -534,9 +567,10 @@ What will you do?
                             </Scenario>
                             <Choice
                                 action="Insert LED"
-                                action_type="13">
+                                emoji="&#xD83D;&#xDE80;">
                                 <Scenario
-                                    scenario_type="7">To your delight, the device fills the cave with bright light.
+                                    scenario_type="7"
+                                    emoji="&#xD83D;&#xDE80;">To your delight, the device fills the cave with bright light.
 You look around you and notice that strangely-shaped stalactites hang from the ceiling.
 They're long and thin, with spheres of all different colors on their ends.
 They are peculiar but intriguing.
@@ -544,9 +578,10 @@ What will you do?
                                 </Scenario>
                                 <Choice
                                     action="Break one off"
-                                    action_type="9">
+                                    emoji="&#xD83D;&#xDE80;">
                                     <Scenario
-                                        scenario_type="1">The object is strangely symmetrical, almost as if it had been hand-crafted.
+                                        scenario_type="1"
+                                        emoji="&#xD83D;&#xDE80;">The object is strangely symmetrical, almost as if it had been hand-crafted.
 It's not rocky, like your surroundings, but glossy and semi-transparent.
 Something compels you to taste it.
 It's fruity and sweet.
@@ -565,18 +600,20 @@ You put on your Daydream headset...
                             </Choice>
                             <Choice
                                 action="Continue"
-                                action_type="23">
+                                emoji="&#xD83D;&#xDE80;">
                                 <Scenario
-                                    scenario_type="20">The cave is dark and you are barely getting anywhere.
+                                    scenario_type="20"
+                                    emoji="&#xD83D;&#xDE80;">The cave is dark and you are barely getting anywhere.
 On top of that, you are quite hungry.
 With no light, you do not have many options.
 What will you do?
                                 </Scenario>
                                 <Choice
                                     action="Feel around"
-                                    action_type="14">
+                                    emoji="&#xD83D;&#xDE80;">
                                     <Scenario
-                                        scenario_type="1">You place your hand on the floor in the hope of finding something useful.
+                                        scenario_type="1"
+                                        emoji="&#xD83D;&#xDE80;">You place your hand on the floor in the hope of finding something useful.
 Alas, you find only cave pebbles.
 You hold them in your hand, struggling to come up with any more ideas.
 Strangely, the pebbles seem to be softening in your hands.
@@ -600,9 +637,10 @@ You put on your Daydream headset...
                         </Choice>
                         <Choice
                             action="A pair of boots"
-                            action_type="20">
+                            emoji="&#xD83D;&#xDE80;">
                             <Scenario
-                                scenario_type="2">You put on the boots, wondering if they will come in handy.
+                                scenario_type="2"
+                                emoji="&#xD83D;&#xDE80;">You put on the boots, wondering if they will come in handy.
 Suddenly, you feel a magnetic pull as the walls seems close in on you.
 You catch a glimpse of the elderly Android waving goodbye as a blinding light engulfs you.
 Before you can say 'Xperia' you land on a snowy slope, a blizzard howling around you.
@@ -614,9 +652,10 @@ What will you do?
                             </Scenario>
                             <Choice
                                 action="Climb"
-                                action_type="10">
+                                emoji="&#xD83D;&#xDE80;">
                                 <Scenario
-                                    scenario_type="17">The boots come in handy as you traverse up the slope.
+                                    scenario_type="17"
+                                    emoji="&#xD83D;&#xDE80;">The boots come in handy as you traverse up the slope.
 It seems like an eternity but you manage to reach a plateau where you notice a large cube of ice and a pick axe lying next to it.
 Inside the cube, you spot a vague outline of an item, brown and white in color.
 "What is that?" you wonder.
@@ -624,9 +663,10 @@ What will you do?
                                 </Scenario>
                                 <Choice
                                     action="Dig!"
-                                    action_type="9">
+                                    emoji="&#xD83D;&#xDE80;">
                                     <Scenario
-                                        scenario_type="1">You pick up the axe and begin to chip away at the surface.
+                                        scenario_type="1"
+                                        emoji="&#xD83D;&#xDE80;">You pick up the axe and begin to chip away at the surface.
 It takes a long time but you are compelled to get to the item at the centre.
 You reach it and it falls from the cube, on to the snow.
 You pick it up and notice a frozen white substance nestled between two brown, pitted layers.
@@ -648,9 +688,10 @@ You put on your Daydream headset...
                             </Choice>
                             <Choice
                                 action="Clear the snow"
-                                action_type="13">
+                                emoji="&#xD83D;&#xDE80;">
                                 <Scenario
-                                    scenario_type="8">You decide to clear the immediate snow around you to build a bunker to shelter you.
+                                    scenario_type="8"
+                                    emoji="&#xD83D;&#xDE80;">You decide to clear the immediate snow around you to build a bunker to shelter you.
 You dig and dig, almost endlessly, but you eventually form some kind of a shelter.
 On your last scoop of snow, your hand hits a wooden surface.
 Your energy rejuvenated by intrigue, you keep digging and unearth a small box.
@@ -658,9 +699,10 @@ What will you do?
                                 </Scenario>
                                 <Choice
                                     action="Open the box"
-                                    action_type="9">
+                                    emoji="&#xD83D;&#xDE80;">
                                     <Scenario
-                                        scenario_type="1">Inside the box you find two cylindrical objects, one a light pink and the other white.
+                                        scenario_type="1"
+                                        emoji="&#xD83D;&#xDE80;">Inside the box you find two cylindrical objects, one a light pink and the other white.
 They remind you of clouds and they feel soft to the touch.
 All this digging in the cold has made you hungry.
 Without thinking, you pop one of the objects in to your mouth.
@@ -681,9 +723,10 @@ You put on your Daydream headset...
                         </Choice>
                         <Choice
                             action="Bottle of water"
-                            action_type="21">
+                            emoji="&#xD83D;&#xDE80;">
                             <Scenario
-                                scenario_type="14">You tuck away the button, unsure of its significance.
+                                scenario_type="14"
+                                emoji="&#xD83D;&#xDE80;">You tuck away the button, unsure of its significance.
 Suddenly, you feel a magnetic pull as the walls seems close in on you.
 You catch a glimpse of the elderly Android waving goodbye as a blinding light engulfs you.
 Before you can say 'OnePlus' you land in the centre of a field.
@@ -693,9 +736,10 @@ What will you do?
                             </Scenario>
                             <Choice
                                 action="Rest"
-                                action_type="24">
+                                emoji="&#xD83D;&#xDE80;">
                                 <Scenario
-                                    scenario_type="13">You doze off almost instantly and wake up some time after, feeling revitalised.
+                                    scenario_type="13"
+                                    emoji="&#xD83D;&#xDE80;">You doze off almost instantly and wake up some time after, feeling revitalised.
 You notice you are not alone in the field.
 A few other Androids dressed in denim are walking around, gathering the dried plants surrounding you.
 You wave at one of them and he makes his way towards you.
@@ -705,9 +749,10 @@ After a fair bit of conversation, you determine he comes from a family of 'baker
                                 </Scenario>
                                 <Choice
                                     action="Sure"
-                                    action_type="1">
+                                    emoji="&#xD83D;&#xDE80;">
                                     <Scenario
-                                        scenario_type="1">He reaches in to his backpack and pulls out a cardboard carton.
+                                        scenario_type="1"
+                                        emoji="&#xD83D;&#xDE80;">He reaches in to his backpack and pulls out a cardboard carton.
 He opens it up and you take a look inside.
 You see 6 ring-shaped items, each with a glossy shell covering their tops.
 "Well, go ahead" he says.
@@ -728,9 +773,10 @@ You put on your Daydream headset...
                             </Choice>
                             <Choice
                                 action="Drink water"
-                                action_type="7">
+                                emoji="&#xD83D;&#xDE80;">
                                 <Scenario
-                                    scenario_type="10">The water provides you with some much-needed energy.
+                                    scenario_type="10"
+                                    emoji="&#xD83D;&#xDE80;">The water provides you with some much-needed energy.
 You notice a thin wisp of smoke in the distance and decide to walk towards it.
 You find that the source of the smoke is a small, stone house with a sign on it that reads "The Bakers".
 Intrigued by this strange word, you enter the house.
@@ -740,9 +786,10 @@ An Android is sitting at a table, engrossed in a task involving a large, white f
                                 </Scenario>
                                 <Choice
                                     action="Yeah!"
-                                    action_type="3">
+                                    emoji="&#xD83D;&#xDE80;">
                                     <Scenario
-                                        scenario_type="1">She hands you an item that appears to be holding the same substance she was piping.
+                                        scenario_type="1"
+                                        emoji="&#xD83D;&#xDE80;">She hands you an item that appears to be holding the same substance she was piping.
 There is a thin, brown shell on the top of it, which cracks as you take it in yiur hand.
 It looks enticing, so you bite in to it.
 It's creamy, chocolaty, and sweet with a doughy consistency.
@@ -766,9 +813,10 @@ You put on your Daydream headset...
         </Choice>
         <Choice
             action="Stand still"
-            action_type="28">
+            emoji="&#xD83D;&#xDE80;">
             <Scenario
-                scenario_type="5">The bicycle begins to slow down rapidly as the rider hastily applies the breaks.
+                scenario_type="5"
+                emoji="&#xD83D;&#xDE80;">The bicycle begins to slow down rapidly as the rider hastily applies the breaks.
 It stops just before you and the owner is not impressed.
 The Android huffs and rides away.
 "That was close" you mutter out loud, wondering how you could have handled the situation better.

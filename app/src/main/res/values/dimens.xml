@@ -6,7 +6,9 @@
     <dimen name="padding_dialog">24dp</dimen>
     <dimen name="inset_shortcut_icon">12dp</dimen>
     <dimen name="inset_shortcut_icon_background">2dp</dimen>
-    <dimen name="inset_notification_icon">8dp</dimen>
-    <dimen name="inset_notification_icon_background">0dp</dimen>
+    <dimen name="inset_emoji_shortcut">4dp</dimen>
+    <dimen name="inset_emoji_notification">0dp</dimen>
+    <dimen name="size_emoji_shortcut">44dp</dimen>
+    <dimen name="size_emoji_notification">40dp</dimen>
 
 </resources>
