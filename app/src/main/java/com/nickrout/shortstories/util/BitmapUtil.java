@@ -4,7 +4,6 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Paint;
-import android.graphics.Typeface;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.LayerDrawable;
@@ -83,7 +82,7 @@ public class BitmapUtil {
         paint.setStyle(Paint.Style.FILL);
         paint.setTextAlign(Paint.Align.LEFT);
         paint.setTextSize(size);
-        paint.setTypeface(Typeface.createFromAsset(context.getAssets(), "fonts/NotoColorEmoji.ttf"));
+        paint.setTypeface(TypefaceUtil.getTypeface(context, TypefaceUtil.NOTO_COLOR_EMOJI));
         float baseline = -paint.ascent();
         int width = (int) (paint.measureText(emoji) + 0.5f);
         int height = (int) (baseline + paint.descent() + 0.5f);
