@@ -12,7 +12,7 @@ ShortStories provides a platform to play text-based games using the various elem
 
 • <b>Dialogs provide a means of viewing a list of achievements, gained by exploring various paths in a story</b>
 
-Unique colors, icons, vibration patterns and sounds exist for different types of scenarios and actions, and are used to theme the Notifications and App Shortcuts.
+Unique colors, icons, vibration patterns and sounds exist for different types of scenarios, and are used to theme the Notifications. Emoji provide a contextual icon for scenarios and choices.
 
 Stories are defined in XML. A basic structure of <b>Story</b>, <b>Choice</b>, <b>Scenario</b>, <b>Achievement</b> and <b>Finish</b> tags allows ShortStories to parse and play almost any kind of text-based, multiple choice game.
 
