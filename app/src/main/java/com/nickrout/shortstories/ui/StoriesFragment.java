@@ -31,7 +31,7 @@ public class StoriesFragment extends Fragment implements StoryListener {
     private static final String TAG = "StoriesFragment";
 
     private FragmentStoriesBinding mBinding;
-    private static final List<String> STORY_FILES = new ArrayList<>(Arrays.asList("story.xml"));
+    private static final List<String> STORY_FILES = new ArrayList<>(Arrays.asList("an_androids_tale.xml"));
 
     public StoriesFragment() {
     }
@@ -66,7 +66,7 @@ public class StoriesFragment extends Fragment implements StoryListener {
                 List<Story> stories = new ArrayList<>();
                 for (String storyFile : storyFiles) {
                     try {
-                        Story story = serializer.read(Story.class, getActivity().getAssets().open(storyFile));
+                        Story story = serializer.read(Story.class, getActivity().getAssets().open("stories/" + storyFile));
                         story.file = storyFile;
                         if (!foundInProgressStory) {
                             boolean inProgress = progress.isInProgress(storyFile);
