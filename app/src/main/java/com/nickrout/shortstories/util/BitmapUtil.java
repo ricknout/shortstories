@@ -82,7 +82,6 @@ public class BitmapUtil {
         paint.setStyle(Paint.Style.FILL);
         paint.setTextAlign(Paint.Align.LEFT);
         paint.setTextSize(size);
-        paint.setTypeface(TypefaceUtil.getTypeface(context, TypefaceUtil.NOTO_COLOR_EMOJI));
         float baseline = -paint.ascent();
         int width = (int) (paint.measureText(emoji) + 0.5f);
         int height = (int) (baseline + paint.descent() + 0.5f);
